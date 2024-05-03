@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+---
+
+<Layout title="Welcome to Astro.">
+
+   <nav class="hamburguer mt-4">
+
+    <!-- justify-around max-w-6xl mx-auto p-4 sm:flex-row -->
+        <svg id="menu" xmlns="http://www.w3.org/2000/svg" class="mt-0 h-6 w-6 mx-2 sm:hidden cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+
+        <ul id="menuItems" class="hidden flex flex-col absolute top-0 pt-16 bg-neutral-900 z-10 left-0 h-full  items-center gap-8 p-6 md:flex md:flex-row md:relative md: justify-center md:bg-transparent md:py-8 ">
+            <svg id="close" class="absolute top-4 left-3 sm:hidden cursor-pointer" width="100" height="100"><path d="M 10,10 L 30,30 M 30,10 L 10,30" stroke="white" stroke-width="4" /></svg>
+            <a href="#Educacion" class="headerList" >Educación</a>
+            <a href="#Experiencia" class="headerList">Experiencia</a>
+            <a href="#Awards" class="headerList">Conferencias y premios</a>
+            <a href="#Proyectos" class="headerList">Proyectos</a>
+            <a href="#Contact" class="headerList">Contacto</a>
+        </ul>
+
+        <div id="cancelable" class="absolute w-1/2 h-full top-0 left-48  z-30"></div>
+   </nav>
+
+   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const menuIcon = document.getElementById("menu");
+        const menuItems = document.getElementById("menuItems");
+        const closeButton = document.getElementById("close");
+        const cancelable = document.getElementById("cancelable");
+
+        menuIcon.addEventListener("click", function() {
+            menuItems.classList.toggle("hidden");
+        });
+
+        closeButton.addEventListener("click", function() {
+            menuItems.classList.add("hidden");
+        });
+
+        cancelable.addEventListener("click", function() {
+            menuItems.classList.add("hidden");
+        });
+    });
+</script>
+
+</Layout>

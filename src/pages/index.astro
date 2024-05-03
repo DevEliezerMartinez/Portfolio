@@ -1,0 +1,39 @@
+---
+import Education from "../components/Education.astro";
+import Header from "../components/Header.astro";
+import CoverPage from "../components/CoverPage.astro";
+import Layout from "../layouts/Layout.astro";
+import TalksAndAwards from "../components/TalksAndAwards.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import Liderazgo from "../components/Liderazgo.astro";
+import Contacto from "../components/Contact.astro";
+
+---
+
+<Layout title="Eliezer Martinez Portfolio.">
+  <main class="px-6 md: max-w-7xl r flex flex-col   m-auto">
+    <Header />
+
+    <CoverPage />
+
+    <Education />
+
+    <TalksAndAwards />
+
+    <Experience/>
+
+    <Projects/>
+
+    <Liderazgo/>
+
+    <Contacto/>
+  </main>
+</Layout>
+
+<style is:global>
+  .icon {
+    width: 33px;
+    height: 33px;
+  }
+</style>
