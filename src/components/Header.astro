@@ -14,14 +14,14 @@ import Layout from '../layouts/Layout.astro';
 
         <ul id="menuItems" class="hidden flex flex-col absolute top-0 pt-16 bg-neutral-900 z-10 left-0 h-full  items-center gap-8 p-6 md:flex md:flex-row md:relative md: justify-center md:bg-transparent md:py-8 ">
             <svg id="close" class="absolute top-4 left-3 sm:hidden cursor-pointer" width="100" height="100"><path d="M 10,10 L 30,30 M 30,10 L 10,30" stroke="white" stroke-width="4" /></svg>
-            <a href="#Educacion" class="headerList" >Educación</a>
-            <a href="#Experiencia" class="headerList">Experiencia</a>
-            <a href="#Awards" class="headerList">Conferencias y premios</a>
-            <a href="#Proyectos" class="headerList">Proyectos</a>
-            <a href="#Contact" class="headerList">Contacto</a>
+            <a href="#Educacion" class="headerList hover:text-blue-600  hover:animate-jump hover:font-semibold" >Educación</a>
+            <a href="#Experiencia" class="headerList  hover:text-blue-600  hover:animate-jump hover:font-semibold">Experiencia</a>
+            <a href="#Awards" class="headerList  hover:text-blue-600  hover:animate-jump hover:font-semibold">Conferencias y premios</a>
+            <a href="#Proyectos" class="headerList  hover:text-blue-600  hover:animate-jump hover:font-semibold">Proyectos</a>
+            <a href="#Contact" class="headerList  hover:text-blue-600  hover:animate-jump hover:font-semibold">Contacto</a>
         </ul>
 
-        <div id="cancelable" class="absolute w-1/2 h-full top-0 left-48  z-30"></div>
+        <div id="cancelable" class="absolute w-1/2 h-full top-0 left-48  z-30 hidden"></div>
    </nav>
 
    <script>
@@ -33,6 +33,8 @@ import Layout from '../layouts/Layout.astro';
 
         menuIcon.addEventListener("click", function() {
             menuItems.classList.toggle("hidden");
+            cancelable.classList.remove("hidden")
+
         });
 
         closeButton.addEventListener("click", function() {
