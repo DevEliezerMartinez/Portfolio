@@ -1,15 +1,50 @@
-<h3 class="Subtitle text-4xl md:text-6xl mb-6 animate-fade-right animate-once " id="Educacion">Educación</h3>
+---
+// Education.astro
+---
 
-<div class="md:flex md:flex-row-reverse md:items-center md:justify-between  md:w-full md:mb-24 ">
-  <picture >
+<h3 class="Subtitle text-4xl md:text-6xl mb-6 animate-fade-right animate-once" id="Educacion">
+  Educación
+</h3>
+
+<div class="md:flex md:flex-row-reverse md:items-center md:justify-between md:gap-8 md:w-full md:mb-24">
+  <picture class="flex-shrink-0">
     <img
-      class="max-w-64 m-auto md:max-w-80"
+      class="w-full md:w-96 md:max-w-md rounded-lg shadow-md object-cover"
       src="/Educacion.jpg"
-      alt="Fotografía institucional"
+      alt="Eliezer Solano - Ingeniero en Informática"
     />
   </picture>
 
-  <p class="Descriptions text-center mx-2 mt-6 px-6 font-extralight md:text-left md:text-lg md:px-0 md:w-1/2 ">
-    Me titulé como  Ingeniero en Informática en el Tecnológico Nacional de México, Campus San Marcos, con mención honorífica. Esta formación, junto con mis certificaciones en UX/UI Design: Design Thinking and Figma (Udemy), Data Analysis with Python (Desafío Latam), Microsoft Azure Fundamentals AZ-900 (Microsoft, 2021), y Cyber Security Essentials (Cisco, 2021), me permite ofrecer una sólida base de conocimientos y habilidades técnicas, fundamentales para proyectos de desarrollo de software y soluciones tecnológicas.
-  </p>
+  <div class="mt-6 md:mt-0 md:flex-1">
+    <p class="Descriptions text-center mx-2 px-6 font-extralight md:text-left md:text-lg md:px-0">
+      Me titulé como Ingeniero en Informática en el Tecnológico Nacional de México, Campus San Marcos, 
+      con <strong>mención honorífica</strong>. Esta formación académica, complementada con certificaciones 
+      especializadas, me proporciona una sólida base técnica y metodológica para el desarrollo de 
+      soluciones tecnológicas innovadoras.
+    </p>
+
+    <div class="mt-6 px-6 md:px-0">
+      <h4 class="Descriptions font-semibold text-lg mb-3 text-center md:text-left">
+        Certificaciones Profesionales
+      </h4>
+      <ul class="Descriptions font-extralight space-y-2 md:text-lg">
+        <li class="flex items-start gap-2">
+          <span class="text-blue-600 mt-1">•</span>
+          <span><strong>UX/UI Design: Design Thinking and Figma</strong> - Udemy</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-blue-600 mt-1">•</span>
+          <span><strong>Data Analysis with Python</strong> - Desafío Latam</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-blue-600 mt-1">•</span>
+          <span><strong>Microsoft Azure Fundamentals AZ-900</strong> - Microsoft (2021)</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-blue-600 mt-1">•</span>
+          <span><strong>Cyber Security Essentials</strong> - Cisco (2021)</span>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

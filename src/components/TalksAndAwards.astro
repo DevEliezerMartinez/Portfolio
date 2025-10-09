@@ -1,220 +1,247 @@
 ---
-
+// Awards.astro
 ---
+
+<style>
+  details > summary {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+  details[open] .plus-icon {
+    transform: rotate(45deg);
+  }
+</style>
 
 <h3
   class="Subtitle text-4xl md:text-6xl my-6 animate-fade-right animate-once"
-  id="#Awards"
+  id="Awards"
 >
   Conferencias y premiaciones
 </h3>
 
-<section class="border-l-2 pl-4 md:mb-32 md:flex-col md:flex md:gap-6">
-  <!--   <article>
-    <div class="title flex mt-8">
-      <img class="mr-2" src="/tecNM.svg" alt="Logo Tecnológico" />
-      <h3 class="Descriptions font-semibold md:text-xl">
-        Conferencia "Caminos al éxito: Del aula a la vida profesional
-      </h3>
-    </div>
+<section class="border-l-2 pl-4 md:mb-32 space-y-4">
 
-    <p class="Descriptions font-extralight mt-4 md:text-lg">
-      El Tecnológico Nacional de México, Campus San Marcos, me otorgó un
-      reconocimiento por ofrecer esta conferencia inspiradora a estudiantes, en
-      la que compartí mi experiencia y motivé a los jóvenes a perseguir sus
-      sueños en el campo de la tecnología.
-    </p>
-  </article>
-  <article>
-    <div class="title flex mt-8">
-      <img class="mr-6" src="/Bachi.svg" alt="Logo COBACH" />
-      <h3 class="Descriptions font-semibold md:text-xl">
-        Conferencia "Jóvenes en la tecnología" - Colegio de Bachilleres #10
-      </h3>
-    </div>
-
-    <p class="Descriptions font-extralight mt-4 md:text-lg">
-      El Colegio de Bachilleres Plantel 10 me reconoció por la conferencia que
-      ofrecí a estudiantes de último grado, en la que los introduje al
-      emocionante mundo de la tecnología y sus oportunidades.
-    </p>
-  </article>
-  <article>
-    <div class="title flex mt-8">
-      <img class="mr-2" src="/Cups.svg" alt="Logo CUPS" />
-      <h3 class="Descriptions font-semibold md:text-xl">
-        Conferencia "Ciberseguridad: Riesgos e implicaciones" - CUPS
-      </h3>
-    </div>
-
-    <p class="Descriptions font-extralight mt-4 md:text-lg">
-      Impartí esta conferencia en la que abordé la importancia de la
-      ciberseguridad, la protección de datos y la conciencia sobre ciberataques,
-      dirigida a estudiantes de Ingeniería en Sistemas Computacionales y
-      Criminalística.
-    </p>
-  </article>
-  <article>
-    <div class="title flex mt-8">
-      <img class="mr-2" src="/Gober.svg" alt="Logo CUPS" />
-      <h3 class="Descriptions font-semibold md:text-xl">
-        Reconocimiento Académico - Gobierno del Estado de Guerrero
-      </h3>
-    </div>
-
-    <p class="Descriptions font-extralight mt-4 md:text-lg">
-      El Gobierno del Estado de Guerrero, a través del Consejo de Ciencia,
-      Tecnología e Innovación, me otorgó este reconocimiento por mi
-      participación y desempeño sobresaliente en el Programa de EmFuTech de
-      Mirai Innovation en Japón.
-    </p>
-  </article>
- -->
-
-  <div class="collapse collapse-plus ">
-    <input type="radio" name="my-accordion-3" checked="checked" />
-    <div
-      class="collapse-title text-xl Descriptions font-semibold text-right md:text-xl"
-    >
-      <div class="title flex">
-        <img class="mr-2" src="/tecNM.svg" alt="Logo Tecnológico" />
-        <h3 class="md:text-xl">
+  <!-- Tecnológico Nacional -->
+  <details class="group rounded-lg p-4 transition-all" open>
+    <summary class="cursor-pointer flex items-center justify-between">
+      <div class="flex items-center gap-3 flex-1">
+        <img class="w-8 h-8 md:w-10 md:h-10" src="/tecNM.svg" alt="Logo Tecnológico" />
+        <h3 class="text-lg md:text-xl font-semibold">
           Conferencia "Caminos al éxito: Del aula a la vida profesional"
         </h3>
       </div>
-    </div>
-    <div class="collapse-content">
-      <p class="Descriptions font-extralight mt-4 text-right md:text-xl">
+      <span class="plus-icon text-2xl text-blue-600 transition-transform duration-200 ml-4">+</span>
+    </summary>
+    
+    <div class="mt-4 pl-11">
+      <p class="Descriptions font-extralight  mb-4 md:text-lg">
         El Tecnológico Nacional de México, Campus San Marcos, me otorgó un
         reconocimiento por ofrecer esta conferencia inspiradora a estudiantes,
         en la que compartí mi experiencia y motivé a los jóvenes a perseguir sus
         sueños en el campo de la tecnología.
       </p>
-
-      <div class="flex gap-4  justify-end">
-        <p class="text-right text-blue-600 my-4">
-          <a
-            target="_blank"
-            href="https://drive.google.com/file/d/1w3A0gFeW-BsN6aXkMw8XRehG-5JP34Jn/view?usp=sharing"
-            >Certificado</a>
-        </p>
-        <p class="text-right text-blue-600 my-4">
-          <a
-            target="_blank"
-            href="https://www.facebook.com/TecNMSanMarcosGro/posts/pfbid02XMvgWDwHiMnWPssoiwvzuAVA7eFAKLpLfHReewtrw83HRweGVtpgRKQNkrqrsjMzl"
-            >Post</a>
-        </p>
+      <div class="flex gap-4">
+        <a
+          target="_blank"
+          href="https://drive.google.com/file/d/1w3A0gFeW-BsN6aXkMw8XRehG-5JP34Jn/view?usp=sharing"
+          class="text-blue-600 hover:text-blue-800 hover:underline"
+        >
+          Certificado
+        </a>
+        <a
+          target="_blank"
+          href="https://www.facebook.com/TecNMSanMarcosGro/posts/pfbid02XMvgWDwHiMnWPssoiwvzuAVA7eFAKLpLfHReewtrw83HRweGVtpgRKQNkrqrsjMzl"
+          class="text-blue-600 hover:text-blue-800 hover:underline"
+        >
+          Post
+        </a>
       </div>
     </div>
-  </div>
+  </details>
 
-  <div class="collapse collapse-plus ">
-    <input type="radio" name="my-accordion-3" checked="checked" />
-    <div
-      class="collapse-title text-xl Descriptions font-semibold text-right md:text-xl"
-    >
-      <div class="title flex">
-        <img class="mr-6" src="/Bachi.svg" alt="Logo COBACH" />
-        <h3 class="md:text-xl">
+  <!-- Colegio de Bachilleres -->
+  <details class="group rounded-lg p-4 transition-all">
+    <summary class="cursor-pointer flex items-center justify-between">
+      <div class="flex items-center gap-3 flex-1">
+        <img class="w-8 h-8 md:w-10 md:h-10" src="/Bachi.svg" alt="Logo COBACH" />
+        <h3 class="text-lg md:text-xl font-semibold">
           Conferencia "Jóvenes en la tecnología" - Colegio de Bachilleres #10
         </h3>
       </div>
-    </div>
-    <div class="collapse-content">
-      <p class="Descriptions font-extralight mt-4 text-right md:text-xl">
+      <span class="plus-icon text-2xl text-blue-600 transition-transform duration-200 ml-4">+</span>
+    </summary>
+    
+    <div class="mt-4 pl-11">
+      <p class="Descriptions font-extralight  mb-4 md:text-lg">
         El Colegio de Bachilleres Plantel 10 me reconoció por la conferencia que
         ofrecí a estudiantes de último grado, en la que los introduje al
         emocionante mundo de la tecnología y sus oportunidades.
       </p>
-
-      <div class="flex gap-4  justify-end">
-        <p class="text-right text-blue-600 my-4">
-          <a
-            target="_blank"
-            href="https://drive.google.com/file/d/1ZVEcvSpPA9Big04ZAxkRBytFjJUUtojo/view?usp=sharing"
-            >Certificado</a>
-        </p>
-        <p class="text-right text-blue-600 my-4">
-          <a
-            target="_blank"
-            href="https://www.facebook.com/cobach.lopez/posts/pfbid02jHmka8BYw419CHyxsN2cx3GRMzfcTjMedTMpT5aWQD845umz5g9SMHbQXfbv3n7bl"
-            >Post</a>
-        </p>
+      <div class="flex gap-4">
+        <a
+          target="_blank"
+          href="https://drive.google.com/file/d/1ZVEcvSpPA9Big04ZAxkRBytFjJUUtojo/view?usp=sharing"
+          class="text-blue-600 hover:text-blue-800 hover:underline"
+        >
+          Certificado
+        </a>
+        <a
+          target="_blank"
+          href="https://www.facebook.com/cobach.lopez/posts/pfbid02jHmka8BYw419CHyxsN2cx3GRMzfcTjMedTMpT5aWQD845umz5g9SMHbQXfbv3n7bl"
+          class="text-blue-600 hover:text-blue-800 hover:underline"
+        >
+          Post
+        </a>
       </div>
     </div>
-  </div>
+  </details>
 
-  <div class="collapse collapse-plus ">
-    <input type="radio" name="my-accordion-3" checked="checked" />
-    <div
-      class="collapse-title text-xl Descriptions font-semibold text-right md:text-xl"
-    >
-      <div class="title flex">
-        <img class="mr-2" src="/Cups.svg" alt="Logo CUPS" />
-        <h3 class="md:text-xl">
+  <!-- CUPS -->
+  <details class="group rounded-lg p-4 transition-all">
+    <summary class="cursor-pointer flex items-center justify-between">
+      <div class="flex items-center gap-3 flex-1">
+        <img class="w-8 h-8 md:w-10 md:h-10" src="/Cups.svg" alt="Logo CUPS" />
+        <h3 class="text-lg md:text-xl font-semibold">
           Conferencia "Ciberseguridad: Riesgos e implicaciones" - CUPS
         </h3>
       </div>
-    </div>
-    <div class="collapse-content">
-      <p class="Descriptions font-extralight mt-4 text-right md:text-xl">
+      <span class="plus-icon text-2xl text-blue-600 transition-transform duration-200 ml-4">+</span>
+    </summary>
+    
+    <div class="mt-4 pl-11">
+      <p class="Descriptions font-extralight  mb-4 md:text-lg">
         Impartí esta conferencia en la que abordé la importancia de la
         ciberseguridad, la protección de datos y la conciencia sobre
         ciberataques, dirigida a estudiantes de Ingeniería en Sistemas
         Computacionales y Criminalística.
       </p>
-
-      <div class="flex gap-4  justify-end">
-        <p class="text-right text-blue-600 my-4">
-          <a
-            target="_blank"
-            href="https://drive.google.com/file/d/1AM8pD2f5XrhhFWfjb2pFyuk3w5AsKvUT/view?usp=drive_link"
-            >Certificado</a>
-        </p>
-        <p class="text-right text-blue-600 my-4">
-          <a
-            target="_blank"
-            href="https://www.facebook.com/cups.ometepec/posts/pfbid02bw64X4nyxGzd7hHDud78YbfvyvXsJWpUze6nv4M7jrKSremWLutDTUj8Wh9LQdoNl"
-            >Post</a>
-        </p>
+      <div class="flex gap-4">
+        <a
+          target="_blank"
+          href="https://drive.google.com/file/d/1AM8pD2f5XrhhFWfjb2pFyuk3w5AsKvUT/view?usp=drive_link"
+          class="text-blue-600 hover:text-blue-800 hover:underline"
+        >
+          Certificado
+        </a>
+        <a
+          target="_blank"
+          href="https://www.facebook.com/cups.ometepec/posts/pfbid02bw64X4nyxGzd7hHDud78YbfvyvXsJWpUze6nv4M7jrKSremWLutDTUj8Wh9LQdoNl"
+          class="text-blue-600 hover:text-blue-800 hover:underline"
+        >
+          Post
+        </a>
       </div>
     </div>
-  </div>
+  </details>
 
-  <div class="collapse collapse-plus ">
-    <input type="radio" name="my-accordion-3" checked="checked" />
-    <div
-      class="collapse-title text-xl Descriptions font-semibold text-right md:text-xl"
-    >
-      <div class="title flex">
-        <img class="mr-2" src="/Gober.svg" alt="Logo CUPS" />
-        <h3 class="md:text-xl">
+  <!-- Gobierno del Estado de Guerrero -->
+  <details class="group rounded-lg p-4 transition-all">
+    <summary class="cursor-pointer flex items-center justify-between">
+      <div class="flex items-center gap-3 flex-1">
+        <img class="w-8 h-8 md:w-10 md:h-10" src="/Gober.svg" alt="Logo Gobierno" />
+        <h3 class="text-lg md:text-xl font-semibold">
           Reconocimiento Académico - Gobierno del Estado de Guerrero
         </h3>
       </div>
-    </div>
-    <div class="collapse-content">
-      <p class="Descriptions font-extralight mt-4 text-right md:text-xl">
+      <span class="plus-icon text-2xl text-blue-600 transition-transform duration-200 ml-4">+</span>
+    </summary>
+    
+    <div class="mt-4 pl-11">
+      <p class="Descriptions font-extralight  mb-4 md:text-lg">
         El Gobierno del Estado de Guerrero, a través del Consejo de Ciencia,
         Tecnología e Innovación, me otorgó este reconocimiento por mi
         participación y desempeño sobresaliente en el Programa de EmFuTech de
         Mirai Innovation en Japón.
       </p>
-
-      <div class="flex gap-4  justify-end">
-        <p class="text-right text-blue-600 my-4">
-          <a
-            target="_blank"
-            href="https://drive.google.com/file/d/1QsX23o_JW-L8UVK151EedktVj1SYxKpV/view?usp=sharing"
-            >Certificado</a>
-        </p>
-        <p class="text-right text-blue-600 my-4">
-          <a
-            target="_blank"
-            href="https://www.facebook.com/EvelynSalgadoP/posts/pfbid02vdsXvAaMSwVELiXobhy7t3CrvPXyfFLgnghSdyGN33zkgptW66z4PbGvtpGhtAZ4l"
-            >Post</a>
-        </p>
+      <div class="flex gap-4">
+        <a
+          target="_blank"
+          href="https://drive.google.com/file/d/1QsX23o_JW-L8UVK151EedktVj1SYxKpV/view?usp=sharing"
+          class="text-blue-600 hover:text-blue-800 hover:underline"
+        >
+          Certificado
+        </a>
+        <a
+          target="_blank"
+          href="https://www.facebook.com/EvelynSalgadoP/posts/pfbid02vdsXvAaMSwVELiXobhy7t3CrvPXyfFLgnghSdyGN33zkgptW66z4PbGvtpGhtAZ4l"
+          class="text-blue-600 hover:text-blue-800 hover:underline"
+        >
+          Post
+        </a>
       </div>
     </div>
-  </div>
+  </details>
+
+  <!-- Webinar UX/UI -->
+  <details class="group rounded-lg p-4 transition-all">
+    <summary class="cursor-pointer flex items-center justify-between">
+      <div class="flex items-center gap-3 flex-1">
+        <img class="w-8 h-8 md:w-10 md:h-10" src="https://une-demo.pages.dev/_astro/UNE_com.BN7X7Sti.webp" alt="Logo UNE" />
+        <h3 class="text-lg md:text-xl font-semibold">
+          Webinar de UX/UI con el Ing. Eliezer Solano Martínez
+        </h3>
+      </div>
+      <span class="plus-icon text-2xl text-blue-600 transition-transform duration-200 ml-4">+</span>
+    </summary>
+    
+    <div class="mt-4 pl-11">
+      <p class="Descriptions font-extralight  mb-4 md:text-lg">
+        Reconocimiento por mi participación en el webinar de UX/UI impartido por el Ing. Eliezer Solano Martínez, donde profundicé mis conocimientos en diseño de experiencia e interfaz de usuario.
+      </p>
+      <div class="flex gap-4">
+        <a
+          target="_blank"
+          href="https://drive.google.com/file/d/14rVsW-9IeBpcG8FmwWUsit4939GmmuCO/view?usp=sharing"
+          class="text-blue-600 hover:text-blue-800 hover:underline"
+        >
+          Certificado
+        </a>
+        <a
+          target="_blank"
+          href="https://www.facebook.com/photo/?fbid=1100560662099831&set=a.492657396223497&locale=es_LA"
+          class="text-blue-600 hover:text-blue-800 hover:underline"
+        >
+          Post
+        </a>
+      </div>
+    </div>
+  </details>
+
+  <!-- Talent Land -->
+  <details class="group rounded-lg p-4 transition-all">
+    <summary class="cursor-pointer flex items-center justify-between">
+      <div class="flex items-center gap-3 flex-1">
+        <img class="w-8 h-8 md:w-10 md:h-10" src="https://2019.talent-land.mx/wp-content/uploads/2019/01/favicon.png" alt="Logo Talent Land" />
+        <h3 class="text-lg md:text-xl font-semibold">
+          Talent Land - "Más allá del código y pensando fuera del algoritmo"
+        </h3>
+      </div>
+      <span class="plus-icon text-2xl text-blue-600 transition-transform duration-200 ml-4">+</span>
+    </summary>
+    
+    <div class="mt-4 pl-11">
+      <p class="Descriptions font-extralight  mb-4 md:text-lg">
+        La conferencia aborda los límites de la inteligencia artificial, destacando cómo, a pesar de su capacidad para realizar tareas específicas con rapidez y precisión, enfrenta serias restricciones al intentar comprender y resolver problemas de gran escala y alta complejidad. Se reflexiona sobre su incapacidad para considerar múltiples variables sociales, económicas y humanas interrelacionadas, explorando cómo la IA no puede sustituir el enfoque holístico necesario para entender arquitecturas tecnológicas, sistemas operativos y el propósito detrás del uso de diversos lenguajes de programación. Esta conferencia invita a mirar más allá de los algoritmos, destacando la importancia del pensamiento crítico, la creatividad y una visión humana integral para complementar las capacidades técnicas de la IA.
+      </p>
+      <div class="flex gap-4">
+        <a
+          target="_blank"
+          href="https://drive.google.com/file/d/1kJlVUkjR703G84qwk4-l7J90H6O_ddAw/view?usp=sharing"
+          class="text-blue-600 hover:text-blue-800 hover:underline"
+        >
+          Certificado
+        </a>
+        <a
+          target="_blank"
+          href="https://talent-land.mx/eventos/mas-alla-del-codigo-y-la-pensando-fuera-del-algoritmo-eliezer-solano-los-reyes-del-injerto-cdmx/"
+          class="text-blue-600 hover:text-blue-800 hover:underline"
+        >
+          Evento
+        </a>
+      </div>
+    </div>
+  </details>
+
 </section>
