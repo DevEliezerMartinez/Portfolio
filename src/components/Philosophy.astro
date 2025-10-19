@@ -1,0 +1,138 @@
+---
+// PhilosophyHero.astro
+---
+
+<section class="philosophy-section bg-gradient-to-b h-dvh flex justify-center items-center bg-light-blue px-6 py-16 md:py-24">
+  <div class="max-w-6xl mx-auto text-center">
+    <h1 class="philosophy-title text-blue-deep text-4xl md:text-5xl lg:text-6xl font-bold italic mb-6 opacity-0">
+      FILOSOFÍA Y FUTURO
+    </h1>
+    
+    <div class="reveal-text-container overflow-hidden">
+      <p class="reveal-text my-8 text-xl md:text-2xl font-light leading-relaxed font-plex opacity-0">
+        Hoy vivo en Guadalajara, y sigo en movimiento. No persigo la perfección, sino la mejora constante. 
+        Sigo aprendiendo, siempre atrevido ante los retos. 
+        Sueño con diseñar experiencias digitales para los creadores que inspiran a millones, construir sus 
+        escenarios digitales como si fueran autos de carrera: potentes, precisos y con propósito. 
+        No importa cuántas veces me caiga, siempre vuelvo a levantarme.
+      </p>
+    </div>
+
+    <p class="final-text text-gulf-blue font-clash text-4xl md:text-6xl font-bold mt-32 opacity-0">
+      Never give up.
+    </p>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import { SplitText } from 'gsap/SplitText';
+  
+  // Esperar a que las fuentes y el DOM estén completamente cargados
+  const initAnimations = async () => {
+    try {
+      // Esperar a que las fuentes se carguen
+      await document.fonts.ready;
+      
+      gsap.registerPlugin(ScrollTrigger, SplitText);
+      
+      const philosophySection = document.querySelector('.philosophy-section');
+      const title = document.querySelector('.philosophy-title');
+      const revealText = document.querySelector('.reveal-text');
+      const finalText = document.querySelector('.final-text');
+      
+      if (!philosophySection || !title || !revealText || !finalText) {
+        console.error('No se encontraron los elementos necesarios');
+        return;
+      }
+      
+      // Dividir el texto en palabras para animación secuencial
+      const split = new SplitText(revealText, { type: 'words' });
+      gsap.set(revealText, { opacity: 1 });
+      
+      // Calcular duración del scroll basado en cantidad de palabras
+      const scrollDistance = split.words.length * 30; // Ajusta este valor para controlar la velocidad
+      
+      // Pin de la sección durante toda la animación
+      ScrollTrigger.create({
+        trigger: philosophySection,
+        start: 'top top',
+        end: `+=${scrollDistance}`,
+        pin: true,
+        pinSpacing: true,
+        // markers: true, // Descomentar para debugging
+      });
+      
+      // Timeline principal con scrub para vincular al scroll
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: philosophySection,
+          start: 'top top',
+          end: `+=${scrollDistance}`,
+          scrub: 1,
+          // markers: true, // Descomentar para debugging
+        }
+      });
+      
+      // Animar título
+      tl.fromTo(title,
+        {
+          opacity: 0,
+          y: -50
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 2,
+          ease: 'power3.out'
+        }
+      );
+      
+      // Animar cada palabra del párrafo progresivamente
+      tl.fromTo(split.words,
+        {
+          opacity: 0,
+          y: 20
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          stagger: 0.1, // Mayor stagger para que se vea más progresivo
+          ease: 'power2.out'
+        },
+        '-=1' // Overlap con el título
+      );
+      
+      // Animar el texto final "Never give up"
+      tl.fromTo(finalText,
+        {
+          opacity: 0,
+          scale: 0.8,
+          y: 30
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 2,
+          ease: 'back.out(1.7)'
+        },
+        '-=0.5'
+      );
+      
+      console.log('Animaciones inicializadas correctamente');
+      
+    } catch (error) {
+      console.error('Error al inicializar animaciones:', error);
+    }
+  };
+  
+  // Iniciar cuando el DOM esté listo
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAnimations);
+  } else {
+    initAnimations();
+  }
+</script>

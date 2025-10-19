@@ -1,81 +1,141 @@
 ---
-
+// HeroSection.astro
 ---
 
-<section class="flex flex-col items-center h-full mb-32">
-  <picture>
-    <img
-      class="rounded-full max-w-64"
-      src="/Eliezer.jpg"
-      alt="Fotografia personal"
-    />
-  </picture>
-  <h1
-    class="Subtitle text-4xl my-4 md:text-6xl md:my-4 animate-fade-up animate-once"
+<section
+  id="Hero"
+  class="relative flex min-h-dvh flex-col items-center justify-end px-4 pb-24"
+>
+  <!-- Overlay con degradado -->
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-blue-deep/0 to-blue-deep pointer-events-none"
   >
-    Eliezer Martinez
-  </h1>
-  <h3 class="ThirdTitles text-lg md:text-2xl animate-fade-down animate-once">
-    Computer Engineer | Fullstack Developer | Project Lead
-  </h3>
+  </div>
 
-  <p
-    class="Descriptions text-center mt-4 md:max-w-2xl animate-fade-up animate-once"
-  >
-    Ingeniero en informática y desarrollador fullstack con experiencia
-    internacional en Japón. Combino visión técnica y enfoque humano para crear
-    soluciones digitales eficientes, escalables y con propósito. Actualmente
-    lidero proyectos que integran tecnología, diseño y estrategia para
-    transformar procesos y experiencias.
-  </p>
+  <!-- Contenido -->
+  <div class="relative z-10 flex flex-col items-center md:pb-24">
+    <h1
+      class="split-title text-5xl my-4 md:text-7xl md:my-6 font-display text-white text-center"
+    >
+      Eliezer Martinez
+    </h1>
+    <h2 class="split-subtitle text-lg md:text-3xl text-orange text-center font-display">
+      Pasión por crear y mejorar con propósito
+    </h2>
 
-  <a
-    class="animate-jump animate-once my-8 middle none center mr-4 rounded-lg bg-blue-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-    data-ripple-light="true"
-    href="#Contact"
-  >
-    Contactame!
-  </a>
-  <aside
-    class="flex flex-row pb-5 border-b-2 border-white w-2/3 md:w-auto justify-around md:flex-col md:border-b-0 md:gap-16 md:absolute md:top-1/3 md:left-4"
-  >
-    <a target="_blank" href="https://github.com/DevEliezerMartinez/"
-      ><img
-        class="icon animate-jump animate-infinite animate-duration-[9500ms] hover:animate-rotate-y"
-        src="/github.svg"
-        alt="Github icon"
-      /></a
-    >
-    <a target="_blank" href="https://www.linkedin.com/in/-eliezermartinez/">
-      <img
-        class="icon animate-jump animate-infinite animate-duration-[9500ms] hover:animate-rotate-y"
-        src="/linkedin.svg"
-        alt="linkedin icon"
-      />
-    </a>
-    <a
-      target="_blank"
-      href="https://wa.me/7331701927?text=Recién%20veo%20tu%20portafolio%20y%20me%20gustaría..."
-    >
-      <img
-        class="icon animate-jump animate-infinite animate-duration-[9500ms] hover:animate-rotate-y"
-        src="/whatsap.svg"
-        alt="whatsapp icon"
-      />
-    </a>
+    <p class="split-text text-center mt-4 md:mt-6 md:max-w-2xl text-xl text-gray-200">
+      Cada proyecto empieza con una pregunta simple: ¿Cómo puedo hacer que la
+      tecnología se sienta más humana? Porque no programo por inercia, sino con
+      propósito.
+    </p>
 
     <a
-      target="_blank"
-      href="https://drive.google.com/file/d/19fimXalw-rJgScO55mZZQqDAjcawZ8rN/view?usp=drive_link"
+      href="#about-section"
+      class="cta-button mt-8 px-6 py-3 font-plex font-bold bg-light-blue rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm"
     >
-      <img
-        class="icon animate-jump animate-infinite animate-duration-[9500ms] hover:animate-rotate-y"
-        src="/pdf.svg"
-        alt="pdf icon"
-      />
+      Descubre cómo trabajo
     </a>
-
-    <div class="hidden md:block ml-3 md:w-0 md:h-48 md:border border-white">
-    </div>
-  </aside>
+  </div>
 </section>
+
+<style>
+  #Hero {
+    background-image: url("../assets/PrincipalHero_mobile2.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  @media (min-width: 768px) {
+    #Hero {
+      background-image: url("../assets/PrincipalHero.jpg");
+    }
+  }
+
+  /* Ocultar elementos antes de la animación */
+  .split-title,
+  .split-subtitle,
+  .split-text {
+    opacity: 0;
+  }
+
+  .cta-button {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  /* Will-change para mejor rendimiento */
+  .split-title *,
+  .split-subtitle *,
+  .split-text * {
+    will-change: transform;
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { SplitText } from "gsap/SplitText";
+
+  gsap.registerPlugin(SplitText);
+
+  // Esperar a que las fuentes estén cargadas
+  document.fonts.ready.then(() => {
+    // Animar el título principal
+    const titleSplit = new SplitText(".split-title", {
+      type: "words,lines",
+      linesClass: "line",
+    });
+
+    gsap.set(".split-title", { opacity: 1 });
+    
+    gsap.from(titleSplit.lines, {
+      duration: 0.8,
+      yPercent: 100,
+      opacity: 0,
+      stagger: 0.15,
+      ease: "expo.out",
+    });
+
+    // Animar el subtítulo
+    const subtitleSplit = new SplitText(".split-subtitle", {
+      type: "words,lines",
+      linesClass: "line",
+    });
+
+    gsap.set(".split-subtitle", { opacity: 1 });
+    
+    gsap.from(subtitleSplit.lines, {
+      duration: 0.8,
+      yPercent: 100,
+      opacity: 0,
+      stagger: 0.1,
+      ease: "expo.out",
+      delay: 0.3,
+    });
+
+    // Animar el párrafo
+    const textSplit = new SplitText(".split-text", {
+      type: "words,lines",
+      linesClass: "line",
+    });
+
+    gsap.set(".split-text", { opacity: 1 });
+    
+    gsap.from(textSplit.lines, {
+      duration: 0.7,
+      yPercent: 100,
+      opacity: 0,
+      stagger: 0.08,
+      ease: "expo.out",
+      delay: 0.6,
+    });
+
+    // Animar el botón CTA
+    gsap.to(".cta-button", {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "expo.out",
+      delay: 1,
+    });
+  });
+</script>

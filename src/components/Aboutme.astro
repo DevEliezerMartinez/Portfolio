@@ -1,0 +1,365 @@
+---
+// AboutMe.astro
+import Eliezer from "@/assets/Eliezer.png";
+---
+
+<section
+    id="about-section"
+    class="min-h-screen pb-24x bg-[#0A1929] flex items-center justify-center p-8 font-plex relative overflow-hidden"
+>
+    <!-- Líneas de fondo con degradado animadas -->
+    <div
+        class="absolute inset-0 flex justify-between px-[10%] pointer-events-none"
+        id="lines-container"
+    >
+        <div class="line-gradient" data-line="1"></div>
+        <div class="line-gradient" data-line="2"></div>
+        <div class="line-gradient" data-line="3"></div>
+        <div class="line-gradient hidden md:block" data-line="4"></div>
+        <div class="line-gradient hidden md:block" data-line="5"></div>
+    </div>
+
+    <div class="max-w-7xl w-full relative z-10">
+        <!-- Header - Solo visible en desktop -->
+        <h1
+            class="text-orange-500 text-4xl md:text-5xl lg:text-8xl font-light tracking-wide italic mb-12 md:mb-16"
+        >
+            SOBRE MI
+        </h1>
+
+        <!-- Layout Grid -->
+        <div
+            class="grid grid-cols-1 md:grid-cols-[35%_65%] gap-8 md:gap-16 items-start"
+        >
+            <!-- Left Column - Image -->
+            <div class="w-full h-full">
+                <img
+                    src={Eliezer.src}
+                    alt="Perfil"
+                    class="w-full h-full object-cover object-center"
+                />
+            </div>
+
+            <!-- Right Column - Content -->
+            <div class="space-y-6 md:pl-8">
+                <!-- Title Section -->
+                <div class="mb-8">
+                    <h2
+                        class="text-white text-5xl md:text-6xl font-bold italic mb-4 font-jakarta"
+                    >
+                        ¡Hola!
+                    </h2>
+                    <p class="text-gray-300 text-2xl md:text-[28px] italic">
+                        Me da gusto que estés aquí.
+                    </p>
+                </div>
+
+                <!-- Content Paragraphs -->
+                <div
+                    class="about-content space-y-5 text-white text-lg md:text-xl leading-relaxed"
+                >
+                    <p class="about-paragraph">
+                        Soy ingeniero informático y desarrollador de software en
+                        el Centro Universitario UNE, con enfoque integral de
+                        frontend y backend y la adaptación de soluciones
+                        completas, rompiendo límites entre roles, diseñando
+                        soluciones completas y con un verdadero propósito
+                    </p>
+
+                    <p class="about-paragraph">
+                        No nací rodeado de tecnología, pero sí de curiosidad.
+                        Crecer en San Marcos, Guerrero me enseñó a buscar
+                        soluciones con lo que tenía a mi alcance, y fue ahí
+                        donde nació mi pasión por la ingeniería.
+                    </p>
+
+                    <p class="about-paragraph">
+                        Mi camino no empezó con grandes recursos, sino con la
+                        determinación de entender cómo y por qué funcionan las
+                        cosas, y cómo podrían hacerlo mejor.
+                    </p>
+
+                    <p class="about-paragraph">
+                        Años después, estudiar en Japón se convirtió en un punto
+                        de inflexión.
+                    </p>
+
+                    <p class="about-paragraph">
+                        Allí aprendí que la excelencia no es una meta, sino un
+                        hábito. Que la atención al detalle es lo que transforma
+                        el trabajo en un acto de mejora constante.
+                    </p>
+
+                    <p
+                        class="about-paragraph-highlight text-orange-500 font-medium italic pt-2 text-right"
+                    >
+                        Desde entonces, cada línea de código tiene un propósito:
+                        ayudar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transición de hojas cayendo -->
+    <div
+        class="leaves-transition absolute inset-x-0 bottom-0 h-screen pointer-events-none overflow-hidden"
+    >
+        <!-- Definición del símbolo SVG - Sakura -->
+        <svg
+            class="svg-definitions"
+            style="position: absolute; width: 0; height: 0;"
+        >
+            <symbol id="leaf" viewBox="0 0 117 113" fill="none">
+                <path
+                    d="M116.995 46.3912L106.514 44.1634L113.684 36.2008C107.885 27.806 95.3523 23.9857 82.3509 26.9361C81.1393 13.6593 73.633 2.91997 63.8573 0L58.5 9.27933L53.1427 0.000228608C43.367 2.92043 35.861 13.6598 34.6491 26.9363C21.648 23.9859 9.11457 27.8062 3.31667 36.201L10.4861 44.1634L0.00548173 46.3912C-0.238116 56.5908 7.65596 67.0481 19.9085 72.3033C13.085 83.7565 12.8451 96.8568 19.0374 104.965L28.8256 100.607L27.7057 111.263C37.3308 114.647 49.7159 110.371 58.5 100.342C67.2841 110.371 79.6692 114.647 89.2943 111.263L88.1744 100.607L97.9628 104.965C104.155 96.857 103.915 83.7567 97.0917 72.3033C109.344 67.0483 117.238 56.5908 116.995 46.3912ZM72.0686 65.4316C72.8743 64.8927 73.8231 64.6021 74.8103 64.6021C75.67 64.6021 76.5194 64.8301 77.2673 65.2622C78.4067 65.9194 79.2216 66.9818 79.5623 68.2524C79.9028 69.5229 79.728 70.8504 79.0696 71.9893C78.1926 73.5089 76.5569 74.4529 74.8009 74.4529C73.9406 74.4529 73.0907 74.2244 72.3426 73.7925C70.7142 72.8519 69.7768 71.0446 69.892 69.2057L60.6782 63.8863V74.5242C62.3286 75.3439 63.4252 77.0598 63.4252 78.9407C63.4252 81.6564 61.2157 83.8655 58.5 83.8655C55.7843 83.8655 53.5748 81.6564 53.5748 78.9407C53.5748 77.0598 54.6714 75.3439 56.3218 74.5242V63.8863L47.1083 69.2057C47.2234 71.0446 46.2861 72.8519 44.6577 73.7925C43.9093 74.2242 43.0594 74.4529 42.1993 74.4529C40.4434 74.4529 38.8077 73.5087 37.9302 71.9893C37.2725 70.8504 37.0975 69.5231 37.4379 68.2524C37.7784 66.9818 38.5935 65.9194 39.7329 65.2618C40.4806 64.8301 41.33 64.6021 42.1899 64.6021C43.1773 64.6021 44.1261 64.8927 44.9312 65.4316L54.1431 60.1131L44.9312 54.7951C44.1261 55.3341 43.1773 55.6246 42.1899 55.6246C41.3302 55.6246 40.4809 55.3965 39.7329 54.9642C38.5935 54.307 37.7787 53.2446 37.4379 51.9741C37.0975 50.7035 37.2725 49.3761 37.9306 48.2371C38.8077 46.7175 40.4432 45.7735 42.1993 45.7735C43.0594 45.7735 43.9095 46.002 44.6577 46.4339C46.2861 47.3745 47.2234 49.1818 47.1083 51.0207L56.3218 56.3401V45.7022C54.6714 44.8825 53.5748 43.1666 53.5748 41.2857C53.5748 38.57 55.7843 36.3609 58.5 36.3609C61.2157 36.3609 63.4252 38.57 63.4252 41.2857C63.4252 43.1666 62.3286 44.8825 60.6782 45.7022V56.3401L69.892 51.0207C69.7768 49.1818 70.7142 47.3745 72.3426 46.4339C73.0909 46.0023 73.9408 45.7735 74.8009 45.7735C76.5569 45.7735 78.1926 46.7177 79.0701 48.2371C79.7277 49.3761 79.9028 50.7033 79.5623 51.9741C79.2218 53.2446 78.4067 54.307 77.2673 54.9649C76.5196 55.3965 75.6702 55.6246 74.8103 55.6246C73.8231 55.6246 72.8743 55.3339 72.0686 54.7951L62.8571 60.1131L72.0686 65.4316Z"
+                    fill="#93DAFE"></path>
+            </symbol>
+        </svg>
+
+        <!-- Instancias de sakura -->
+        <svg class="leaf leaf-1" width="100" height="97"
+            ><use href="#leaf"></use></svg
+        >
+        <svg class="leaf leaf-2" width="85" height="82"
+            ><use href="#leaf"></use></svg
+        >
+        <svg class="leaf leaf-3" width="110" height="107"
+            ><use href="#leaf"></use></svg
+        >
+        <svg class="leaf leaf-4" width="95" height="92"
+            ><use href="#leaf"></use></svg
+        >
+        <svg class="leaf leaf-5" width="90" height="87"
+            ><use href="#leaf"></use></svg
+        >
+        <svg class="leaf leaf-6" width="105" height="102"
+            ><use href="#leaf"></use></svg
+        >
+        <svg class="leaf leaf-7" width="88" height="85"
+            ><use href="#leaf"></use></svg
+        >
+        <svg class="leaf leaf-8" width="98" height="95"
+            ><use href="#leaf"></use></svg
+        >
+        <svg class="leaf leaf-9" width="92" height="89"
+            ><use href="#leaf"></use></svg
+        >
+        <svg class="leaf leaf-10" width="102" height="99"
+            ><use href="#leaf"></use></svg
+        >
+        <svg class="leaf leaf-11" width="87" height="84"
+            ><use href="#leaf"></use></svg
+        >
+        <svg class="leaf leaf-12" width="96" height="93"
+            ><use href="#leaf"></use></svg
+        >
+        <svg class="leaf leaf-13" width="93" height="90"
+            ><use href="#leaf"></use></svg
+        >
+        <svg class="leaf leaf-14" width="89" height="86"
+            ><use href="#leaf"></use></svg
+        >
+        <svg class="leaf leaf-15" width="104" height="101"
+            ><use href="#leaf"></use></svg
+        >
+        <svg class="leaf leaf-16" width="91" height="88"
+            ><use href="#leaf"></use></svg
+        >
+    </div>
+</section>
+
+<style>
+    .font-plex {
+        font-family: "IBM Plex Sans", sans-serif;
+    }
+
+    .line-gradient {
+        width: 1px;
+        height: 30vh;
+        opacity: 1;
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 50%,
+            rgba(255, 255, 255, 0) 100%
+        );
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+
+    @media (min-width: 768px) {
+        .line-gradient {
+            height: 80vh;
+        }
+    }
+
+    /* Estilos para las hojas */
+    .leaves-transition {
+        z-index: 30;
+    }
+
+    .leaf {
+        position: absolute;
+        opacity: 0;
+        will-change: transform, opacity;
+    }
+
+    /* Posiciones iniciales */
+    .leaf-1 { left: 3%; }
+    .leaf-2 { left: 12%; }
+    .leaf-3 { left: 19%; }
+    .leaf-4 { left: 28%; }
+    .leaf-5 { left: 34%; }
+    .leaf-6 { left: 43%; }
+    .leaf-7 { left: 51%; }
+    .leaf-8 { left: 58%; }
+    .leaf-9 { left: 67%; }
+    .leaf-10 { left: 73%; }
+    .leaf-11 { left: 82%; }
+    .leaf-12 { left: 91%; }
+    .leaf-13 { left: 7%; }
+    .leaf-14 { left: 15%; }
+    .leaf-15 { left: 23%; }
+    .leaf-16 { left: 37%; }
+</style>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    import { SplitText } from "gsap/SplitText";
+
+    const initAboutAnimations = async () => {
+        try {
+            // Esperar a que las fuentes se carguen
+            await document.fonts.ready;
+
+            gsap.registerPlugin(ScrollTrigger, SplitText);
+
+            // Animación de líneas
+            const lines = document.querySelectorAll(".line-gradient");
+            const linesTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#about-section",
+                    start: "top 70%",
+                    end: "center center",
+                    scrub: 1,
+                },
+            });
+
+            lines.forEach((line, index) => {
+                linesTl.to(
+                    line,
+                    {
+                        opacity: 0.4,
+                        scaleY: 1,
+                        duration: 0.8,
+                        ease: "power2.out",
+                    },
+                    index * 0.2,
+                );
+            });
+
+            // Animación de texto revelado progresivamente
+            const aboutContent = document.querySelector('.about-content');
+            const aboutParagraphs = document.querySelectorAll('.about-paragraph');
+            const highlightParagraph = document.querySelector('.about-paragraph-highlight');
+
+            if (!aboutContent || aboutParagraphs.length === 0) {
+                console.error('No se encontraron los párrafos de About Me');
+                return;
+            }
+
+            // Dividir cada párrafo en palabras
+            const splits = [];
+            aboutParagraphs.forEach((paragraph) => {
+                const split = new SplitText(paragraph, { type: 'words' });
+                splits.push(split);
+                gsap.set(split.words, { opacity: 0, y: 20 });
+            });
+
+            // Dividir el párrafo destacado
+            let highlightSplit = null;
+            if (highlightParagraph) {
+                highlightSplit = new SplitText(highlightParagraph, { type: 'words' });
+                gsap.set(highlightSplit.words, { opacity: 0, y: 20 });
+            }
+
+            // Timeline para revelar el texto progresivamente con scroll
+            const textTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: aboutContent,
+                    start: "top 65%",
+                    end: "bottom 55%",
+                    scrub: 1,
+                    // markers: true, // Descomentar para debugging
+                }
+            });
+
+            // Animar todos los párrafos secuencialmente
+            splits.forEach((split, index) => {
+                textTimeline.to(split.words, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    stagger: 0.04,
+                    ease: "power2.out"
+                }, index === 0 ? 0 : "-=0.6");
+            });
+
+            // Animar el párrafo destacado al final
+            if (highlightSplit) {
+                textTimeline.to(highlightSplit.words, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    stagger: 0.05,
+                    ease: "power2.out"
+                }, "-=0.5");
+            }
+
+            // Animación de hojas cayendo
+            const leaves = document.querySelectorAll(".leaf");
+
+            leaves.forEach((leaf, index) => {
+                const randomRotation = gsap.utils.random(180, 540);
+                const randomX = gsap.utils.random(-80, 80);
+
+                gsap.fromTo(
+                    leaf,
+                    {
+                        y: -100,
+                        x: 0,
+                        rotation: 0,
+                        opacity: 0,
+                    },
+                    {
+                        scrollTrigger: {
+                            trigger: "#about-section",
+                            start: "bottom bottom",
+                            end: "bottom top",
+                            scrub: 1.5,
+                        },
+                        y: "120vh",
+                        x: randomX,
+                        rotation: randomRotation,
+                        opacity: 1,
+                        ease: "none",
+                    },
+                );
+            });
+
+            console.log('Animaciones de About Me inicializadas correctamente');
+
+        } catch (error) {
+            console.error('Error al inicializar animaciones de About Me:', error);
+        }
+    };
+
+    // Iniciar cuando el DOM esté listo
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAboutAnimations);
+    } else {
+        initAboutAnimations();
+    }
+</script>

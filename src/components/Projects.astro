@@ -1,156 +1,439 @@
-<h3 class="Subtitle text-4xl md:text-6xl my-6" id="Proyectos">Proyectos</h3>
+---
+// Component: Projects.astro
+import Alfabetizatec_desktop from "@/assets/Alfabetizatec_desktop.png";
+import Alfabetizatec_mobile from "@/assets/Alfabetizatec_mobile.png";
+import DemoMotorsport from "@/assets/Demo_motorsport.png";
+import { Image } from "astro:assets";
+---
 
-<section>
-  <picture>
-    <img
-      class="my-8 md:w-2/4 rounded-sm"
-      src="/UNE.png"
-      alt="Captura de la página web del Centro Universitario UNE"
-    />
-  </picture>
+<section class="projects-section relative py-16 px-6 md:px-12 overflow-hidden">
+  <!-- Fondo con dots pattern -->
+  <div class="absolute inset-0 dots-background"></div>
 
-  <h3
-    class="Descriptions font-semibold md:text-xl animate-fade-right animate-once"
-  >
-    Página Web Oficial - Centro Universitario UNE
-  </h3>
-
-  <p class="Descriptions font-extralight my-4">
-    Desarrollé la página web oficial del Centro Universitario UNE utilizando
-    Astro y Tailwind CSS. El sitio web presenta una interfaz moderna y
-    responsiva que comunica efectivamente la información institucional,
-    programas académicos y servicios educativos. La implementación con Astro
-    permite una carga ultrarrápida y optimización SEO, mientras que Tailwind CSS
-    garantiza un diseño consistente y mantenible.
-  </p>
-
-  <div class="flex w-full justify-between flex-wrap items-center">
-    <div class="flex flex-wrap gap-2">
-      <img
-        src="https://img.shields.io/badge/Astro-FF5D01?style=for-the-badge&logo=astro&logoColor=white"
-        alt="Astro"
-      />
-      <img
-        src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"
-        alt="Tailwind CSS"
-      />
-    </div>
-
-    <div class="flex gap-4 items-center">
-      <a
-        href="https://une-demo.pages.dev/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-blue-600 hover:text-blue-800 hover:underline font-medium"
-        title="Ver sitio web en vivo"
+  <!-- Contenido -->
+  <div class="relative z-10 max-w-6xl mx-auto">
+    <!-- Header -->
+    <div class="mb-12">
+      <h2
+        class="text-[var(--color-orange)] text-2xl md:text-3xl font-bold italic mb-8"
       >
-        Ver Sitio Web
-      </a>
-      <a
-        href="https://github.com/Universidad-Une/UNE"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="Ver código en GitHub"
+        PROYECTOS
+      </h2>
+      <h3
+        class="text-white text-4xl md:text-6xl lg:text-7xl font-bold italic tracking-tight"
       >
-        <img
-          class="w-6 hover:opacity-70 transition-opacity"
-          src="/github.svg"
-          alt="GitHub"
-        />
-      </a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <picture>
-    <img
-      class="my-8 md:w-2/4 rounded-sm"
-      src="/alfabetizatec.png"
-      alt="Captura del proyecto"
-    />
-  </picture>
-
-  <h3
-    class="Descriptions font-semibold md:text-xl animate-fade-right animate-once"
-  >
-    AlfabetizaTec
-  </h3>
-  <p class="Descriptions font-extralight my-4">
-    Desarrollo de una plataforma educativa para apoyar en la alfabetización
-    digital, especialmente para personas con poco acceso a tecnología. El
-    proyecto utiliza PHP, MySQL, JavaScript y CSS nativo para crear módulos
-    interactivos y un sistema de seguimiento del progreso de los usuarios.
-  </p>
-
-  <div class="flex w-full justify-between flex-wrap">
-    <div class="flex flex-wrap gap-2">
-      <img
-        src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white"
-        alt=""
-      />
-      <img
-        src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"
-        alt=""
-      />
-      <img
-        src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white"
-        alt=""
-      />
+        ALFABETIZATEC
+      </h3>
     </div>
 
+    <!-- Imagen del proyecto -->
+    <div class="mb-12 flex justify-center items-center gap-8">
+      <!-- Laptop mockup -->
+      <div class="hidden md:block relative">
+        <div
+          class="bg-gray-800 rounded-lg p-3 shadow-2xl"
+          style="width: 500px;"
+        >
+          <div class="bg-white rounded overflow-hidden">
+            <Image
+              src={Alfabetizatec_desktop}
+              alt="AlfabetizaTec Desktop"
+              class="w-full h-auto"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile mockup -->
+      <div class="relative">
+        <div
+          class="bg-gray-900 rounded-[2.5rem] p-3 shadow-2xl"
+          style="width: 280px;"
+        >
+          <div
+            class="bg-white rounded-[2rem] overflow-hidden"
+            style="height: 580px;"
+          >
+            <Image
+              src={Alfabetizatec_mobile}
+              alt="AlfabetizaTec Mobile"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Descripción -->
+    <div class="space-y-6 text-white">
+      <p class="text-lg md:text-xl italic">
+        <span class="text-[var(--color-orange)]"
+          >Educación a escala nacional</span
+        >
+      </p>
+
+      <section class="alfabetizatec-description font-plex italic">
+        <p class="project-paragraph leading-relaxed text-base md:text-2xl">
+          Uno de los proyectos más significativos que he desarrollado es <span
+            class="font-semibold">Alfabetizatec</span
+          >, una plataforma creada para el Instituto Nacional para la Educación
+          de los Adultos (INEA) junto con el TecNM San Marcos.
+        </p>
+
+        <p class="project-paragraph leading-relaxed text-base md:text-2xl">
+          Su propósito era más grande que el código: ayudar a que más personas
+          aprendan a leer y escribir. Hoy se usa a nivel nacional para facilitar
+          la educación de miles de personas. Recibí reconocimiento oficial por
+          el proyecto, pero lo que más me importa es saber que está ayudando a
+          gente real a transformar sus vidas a través del conocimiento.
+        </p>
+
+        <p class="project-paragraph leading-relaxed text-base md:text-2xl">
+          Desarrollar esa herramienta fue entender que la tecnología, cuando se
+          usa con empatía, puede cambiar realidades. Cada proyecto que construyo
+          sigue esa misma filosofía: no busco llenar un portafolio, sino dejar
+          huellas que sirvan.
+        </p>
+      </section>
+
+      <!-- Stack -->
+      <div class="pt-6 flex flex-col items-start md:flex-row gap-4 justify-end">
+        <p
+          class="text-sm md:text-base border-2 border-white inline-block px-6 py-3"
+        >
+          <span class="font-semibold">Stack:</span> PHP, MySQL, JavaScript, CSS
+        </p>
+        <p
+          class="text-sm md:text-base border-2 border-white inline-block px-6 py-3"
+        >
+          <a href="/alfabetizatec" class="font-semibold">Conocer más</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Espaciador con fade de dots -->
+    <div class="project-spacer mt-16 mb-16"></div>
+
+    <!-- Segundo Proyecto: Demo Motorsport -->
     <div>
-      <a
-        href="https://github.com/DevEliezerMartinez/"
-        target="_blank"
-        rel="noopener noreferrer"
+      <!-- Header -->
+      <div class="mb-12">
+        <h3
+          class="text-white text-4xl md:text-6xl lg:text-7xl font-bold italic tracking-tight text-center"
+        >
+          DEMO MOTORSPORT
+        </h3>
+      </div>
+
+      <!-- Imagen del proyecto -->
+      <div class="mb-12 flex justify-center">
+        <div class="relative max-w-2xl w-full">
+          <div class="rounded-2xl overflow-hidden shadow-2xl">
+            <Image
+              src={DemoMotorsport}
+              alt="Demo Motorsport"
+              class="w-full h-auto"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Descripción -->
+      <div class="space-y-6 text-white">
+        <p class="text-lg md:text-xl italic text-center">
+          <span class="text-[var(--color-orange)]"
+            >Exploración técnica + pasión personal</span
+          >
+        </p>
+
+        <section class="motorsport-description font-plex italic">
+          <p class="project-paragraph leading-relaxed text-base md:text-2xl">
+            Página interactiva Showroom de autos con animaciones avanzadas.
+            Tableros digitales, líneas de recorrido, datos en tiempo real. No es
+            un proyecto cliente. Es mi forma de mostrar qué es posible cuando
+            combinas técnica con pasión genuina.
+          </p>
+
+          <p class="project-paragraph leading-relaxed text-base md:text-2xl">
+            Motorsport me apasiona tanto como la tecnología. Llevar todo al
+            límite, conocer los límites propios y del medio, precisión bajo
+            presión. Eso busco en cada proyecto que toco.
+          </p>
+
+          <p class="project-paragraph leading-relaxed text-base md:text-2xl">
+            Esto es lo que apasiona hacer,tanto para marcas deportivas o contenido personal.
+            Imaginar experiencias digitales memorables que realmente representen
+            una autentica identidad.
+          </p>
+        </section>
+
+        <!-- Stack -->
+      <div class="pt-6 flex flex-col items-start md:flex-row gap-4 justify-end">
+          <p
+            class="text-sm md:text-base border-2 border-white inline-block px-6 py-3"
+          >
+            <span class="font-semibold">Stack:</span> Astro, GSAP, Tailwind
+          </p>
+          <p
+            class="text-sm md:text-base border-2 border-white inline-block px-6 py-3"
+          >
+            <a href="/motorsport" class="font-semibold">Conocer más</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Otros Proyectos Destacados -->
+    <div class="mt-20 other-projects-section">
+      <h2
+        class="text-[var(--color-orange)] text-2xl md:text-3xl font-bold italic mb-12"
       >
-        <img class="w-6" src="/github.svg" alt="" />
-      </a>
+        OTROS PROYECTOS DESTACADOS
+      </h2>
+
+      <div class="space-y-12">
+        <!-- Proyecto 1: Página Web UNE -->
+        <div class="border-b border-white/20 pb-8 font-plex italic">
+          <h3 class="text-white text-xl md:text-2xl font-semibold mb-4">
+            Página Web Oficial — Centro Universitario UNE
+          </h3>
+          <p class="other-project-paragraph text-white leading-relaxed mb-6 text-base md:text-2xl">
+            Sitio institucional moderno y responsivo con Astro y Tailwind CSS.
+            Carga ultrarrápida, optimización SEO, diseño consistente que
+            comunica efectivamente programas académicos y servicios educativos.
+          </p>
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <p class="text-white text-sm md:text-base">
+              <span class="font-semibold">Stack:</span> GSAP, Tailwind CSS
+            </p>
+            <a
+              href="https://une-demo.pages.dev/planteles/"
+              target="_blank"
+              class="text-white hover:text-[var(--color-orange)] transition-colors text-sm md:text-base underline"
+            >
+              Ver demo
+            </a>
+          </div>
+        </div>
+
+        <!-- Proyecto 2: Sistema de Punto de Venta -->
+        <div class="border-b border-white/20 pb-8 font-plex italic">
+          <h3 class="text-white text-xl md:text-2xl font-semibold mb-4">
+            Sistema de Punto de Venta — Startup
+          </h3>
+          <p class="other-project-paragraph text-white leading-relaxed mb-6 text-base md:text-2xl">
+            Aplicación web con Server Side Rendering para cotizaciones de renta
+            y gestión de pedidos. Interfaz optimizada para flujos de venta
+            eficientes.
+          </p>
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <p class="text-white text-sm md:text-base">
+              <span class="font-semibold">Stack:</span> Python, Tailwind CSS
+            </p>
+            <a
+              href="https://github.com/DevEliezerMartinez/PosMABG"
+              target="_blank"
+              class="text-white hover:text-[var(--color-orange)] transition-colors text-sm md:text-base underline"
+            >
+              Ver Github
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section>
-  <picture>
-    <img
-      class="my-8 md:w-2/4 rounded-sm"
-      src="/MABG.webp"
-      alt="Captura del proyecto"
-    />
-  </picture>
+<style>
+  .projects-section {
+    background: linear-gradient(180deg, #192c76 0%, #0a1840 100%);
+  }
 
-  <h3 class="Descriptions font-semibold md:text-xl">Punto de Venta</h3>
-  <p class="Descriptions font-extralight my-4">
-    Desarrollo de una aplicación web eficiente para un startup, con un Server
-    Side Rendering en el backend para facilitar cotizaciones de renta de
-    productos y procesos de pedidos.
-  </p>
+  .dots-background {
+    background-image: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.15) 2px,
+      transparent 2px
+    );
+    background-size: 40px 40px;
+    background-position: 0 0;
+  }
 
-  <div class="flex w-full justify-between flex-wrap">
-    <div class="flex flex-wrap gap-2">
-      <img
-        src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"
-        alt=""
-      />
-      <img
-        src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"
-        alt=""
-      />
-      <img
-        src="https://img.shields.io/badge/Sqlite-003B57?style=for-the-badge&logo=sqlite&logoColor=white"
-        alt=""
-      />
-    </div>
+  /* Espaciador con fade de dots */
+  .project-spacer {
+    height: 100px;
+  }
 
-    <div>
-      <a
-        href="https://github.com/DevEliezerMartinez/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img class="w-6" src="/github.svg" alt="" />
-      </a>
-    </div>
-  </div>
-</section>
+  /* Efecto de brillo sutil en hover para las imágenes */
+  .projects-section img {
+    transition: transform 0.3s ease;
+  }
+
+  .projects-section img:hover {
+    transform: scale(1.02);
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { SplitText } from "gsap/SplitText";
+
+  const initProjectsAnimations = async () => {
+    try {
+      // Esperar a que las fuentes se carguen
+      await document.fonts.ready;
+
+      gsap.registerPlugin(ScrollTrigger, SplitText);
+
+      // Animación de parallax suave en los dots
+      gsap.to(".dots-background", {
+        backgroundPosition: "100px 100px",
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".projects-section",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+
+      // Fade in del contenido al hacer scroll
+      gsap.from(".projects-section h2", {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".projects-section",
+          start: "top 80%",
+        },
+      });
+
+      gsap.from(".projects-section h3", {
+        opacity: 0,
+        y: 40,
+        duration: 1,
+        delay: 0.2,
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".projects-section",
+          start: "top 80%",
+        },
+      });
+
+      // Animación de texto revelado - Alfabetizatec
+      const alfabetizatecDescription = document.querySelector('.alfabetizatec-description');
+      const alfabetizatecParagraphs = document.querySelectorAll('.alfabetizatec-description .project-paragraph');
+
+      if (alfabetizatecDescription && alfabetizatecParagraphs.length > 0) {
+        const alfabetizatecSplits = [];
+        alfabetizatecParagraphs.forEach((paragraph) => {
+          const split = new SplitText(paragraph, { type: 'words' });
+          alfabetizatecSplits.push(split);
+          gsap.set(split.words, { opacity: 0, y: 20 });
+        });
+
+        const alfabetizatecTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: alfabetizatecDescription,
+            start: "top 70%",
+            end: "bottom 60%",
+            scrub: 1,
+            // markers: true, // Descomentar para debugging
+          }
+        });
+
+        alfabetizatecSplits.forEach((split, index) => {
+          alfabetizatecTimeline.to(split.words, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            stagger: 0.04,
+            ease: "power2.out"
+          }, index === 0 ? 0 : "-=0.6");
+        });
+      }
+
+      // Animación de texto revelado - Demo Motorsport
+      const motorsportDescription = document.querySelector('.motorsport-description');
+      const motorsportParagraphs = document.querySelectorAll('.motorsport-description .project-paragraph');
+
+      if (motorsportDescription && motorsportParagraphs.length > 0) {
+        const motorsportSplits = [];
+        motorsportParagraphs.forEach((paragraph) => {
+          const split = new SplitText(paragraph, { type: 'words' });
+          motorsportSplits.push(split);
+          gsap.set(split.words, { opacity: 0, y: 20 });
+        });
+
+        const motorsportTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: motorsportDescription,
+            start: "top 70%",
+            end: "bottom 60%",
+            scrub: 1,
+            // markers: true,
+          }
+        });
+
+        motorsportSplits.forEach((split, index) => {
+          motorsportTimeline.to(split.words, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            stagger: 0.04,
+            ease: "power2.out"
+          }, index === 0 ? 0 : "-=0.6");
+        });
+      }
+
+      // Animación de texto revelado - Otros Proyectos
+      const otherProjectsSection = document.querySelector('.other-projects-section');
+      const otherProjectParagraphs = document.querySelectorAll('.other-project-paragraph');
+
+      if (otherProjectsSection && otherProjectParagraphs.length > 0) {
+        const otherProjectSplits = [];
+        otherProjectParagraphs.forEach((paragraph) => {
+          const split = new SplitText(paragraph, { type: 'words' });
+          otherProjectSplits.push(split);
+          gsap.set(split.words, { opacity: 0, y: 20 });
+        });
+
+        const otherProjectsTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: otherProjectsSection,
+            start: "top 70%",
+            end: "bottom 60%",
+            scrub: 1,
+            // markers: true,
+          }
+        });
+
+        otherProjectSplits.forEach((split, index) => {
+          otherProjectsTimeline.to(split.words, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            stagger: 0.03,
+            ease: "power2.out"
+          }, index === 0 ? 0 : "-=0.5");
+        });
+      }
+
+      console.log('Animaciones de Proyectos inicializadas correctamente');
+
+    } catch (error) {
+      console.error('Error al inicializar animaciones de Proyectos:', error);
+    }
+  };
+
+  // Iniciar cuando el DOM esté listo
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initProjectsAnimations);
+  } else {
+    initProjectsAnimations();
+  }
+</script>

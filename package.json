@@ -1,18 +1,29 @@
 {
-  "name": "portafolio",
-  "type": "module",
-  "version": "0.0.1",
+  "name": "portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "astro preview"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevEliezerMartinez/Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DevEliezerMartinez/Portfolio/issues"
+  },
+  "homepage": "https://github.com/DevEliezerMartinez/Portfolio#readme",
   "dependencies": {
-    "@astrojs/tailwind": "^5.1.0",
-    "astro": "^5.14.3",
-    "tailwindcss": "^3.4.3",
-    "tailwindcss-animated": "^1.0.1"
-  }
+    "@tailwindcss/vite": "^4.1.14",
+    "animejs": "^4.2.2",
+    "astro": "^5.14.5",
+    "gsap": "^3.13.0",
+    "tailwindcss": "^4.1.14"
+  },
+  "description": ""
 }

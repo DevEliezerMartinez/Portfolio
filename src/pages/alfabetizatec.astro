@@ -1,0 +1,653 @@
+---
+import "@/styles/global.css";
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header_pages.astro";
+import { Image } from "astro:assets";
+import Alfabetizatec_desktop from "@/assets/Alfabetizatec_desktop.png";
+import Alfabetizatec_mobile from "@/assets/Alfabetizatec_mobile.png";
+import Alfabetizatec_reconocimiento from "@/assets/Reconocimiento_alfabetizatec.jpg";
+---
+
+<Layout title="Alfabetizatec - Eliezer Martinez">
+  <Header />
+  
+  <main class="alfabetizatec-page">
+    <!-- Hero Section -->
+    <section class="hero-section py-32 px-6 md:px-12">
+      <div class="max-w-6xl mx-auto">
+        <div class="breadcrumb mb-8">
+          <a href="/" class="breadcrumb-link hover:underline">Inicio</a>
+        </div>
+        
+        <h1 class="hero-title text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
+          ALFABETIZATEC
+        </h1>
+        
+        <p class="hero-subtitle text-2xl md:text-3xl mb-8">
+          Desarrollando soluciones tecnológicas de impacto nacional 🌍
+        </p>
+        
+       
+      </div>
+    </section>
+
+    <!-- Main Image Section -->
+    <section class="main-image-section py-16 px-6 md:px-12">
+      <div class="max-w-6xl mx-auto">
+        <div class="image-container rounded-2xl overflow-hidden shadow-2xl">
+          <Image
+            src={Alfabetizatec_desktop}
+            alt="Alfabetizatec Interfaz Principal"
+            class="w-full h-auto"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="overview-section py-16 px-6 md:px-12">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="section-title text-3xl md:text-4xl font-bold mb-8">
+          El Proyecto 🚀
+        </h2>
+        
+        <div class="content-text text-lg md:text-xl leading-relaxed space-y-6">
+          <p>
+            Tuve el desafío y la oportunidad de desarrollar <strong>AlfabetizaTEC</strong>, 
+            una plataforma a nivel nacional para el TecNM y el INEA, diseñada para 
+            gestionar y registrar el programa de alfabetización en México.
+          </p>
+          
+          <p>
+            La plataforma permite <strong>administrar el avance por región, estado y campus</strong>, 
+            facilitando el seguimiento de los estudiantes en su camino educativo. Este sistema 
+            centraliza la información y optimiza la coordinación del programa a escala nacional.
+          </p>
+          
+          <p>
+            Este proyecto me permitió aplicar mis habilidades como <strong>Ingeniero de Software</strong> 
+            en una solución escalable y de alto impacto. AlfabetizaTEC no solo optimiza la gestión 
+            del programa, sino que también <strong>empodera a estudiantes y comunidades</strong>, 
+            brindándoles herramientas para mejorar su educación y su futuro.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Challenge Section -->
+    <section class="challenge-section py-16 px-6 md:px-12">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="content-box">
+            <h2 class="section-title text-3xl md:text-4xl font-bold mb-6">
+              El Desafío 💡
+            </h2>
+            
+            <div class="content-text text-lg leading-relaxed space-y-4">
+              <p>
+                Crear una plataforma nacional que pudiera:
+              </p>
+              
+              <ul class="list-disc list-inside space-y-3 ml-4">
+                <li>Gestionar datos de múltiples regiones, estados y campus simultáneamente</li>
+                <li>Registrar y dar seguimiento al progreso educativo de miles de estudiantes</li>
+                <li>Coordinar asesores y círculos de estudio a nivel nacional</li>
+                <li>Generar reportes administrativos por región y estado</li>
+                <li>Garantizar escalabilidad para crecimiento continuo</li>
+                <li>Mantener alta disponibilidad y seguridad de datos</li>
+              </ul>
+              
+              <p class="mt-6">
+                Todo con una interfaz intuitiva accesible desde cualquier dispositivo, 
+                considerando diferentes niveles de conectividad en todo el país.
+              </p>
+            </div>
+          </div>
+          
+          <div class="image-box">
+            <div class="rounded-xl overflow-hidden shadow-xl">
+              <Image
+                src={Alfabetizatec_mobile}
+                alt="Alfabetizatec Vista Mobile"
+                class="w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section py-16 px-6 md:px-12">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="section-title text-3xl md:text-4xl font-bold mb-8">
+          La Solución ⚙️
+        </h2>
+        
+        <div class="content-text text-lg leading-relaxed space-y-6">
+          <p>
+            Diseñé e implementé una <strong>arquitectura escalable</strong> utilizando 
+            tecnologías confiables que garantizan rendimiento y estabilidad a nivel nacional. 
+            La solución se construyó pensando en el usuario final y en las necesidades 
+            específicas del programa de alfabetización.
+          </p>
+          
+          <div class="features-grid grid md:grid-cols-2 gap-8 my-12">
+            <div class="feature-card">
+              <div class="feature-icon text-4xl mb-4">🗺️</div>
+              <h3 class="feature-title text-xl font-bold mb-3">
+                Gestión por Región y Estado
+              </h3>
+              <p class="feature-description">
+                Sistema jerárquico que permite administrar y visualizar el progreso 
+                del programa por región, estado y campus en tiempo real.
+              </p>
+            </div>
+            
+            <div class="feature-card">
+              <h3 class="feature-icon text-4xl mb-4">📊</h3>
+              <h3 class="feature-title text-xl font-bold mb-3">
+                Seguimiento Estudiantil
+              </h3>
+              <p class="feature-description">
+                Registro detallado del avance educativo de cada estudiante, 
+                facilitando el acompañamiento personalizado.
+              </p>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon text-4xl mb-4">👥</div>
+              <h3 class="feature-title text-xl font-bold mb-3">
+                Coordinación de Asesores
+              </h3>
+              <p class="feature-description">
+                Herramientas para gestionar círculos de estudio y coordinación 
+                entre asesores a nivel nacional.
+              </p>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon text-4xl mb-4">📱</div>
+              <h3 class="feature-title text-xl font-bold mb-3">
+                Acceso Universal
+              </h3>
+              <p class="feature-description">
+                Diseño responsive optimizado para funcionar en cualquier dispositivo 
+                con diferentes niveles de conectividad.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack-section py-16 px-6 md:px-12">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="section-title text-3xl md:text-4xl font-bold mb-8">
+          Stack Tecnológico 💻
+        </h2>
+        
+        <div class="tech-grid grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="tech-card text-center">
+            <div class="tech-icon mb-4 text-5xl">🐘</div>
+            <h3 class="tech-name font-bold mb-2">PHP</h3>
+            <p class="tech-desc text-sm opacity-70">Backend Logic</p>
+          </div>
+          
+          <div class="tech-card text-center">
+            <div class="tech-icon mb-4 text-5xl">🗄️</div>
+            <h3 class="tech-name font-bold mb-2">MySQL</h3>
+            <p class="tech-desc text-sm opacity-70">Base de Datos</p>
+          </div>
+          
+          <div class="tech-card text-center">
+            <div class="tech-icon mb-4 text-5xl">⚡</div>
+            <h3 class="tech-name font-bold mb-2">JavaScript</h3>
+            <p class="tech-desc text-sm opacity-70">Interactividad</p>
+          </div>
+          
+          <div class="tech-card text-center">
+            <div class="tech-icon mb-4 text-5xl">🎨</div>
+            <h3 class="tech-name font-bold mb-2">CSS</h3>
+            <p class="tech-desc text-sm opacity-70">Diseño UI</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recognition Section -->
+    <section class="recognition-section py-16 px-6 md:px-12">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="section-title text-3xl md:text-4xl font-bold mb-12 text-center">
+          Reconocimiento Oficial 🏆
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="recognition-image">
+            <div class="rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src={Alfabetizatec_reconocimiento}
+                alt="Reconocimiento Oficial Alfabetizatec"
+                class="w-full h-auto"
+              />
+            </div>
+          </div>
+          
+          <div class="recognition-content">
+            <div class="content-text text-lg leading-relaxed space-y-6">
+              <p>
+                Este proyecto recibió <strong>reconocimiento oficial</strong> por parte 
+                del INEA y el TecNM por su impacto en el programa nacional de alfabetización.
+              </p>
+              
+              <p>
+                El reconocimiento representa no solo la calidad técnica de la solución, 
+                sino especialmente el <strong>impacto social real</strong> que está 
+                generando en comunidades de todo México.
+              </p>
+              
+              <p class="quote-text italic text-xl border-l-4 pl-6 py-4">
+                "Orgulloso de haber trabajado en esta iniciativa que sigue 
+                transformando vidas a nivel nacional." 🌍
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section py-16 px-6 md:px-12">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="section-title text-3xl md:text-4xl font-bold mb-8">
+          Impacto y Alcance 📈
+        </h2>
+        
+        <div class="stats-grid grid md:grid-cols-3 gap-8 mb-12">
+          <div class="stat-card text-center">
+            <div class="stat-icon text-5xl mb-4">🇲🇽</div>
+            <div class="stat-number text-5xl font-bold mb-3">
+              Nacional
+            </div>
+            <p class="stat-label text-lg">Cobertura en Todo México</p>
+          </div>
+          
+          <div class="stat-card text-center">
+            <div class="stat-icon text-5xl mb-4">👥</div>
+            <div class="stat-number text-5xl font-bold mb-3">
+              Miles
+            </div>
+            <p class="stat-label text-lg">Estudiantes Beneficiados</p>
+          </div>
+          
+          <div class="stat-card text-center">
+            <div class="stat-icon text-5xl mb-4">✅</div>
+            <div class="stat-number text-5xl font-bold mb-3">
+              Activo
+            </div>
+            <p class="stat-label text-lg">En Uso Continuo</p>
+          </div>
+        </div>
+        
+        <div class="content-text text-lg leading-relaxed space-y-6">
+          <p>
+            La plataforma está <strong>actualmente en operación a nivel nacional</strong>, 
+            facilitando la gestión del programa de alfabetización en múltiples estados 
+            y regiones de México.
+          </p>
+          
+          <p>
+            El sistema permite a coordinadores, asesores y administradores trabajar 
+            de manera más eficiente, dedicando más tiempo a lo que realmente importa: 
+            <strong>el acompañamiento educativo de los estudiantes</strong>.
+          </p>
+          
+          <blockquote class="impact-quote text-xl py-6">
+            "AlfabetizaTEC empodera a estudiantes y comunidades, brindándoles 
+            herramientas para mejorar su educación y su futuro. La tecnología, 
+            cuando se usa con propósito, genera cambios reales." ✨
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lessons Learned Section -->
+    <section class="lessons-section py-16 px-6 md:px-12">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="section-title text-3xl md:text-4xl font-bold mb-8">
+          Aprendizajes Clave 🎯
+        </h2>
+        
+        <div class="content-text text-lg leading-relaxed space-y-6">
+          <div class="lesson-item mb-8">
+            <h3 class="lesson-title text-xl font-bold mb-3">
+              🌍 Diseño para Impacto Social
+            </h3>
+            <p class="lesson-description">
+              Desarrollar soluciones que transforman vidas requiere empatía y comprensión 
+              profunda de las necesidades reales de las comunidades que servimos.
+            </p>
+          </div>
+          
+          <div class="lesson-item mb-8">
+            <h3 class="lesson-title text-xl font-bold mb-3">
+              📊 Escalabilidad Nacional
+            </h3>
+            <p class="lesson-description">
+              Construir sistemas que operan a nivel nacional enseña la importancia de 
+              arquitecturas robustas, pruebas exhaustivas y planificación a largo plazo.
+            </p>
+          </div>
+          
+          <div class="lesson-item mb-8">
+            <h3 class="lesson-title text-xl font-bold mb-3">
+              👥 Colaboración Institucional
+            </h3>
+            <p class="lesson-description">
+              Trabajar con instituciones gubernamentales y educativas requiere comunicación 
+              clara, adaptabilidad y compromiso con plazos y estándares de calidad.
+            </p>
+          </div>
+          
+          <div class="lesson-item mb-8">
+            <h3 class="lesson-title text-xl font-bold mb-3">
+              💻 Tecnología con Propósito
+            </h3>
+            <p class="lesson-description">
+              El mejor código no es el más complejo, sino el que realmente resuelve 
+              problemas y mejora la vida de las personas. El propósito define el valor.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-20 px-6 md:px-12">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="cta-title text-3xl md:text-4xl font-bold mb-6">
+          ¿Tienes un proyecto con propósito? 🚀
+        </h2>
+        
+        <p class="cta-subtitle text-xl mb-8">
+          Sigamos usando la tecnología para generar cambios reales.
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-4">
+          <a 
+            href="/contacto" 
+            class="cta-btn primary px-8 py-4 rounded-full text-lg font-bold transition-all duration-300"
+          >
+            Trabajemos Juntos
+          </a>
+          
+          <a 
+            href="/#experiencia-section" 
+            class="cta-btn secondary px-8 py-4 rounded-full text-lg font-bold transition-all duration-300"
+          >
+            Ver Más Proyectos
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .alfabetizatec-page {
+    background: linear-gradient(180deg, var(--color-blue-deep) 0%, var(--color-gulf-blue) 50%, var(--color-blue-deep) 100%);
+    min-height: 100vh;
+    color: white;
+  }
+
+  .hero-section {
+    background: linear-gradient(135deg, var(--color-orange) 0%, #ff8c42 100%);
+    position: relative;
+  }
+
+  .hero-title {
+    color: var(--color-blue-deep);
+    line-height: 1;
+  }
+
+  .hero-subtitle {
+    color: var(--color-gulf-blue);
+  }
+
+  .breadcrumb-link {
+    color: var(--color-orange);
+  }
+
+  .breadcrumb-separator,
+  .breadcrumb-current {
+    color: var(--color-blue-deep);
+  }
+
+  .meta-label {
+    color: var(--color-orange);
+  }
+
+  .meta-value {
+    color: var(--color-blue-deep);
+  }
+
+  .main-image-section {
+    background: var(--color-blue-deep);
+  }
+
+  .image-container {
+    transition: transform 0.3s ease;
+  }
+
+  .image-container:hover {
+    transform: scale(1.02);
+  }
+
+  .section-title {
+    color: var(--color-orange);
+    position: relative;
+    padding-bottom: 1rem;
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--color-orange);
+  }
+
+  .content-text {
+    color: white;
+  }
+
+  .feature-card,
+  .tech-card,
+  .stat-card,
+  .lesson-item {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .feature-card:hover,
+  .tech-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--color-orange);
+    transform: translateY(-5px);
+  }
+
+  .feature-title,
+  .tech-name,
+  .lesson-title {
+    color: var(--color-light-blue);
+  }
+
+  .feature-description,
+  .tech-desc,
+  .lesson-description {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .stat-number {
+    color: var(--color-orange);
+  }
+
+  .stat-label {
+    color: white;
+  }
+
+  .quote-text,
+  .impact-quote {
+    border-left-color: var(--color-orange);
+    background: rgba(255, 102, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+  }
+
+  .cta-section {
+    background: linear-gradient(135deg, var(--color-gulf-blue) 0%, var(--color-blue-deep) 100%);
+  }
+
+  .cta-title {
+    color: white;
+  }
+
+  .cta-subtitle {
+    color: var(--color-light-blue);
+  }
+
+  .cta-btn.primary {
+    background-color: var(--color-orange);
+    color: white;
+  }
+
+  .cta-btn.primary:hover {
+    background-color: #ff8c42;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 102, 0, 0.3);
+  }
+
+  .cta-btn.secondary {
+    border: 2px solid white;
+    color: white;
+    background: transparent;
+  }
+
+  .cta-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 3rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animación del hero
+  gsap.from('.hero-title', {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    ease: 'power3.out'
+  });
+
+  gsap.from('.hero-subtitle', {
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    delay: 0.3,
+    ease: 'power3.out'
+  });
+
+  gsap.from('.hero-meta', {
+    opacity: 0,
+    y: 20,
+    duration: 0.8,
+    delay: 0.5,
+    ease: 'power3.out'
+  });
+
+  // Animaciones al hacer scroll
+  gsap.utils.toArray('.section-title').forEach((title) => {
+    gsap.from(title, {
+      scrollTrigger: {
+        trigger: title,
+        start: 'top 80%',
+      },
+      opacity: 0,
+      x: -50,
+      duration: 0.8,
+      ease: 'power2.out'
+    });
+  });
+
+  gsap.utils.toArray('.feature-card, .tech-card, .lesson-item').forEach((card, index) => {
+    gsap.from(card, {
+      scrollTrigger: {
+        trigger: card,
+        start: 'top 85%',
+      },
+      opacity: 0,
+      y: 30,
+      duration: 0.6,
+      delay: index * 0.1,
+      ease: 'power2.out'
+    });
+  });
+
+  // Animación de stats
+  gsap.from('.stat-card', {
+    scrollTrigger: {
+      trigger: '.stats-grid',
+      start: 'top 80%',
+    },
+    opacity: 0,
+    scale: 0.8,
+    stagger: 0.2,
+    duration: 0.8,
+    ease: 'back.out(1.7)'
+  });
+
+  // Animación de reconocimiento
+  gsap.from('.recognition-image', {
+    scrollTrigger: {
+      trigger: '.recognition-section',
+      start: 'top 70%',
+    },
+    opacity: 0,
+    x: -50,
+    duration: 1,
+    ease: 'power3.out'
+  });
+
+  gsap.from('.recognition-content', {
+    scrollTrigger: {
+      trigger: '.recognition-section',
+      start: 'top 70%',
+    },
+    opacity: 0,
+    x: 50,
+    duration: 1,
+    ease: 'power3.out'
+  });
+</script>

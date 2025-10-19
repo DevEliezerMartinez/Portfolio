@@ -1,0 +1,382 @@
+---
+// Component: Talks.astro
+import TalentLandCard from "@/assets/Talent.png";
+import { Image } from "astro:assets";
+---
+
+<section id="Charlas" class="talks-section relative py-20 px-6 md:px-12 overflow-hidden">
+  <!-- SVG Background Shapes -->
+  <svg
+    class="background-shapes absolute inset-0 w-full h-full opacity-0"
+    viewBox="0 0 678 734"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="xMidYMid slice"
+  >
+    <g id="shape-left">
+      <path
+        d="M371.053 0H564L192.947 579H0L371.053 0Z"
+        fill="white"
+        fill-opacity="0.03"></path>
+    </g>
+    <g id="shape-right">
+      <path
+        d="M485.053 155H678L306.947 734H114L485.053 155Z"
+        fill="white"
+        fill-opacity="0.05"></path>
+    </g>
+  </svg>
+
+  <!-- Border top con fade -->
+  <div class="border-fade-top"></div>
+
+  <!-- Contenido -->
+  <div class="relative z-10 max-w-6xl mx-auto">
+    <h2
+      class="text-[var(--color-orange)] text-3xl md:text-5xl font-bold italic mb-12"
+    >
+      COMPARTIENDO CONOCIMIENTO
+    </h2>
+
+    <!-- Charlas destacadas -->
+    <div class="mb-12">
+      <h3 class="text-light-blue font-bold italic text-xl md:text-3xl mb-8">
+        Charlas destacadas
+      </h3>
+
+      <!-- Charla Principal -->
+      <div class="grid md:grid-cols-2 gap-8 items-center mb-16">
+        <!-- Imagen -->
+        <div class="order-2 md:order-1">
+          <div class="rounded-xl max-w-md overflow-hidden shadow-2xl">
+            <Image
+              src={TalentLandCard}
+              alt="Talent Land - Más allá del código EIA"
+              class="w-full h-auto"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Contenido -->
+        <div class="talent-land-content order-1 md:order-2 space-y-6">
+          <h4
+            class="text-[var(--color-orange)] text-xl md:text-3xl italic font-semibold"
+          >
+            Más allá del código e IA: Pensando fuera del algoritmo — Talent Land
+            México
+          </h4>
+
+          <p class="talk-paragraph text-white/90 leading-relaxed text-base md:text-2xl italic">
+            Talent Land es uno de los eventos de tecnología más importantes de
+            México. Hablé sobre cómo el desarrollo va más allá de escribir
+            código: entender problemas reales, pensar estratégicamente,
+            construir con propósito.
+          </p>
+
+          <p
+            class="talk-highlight font-semibold text-base md:text-lg font-sans text-light-blue"
+          >
+            La innovación nace cuando dejamos de pensar solo en lógica y
+            empezamos a pensar en las personas detrás de cada sistema.
+          </p>
+        </div>
+      </div>
+
+      <!-- Charla Secundaria -->
+      <div class="secondary-talk-content mb-12">
+        <h4 class="text-[var(--color-orange)] text-lg md:text-2xl italic mb-4">
+          Jóvenes en tecnología — Colegio de Bachilleres del Estado de Guerrero
+        </h4>
+        <p class="talk-paragraph text-white/90 leading-relaxed text-base md:text-xl">
+          Esta experiencia fue verdaderamente especial. Después de mi estancia
+          en Japón, tuve la oportunidad de regresar para compartir una
+          conferencia con estudiantes de último grado, en la que los introduje
+          al apasionante mundo de la tecnología y las múltiples oportunidades
+          que ofrece. Hablamos sobre cómo la innovación y la perseverancia son
+          claves para abrirse camino en este sector en constante evolución.
+        </p>
+      </div>
+
+      <!-- También he compartido en -->
+      <div class="additional-talks-content">
+        <h4 class="text-[var(--color-orange)] text-lg md:text-2xl italic mb-4">
+          También he compartido en
+        </h4>
+        <ul class="text-white/90 space-y-2 text-base md:text-lg">
+          <li class="talk-list-item flex items-start">
+            <span class="mr-3">•</span>
+            <span
+              >Ciberseguridad: Riesgos e Implicaciones — Centro Universitario
+              del Pacífico Sur</span
+            >
+          </li>
+          <li class="talk-list-item flex items-start">
+            <span class="mr-3">•</span>
+            <span>Caminos del Éxito — TecNM San Marcos</span>
+          </li>
+          <li class="talk-list-item flex items-start">
+            <span class="mr-3">•</span>
+            <span>Diseño de Experiencias Digitales UX/UI — Webinar en UNE</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Border bottom con fade -->
+  <div class="border-fade-bottom"></div>
+</section>
+
+<style>
+  .talks-section {
+    background-color: #0a1840;
+    position: relative;
+  }
+
+  /* SVG Background positioning */
+  .background-shapes {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  /* Border top con fade horizontal */
+  .border-fade-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.3) 20%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0.3) 80%,
+      transparent 100%
+    );
+  }
+
+  /* Border bottom con fade horizontal */
+  .border-fade-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.3) 20%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0.3) 80%,
+      transparent 100%
+    );
+  }
+
+  /* Hover effect en la imagen */
+  .talks-section img {
+    transition: transform 0.3s ease;
+  }
+
+  .talks-section img:hover {
+    transform: scale(1.02);
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { SplitText } from "gsap/SplitText";
+
+  const initTalksAnimations = async () => {
+    try {
+      // Esperar a que las fuentes se carguen
+      await document.fonts.ready;
+
+      gsap.registerPlugin(ScrollTrigger, SplitText);
+
+      // Animación de las formas del fondo con efecto escalonado
+      gsap.to(".background-shapes", {
+        opacity: 1,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: ".talks-section",
+          start: "top 70%",
+        },
+      });
+
+      // Animación escalonada de cada forma
+      gsap.from("#shape-left", {
+        x: -100,
+        opacity: 0,
+        duration: 1.2,
+        scrollTrigger: {
+          trigger: ".talks-section",
+          start: "top 70%",
+        },
+      });
+
+      gsap.from("#shape-right", {
+        x: 100,
+        opacity: 0,
+        duration: 1.2,
+        delay: 0.3,
+        scrollTrigger: {
+          trigger: ".talks-section",
+          start: "top 70%",
+        },
+      });
+
+      // Fade in del contenido
+      gsap.from(".talks-section h2", {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".talks-section",
+          start: "top 80%",
+        },
+      });
+
+      gsap.from(".talks-section h3", {
+        opacity: 0,
+        y: 20,
+        duration: 0.8,
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: ".talks-section",
+          start: "top 80%",
+        },
+      });
+
+      // Animación de texto revelado - Talent Land
+      const talentLandContent = document.querySelector('.talent-land-content');
+      const talentLandParagraphs = document.querySelectorAll('.talent-land-content .talk-paragraph');
+      const talentLandHighlight = document.querySelector('.talent-land-content .talk-highlight');
+
+      if (talentLandContent && talentLandParagraphs.length > 0) {
+        const talentLandSplits = [];
+        talentLandParagraphs.forEach((paragraph) => {
+          const split = new SplitText(paragraph, { type: 'words' });
+          talentLandSplits.push(split);
+          gsap.set(split.words, { opacity: 0, y: 20 });
+        });
+
+        // Dividir el texto destacado
+        let highlightSplit = null;
+        if (talentLandHighlight) {
+          highlightSplit = new SplitText(talentLandHighlight, { type: 'words' });
+          gsap.set(highlightSplit.words, { opacity: 0, y: 20 });
+        }
+
+        const talentLandTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: talentLandContent,
+            start: "top 70%",
+            end: "bottom 60%",
+            scrub: 1,
+            // markers: true, // Descomentar para debugging
+          }
+        });
+
+        talentLandSplits.forEach((split, index) => {
+          talentLandTimeline.to(split.words, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            stagger: 0.04,
+            ease: "power2.out"
+          }, index === 0 ? 0 : "-=0.6");
+        });
+
+        // Animar el highlight al final
+        if (highlightSplit) {
+          talentLandTimeline.to(highlightSplit.words, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            stagger: 0.05,
+            ease: "power2.out"
+          }, "-=0.5");
+        }
+      }
+
+      // Animación de texto revelado - Charla Secundaria
+      const secondaryTalkContent = document.querySelector('.secondary-talk-content');
+      const secondaryTalkParagraphs = document.querySelectorAll('.secondary-talk-content .talk-paragraph');
+
+      if (secondaryTalkContent && secondaryTalkParagraphs.length > 0) {
+        const secondarySplits = [];
+        secondaryTalkParagraphs.forEach((paragraph) => {
+          const split = new SplitText(paragraph, { type: 'words' });
+          secondarySplits.push(split);
+          gsap.set(split.words, { opacity: 0, y: 20 });
+        });
+
+        const secondaryTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: secondaryTalkContent,
+            start: "top 70%",
+            end: "bottom 60%",
+            scrub: 1,
+          }
+        });
+
+        secondarySplits.forEach((split, index) => {
+          secondaryTimeline.to(split.words, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            stagger: 0.04,
+            ease: "power2.out"
+          }, index === 0 ? 0 : "-=0.6");
+        });
+      }
+
+      // Animación de texto revelado - Lista de charlas adicionales
+      const additionalTalksContent = document.querySelector('.additional-talks-content');
+      const talkListItems = document.querySelectorAll('.talk-list-item span:last-child');
+
+      if (additionalTalksContent && talkListItems.length > 0) {
+        const listSplits = [];
+        talkListItems.forEach((item) => {
+          const split = new SplitText(item, { type: 'words' });
+          listSplits.push(split);
+          gsap.set(split.words, { opacity: 0, y: 20 });
+        });
+
+        const listTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: additionalTalksContent,
+            start: "top 70%",
+            end: "bottom 60%",
+            scrub: 1,
+          }
+        });
+
+        listSplits.forEach((split, index) => {
+          listTimeline.to(split.words, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.03,
+            ease: "power2.out"
+          }, index === 0 ? 0 : "-=0.5");
+        });
+      }
+
+      console.log('Animaciones de Charlas inicializadas correctamente');
+
+    } catch (error) {
+      console.error('Error al inicializar animaciones de Charlas:', error);
+    }
+  };
+
+  // Iniciar cuando el DOM esté listo
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTalksAnimations);
+  } else {
+    initTalksAnimations();
+  }
+</script>

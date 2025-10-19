@@ -1,0 +1,62 @@
+---
+import "@/styles/global.css";
+import Layout from "@layouts/Layout.astro";
+import RacingSplash from "@components/motorsport/Splash.astro";
+import { Image } from "astro:assets";
+import DemoMotorsport from "@/assets/Demo_motorsport.png";
+import Hero from "@/components/motorsport/Hero.astro";
+import Welcome from "@/components/motorsport/Welcome.astro";
+import Milestones from "@/components/motorsport/Milestone.astro";
+import Last from "@/components/motorsport/Last.astro";
+---
+
+<Layout title="Demo Motorsport - Eliezer Martinez">
+  <RacingSplash
+    author="DEMO MOTORSPORT"
+    dedication="EN HONOR A UNA LEYENDA"
+    title="— Kenji Nakamura"
+    label="FANPAGE"
+  />
+
+  <section class="splash-page">
+    <main class="main-content opacity-0">
+      <Hero/>
+      <Welcome/>
+      <Milestones/>
+      <Last/>
+    </main>
+  </section>
+</Layout>
+
+<script>
+  import { gsap } from "gsap";
+
+  // Esperar a que termine el splash para mostrar el contenido
+  setTimeout(() => {
+    gsap.to(".main-content", {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power2.out",
+      onComplete: () => {
+        // Activar la animación de texto del hero cuando sea visible
+        const heroElement = document.querySelector('.hero-motorsport');
+        if (heroElement) {
+          heroElement.setAttribute('data-hero-ready', 'true');
+        }
+        
+        // Alternativa: usar la función global si está disponible
+        if (typeof (window as any).startHeroTextReveal === 'function') {
+          (window as any).startHeroTextReveal();
+        }
+      }
+    });
+  }, 3500); // Ajusta este tiempo según la duración de tu splash
+</script>
+
+<style>
+  .main-content {
+    background-color: var(--color-blue-deep);
+    transform: translateY(30px);
+  }
+</style>

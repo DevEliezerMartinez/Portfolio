@@ -1,0 +1,362 @@
+---
+// Specs.astro - Especificaciones técnicas y equipo
+const specs = [
+  {
+    category: "ENGINE",
+    items: [
+      "2JZ-GTE Turbocharged Inline-6",
+      "400 WHP / 450+ BHP (estimated)",
+      "Custom turbo setup",
+      "Forged internals"
+    ]
+  },
+  {
+    category: "TRANSMISSION",
+    items: [
+      "6-Speed Manual Conversion",
+      "Heavy-duty clutch system",
+      "Custom driveline"
+    ]
+  },
+  {
+    category: "CHASSIS",
+    items: [
+      "Welded differential (locked)",
+      "Coilover suspension",
+      "Angle kit installed",
+      "Drift-spec geometry"
+    ]
+  },
+  {
+    category: "BRAKES",
+    items: [
+      "Wilwood 6-piston front calipers",
+      "Hydraulic handbrake system",
+      "Dual rear caliper setup",
+      "Bias adjustment system",
+      "3 master cylinders"
+    ]
+  },
+  {
+    category: "EXTERIOR",
+    items: [
+      "Midnight Purple 2 chameleon paint",
+      "KBD flexible body kit",
+      "Custom hood with lock pins",
+      "White wheels"
+    ]
+  },
+  {
+    category: "INTERIOR",
+    items: [
+      "White bucket seats",
+      "Custom center console",
+      "Wilwood pedal box (no booster)",
+      "Pioneer head unit (2005)",
+      "Full instrumentation + laptop monitoring"
+    ]
+  }
+];
+
+const team = [
+  {
+    name: "Kenyi Nakamura",
+    role: "Builder / Creator / Visionary",
+    description: "From washing cars at 14 to building legends"
+  },
+  {
+    name: "Ángel",
+    role: "Fabrication / Paint Prep / Assembly",
+    description: "The precision perfectionist"
+  },
+  {
+    name: "Nepo",
+    role: "Mechanical / Installation / Problem Solver",
+    description: "The midnight warrior"
+  },
+  {
+    name: "Dylan",
+    role: "Camera / Audio / BMX Pro",
+    description: "2nd Place National Elite BMX"
+  },
+  {
+    name: "Topo",
+    role: "Logistics / Parts / Support",
+    description: "The parts whisperer"
+  }
+];
+
+const specialThanks = [
+  { name: "Carlos & Richi", contribution: "Gods Paint" },
+  { name: "Iron", contribution: "Shop space & donor parts" },
+  { name: "Majo", contribution: "Night photography" }
+];
+---
+
+<section class="specs-section relative w-full min-h-screen bg-black text-white py-20 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-8 md:px-16">
+    
+    <!-- Header -->
+    <div class="specs-header mb-20">
+      <p class="text-orange-500 text-sm tracking-widest mb-4">GEAR 04</p>
+      <h2 class="text-6xl md:text-8xl font-black tracking-tighter mb-4">
+        TECHNICAL
+      </h2>
+      <h2 class="text-6xl md:text-8xl font-black tracking-tighter text-orange-500">
+        SPECIFICATIONS
+      </h2>
+    </div>
+
+    <!-- Specs Grid -->
+    <div class="specs-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
+      {specs.map((spec, index) => (
+        <div class="spec-card opacity-0" data-index={index}>
+          <div class="spec-category-wrapper relative overflow-hidden">
+            <h3 class="spec-category text-2xl font-bold text-orange-500 mb-6 tracking-wider">
+              {spec.category}
+            </h3>
+          </div>
+          <ul class="spec-list space-y-3">
+            {spec.items.map((item) => (
+              <li class="spec-item flex items-start gap-3 text-gray-300">
+                <span class="text-orange-500 mt-1">▸</span>
+                <span class="text-sm leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <div class="spec-line absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-transparent"></div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Team Section -->
+    <div class="team-section mb-20">
+      <div class="team-header mb-16">
+        <h2 class="text-6xl md:text-8xl font-black tracking-tighter mb-4">
+          THE DREAM
+        </h2>
+        <h2 class="text-6xl md:text-8xl font-black tracking-tighter text-orange-500">
+          TEAM
+        </h2>
+      </div>
+
+      <!-- Team Members -->
+      <div class="team-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {team.map((member, index) => (
+          <div class="team-card opacity-0" data-index={index}>
+            <div class="relative p-6 bg-white/5 backdrop-blur-sm border border-orange-500/20 hover:border-orange-500/50 transition-all duration-300 group">
+              <!-- Número decorativo -->
+              <div class="absolute top-4 right-4 text-6xl font-black text-white/5 group-hover:text-orange-500/10 transition-colors">
+                {String(index + 1).padStart(2, '0')}
+              </div>
+              
+              <div class="relative z-10">
+                <h3 class="text-2xl font-bold mb-2 group-hover:text-orange-500 transition-colors">
+                  {member.name}
+                </h3>
+                <p class="text-orange-500 text-sm tracking-wide mb-4">
+                  {member.role}
+                </p>
+                <p class="text-gray-400 text-sm italic">
+                  {member.description}
+                </p>
+              </div>
+
+              <!-- Hover effect -->
+              <div class="absolute inset-0 bg-gradient-to-br from-orange-500/0 to-orange-500/0 group-hover:from-orange-500/5 group-hover:to-orange-500/0 transition-all duration-300"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Special Thanks -->
+      <div class="special-thanks opacity-0">
+        <h3 class="text-3xl font-bold text-orange-500 mb-8 tracking-wider">SPECIAL THANKS</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {specialThanks.map((thanks) => (
+            <div class="thanks-card p-6 bg-gradient-to-br from-orange-500/10 to-transparent border border-orange-500/30">
+              <p class="text-xl font-bold mb-2">{thanks.name}</p>
+              <p class="text-gray-400 text-sm">{thanks.contribution}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Decorative elements -->
+  <div class="absolute top-20 right-10 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-20 left-10 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl"></div>
+</section>
+
+<style>
+  .specs-section {
+    background: linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+  }
+
+  .spec-card {
+    position: relative;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 107, 0, 0.1);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+
+  .spec-card:hover {
+    border-color: rgba(255, 107, 0, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(255, 107, 0, 0.2);
+  }
+
+  .spec-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 107, 0, 0.1), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .spec-card:hover::before {
+    left: 100%;
+  }
+
+  .spec-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.6s ease;
+  }
+
+  .spec-card:hover .spec-line {
+    width: 100%;
+  }
+
+  .spec-item {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  .team-card {
+    transition: transform 0.3s ease;
+  }
+
+  .team-card:hover {
+    transform: scale(1.05);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .specs-header h2,
+    .team-header h2 {
+      font-size: 3rem;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  function initSpecsAnimations() {
+    // Animar header
+    gsap.from('.specs-header', {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      scrollTrigger: {
+        trigger: '.specs-header',
+        start: 'top 80%',
+      }
+    });
+
+    // Animar spec cards
+    const specCards = gsap.utils.toArray('.spec-card') as HTMLElement[];
+    specCards.forEach((card, index) => {
+      gsap.to(card, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        delay: index * 0.1,
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 85%',
+        }
+      });
+
+      // Animar items dentro de cada card
+      const items = card.querySelectorAll('.spec-item');
+      gsap.to(items, {
+        opacity: 1,
+        x: 0,
+        duration: 0.5,
+        stagger: 0.1,
+        delay: 0.3,
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 85%',
+        }
+      });
+    });
+
+    // Animar team header
+    gsap.from('.team-header', {
+      opacity: 0,
+      x: -50,
+      duration: 1,
+      scrollTrigger: {
+        trigger: '.team-header',
+        start: 'top 80%',
+      }
+    });
+
+    // Animar team cards
+    const teamCards = gsap.utils.toArray('.team-card') as HTMLElement[];
+    teamCards.forEach((card, index) => {
+      gsap.to(card, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.8,
+        delay: index * 0.15,
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 85%',
+        }
+      });
+    });
+
+    // Animar special thanks
+    gsap.to('.special-thanks', {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: '.special-thanks',
+        start: 'top 85%',
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSpecsAnimations);
+  } else {
+    initSpecsAnimations();
+  }
+
+  // Refresh on resize
+  let resizeTimer: number;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 250);
+  });
+</script>

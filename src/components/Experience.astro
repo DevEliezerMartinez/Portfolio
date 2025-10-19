@@ -1,119 +1,265 @@
 ---
-// Experience.astro
+// Experiencia.astro
+import JapanImage from "@/assets/mirai.png";
 ---
 
+<section
+    id="experiencia-section"
+    class="min-h-screen bg-light-blue flex items-center justify-center pt-24 relative overflow-hidden"
+>
+    <!-- Header -->
+    <div class="max-w-[90%] w-full relative z-10">
+        <h1
+            class="text-gulf-blue text-4xl md:text-5xl lg:text-8xl font-light tracking-wide italic mb-16 font-plex"
+        >
+            EXPERIENCIA
+        </h1>
+
+        <!-- Content Grid -->
+        <div
+            class="grid grid-cols-1 md:grid-cols-[35%_65%] gap-12 lg:gap-16 items-start"
+        >
+            <!-- Left Column - Image -->
+            <div class="w-full h-full">
+                <img
+                    src={JapanImage.src}
+                    alt="MIRAI Innovation Research Institute - Japón"
+                    class="w-full h-full object-cover object-center "
+                />
+            </div>
+
+            <!-- Right Column - Content -->
+            <div class="space-y-8">
+                <!-- Title -->
+                <div>
+                    <h2
+                        class=" text-5xl md:text-6xl lg:text-8xl font-bold italic mb-4 font-jakarta text-gulf-blue"
+                    >
+                        JAPÓN
+                    </h2>
+                    <p
+                        class="text-gulf-blue text-xl md:text-2xl italic font-jakarta"
+                    >
+                        Donde todo cambio
+                    </p>
+                </div>
+
+                <!-- Description -->
+                <div
+                    class="experience-description space-y-6 leading-relaxed font-plex italic text-lg md:text-2xl"
+                >
+                    <p class="experience-paragraph">
+                        Mi primer experiencia profesional fue un internship en
+                        Japón. Trabajé en proyectos para la industria automotriz
+                        y gané el reconocimiento al Mejor Proyecto de la
+                        Industria.
+                    </p>
+
+                    <p class="experience-paragraph">
+                        Pero más que el premio, me marcó la cultura japonesa. La
+                        puntualidad como forma de respeto, el compromiso
+                        inquebrantable con la calidad, el honor de cumplir tu
+                        palabra. Kaizen se convirtió en mi filosofía: no basta
+                        con que algo funcione, hay que seguir mejorando hasta
+                        que realmente ayude.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+         <div
+            class="kanji-container mt-6  bottom-8 left-0 right-0 flex justify-end gap-4 md:gap-8 md:bottom-12 lg:bottom-16"
+        >
+            <!-- 改 (kai - mejora/cambio) -->
+            <div class="kanji-item flex flex-col items-center gap-2">
+                <svg
+                    id="kanji-kai"
+                    class="kanji-svg w-28 h-28 md:w-40 md:h-40 lg:w-48 lg:h-48"
+                    viewBox="0 0 182 171"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        class="kanji-stroke"
+                    d="M181.2 156C181.333 156.933 181.2 157.8 180.8 158.6C180.533 159.267 180.133 159.933 179.6 160.6C179.2 161.133 178.8 161.667 178.4 162.2C178 162.867 177.733 163.667 177.6 164.6C176.8 163.933 176.2 163.733 175.8 164C175.533 164.4 175.333 164.867 175.2 165.4C174.933 166.067 174.666 166.467 174.4 166.6C170 169.133 165.666 169.733 161.4 168.4C157.133 167.2 153.066 165.733 149.2 164C147.6 163.2 146.066 162.467 144.6 161.8C143.133 161.267 141.733 160.8 140.4 160.4C137.866 155.2 134.8 150.533 131.2 146.4C127.733 142.267 124.266 137.733 120.8 132.8C120 132.8 119.4 133.133 119 133.8C118.6 134.333 118.2 134.867 117.8 135.4C117.266 136.333 116.733 137 116.2 137.4C115.666 137.8 114.8 137.267 113.6 135.8C112.933 136.467 112.533 137.133 112.4 137.8C112.4 138.333 112.4 138.933 112.4 139.6C112.4 140 112.4 140.4 112.4 140.8C112.4 141.2 112.333 141.667 112.2 142.2C108.866 145.267 104.933 148.467 100.4 151.8C95.8665 155 90.9998 157.8 85.7998 160.2C80.5998 162.733 75.1998 164.267 69.5998 164.8C64.1331 165.467 58.6665 164.6 53.1998 162.2C65.4665 159.133 76.3331 153.733 85.7998 146C95.2665 138.267 103.466 129.533 110.4 119.8C108.666 115.533 106.4 111.467 103.6 107.6C100.933 103.6 98.2665 99.5334 95.5998 95.4C92.9331 91.1334 90.6665 86.6 88.7998 81.8C87.9998 82.2 87.1998 82.7334 86.3998 83.4C85.5998 84.0667 84.7998 84.7334 83.9998 85.4C82.1331 87 80.1331 88.4 77.9998 89.6C75.9998 90.8 73.4665 90.6667 70.3998 89.2C74.7998 83.6 78.7331 77.5334 82.1998 71C85.6665 64.4667 88.2665 56.9334 89.9998 48.4C89.8665 48.1334 89.5331 47.6667 88.9998 47C88.5998 46.3334 88.1998 45.6667 87.7998 45C87.3998 44.3334 87.2665 43.6 87.3998 42.8C88.1998 42.9334 88.8665 42.9334 89.3998 42.8C89.9331 42.6667 90.3998 42.5334 90.7998 42.4C91.1998 42.1334 91.5331 42 91.7998 42C92.0665 40.5334 92.3998 39.0667 92.7998 37.6C93.3331 36.1334 93.7998 34.6667 94.1998 33.2C95.1331 30.6667 95.8665 28.1334 96.3998 25.6C97.0665 23.0667 97.1331 20.5334 96.5998 18C96.0665 15.6 94.9331 13.8 93.1998 12.6C91.5998 11.2667 89.9998 9.93337 88.3998 8.60004C86.7998 7.26671 85.7998 5.40004 85.3998 3.00004C86.3331 3.13337 86.9998 3.06671 87.3998 2.80004C87.7998 2.40004 88.1998 1.93337 88.5998 1.40004C88.9998 0.600039 89.3998 0.133375 89.7998 4.29153e-05C93.7998 1.60004 97.9331 3.06671 102.2 4.40005C106.6 5.73338 110 8.13337 112.4 11.6C113.466 14.9334 113.6 18.1334 112.8 21.2C112.133 24.1334 111.2 27.2 110 30.4C109.6 31.8667 109.133 33.3334 108.6 34.8C108.066 36.2667 107.6 37.8 107.2 39.4C111.333 40.0667 115.266 40.1334 119 39.6C122.733 39.0667 126.466 38.4667 130.2 37.8C132.6 37.2667 135 36.8 137.4 36.4C139.8 36 142.333 35.7334 145 35.6C146.066 34 147.733 33.1334 150 33C152.266 32.8667 154.733 33.2 157.4 34C160.2 34.6667 162.933 35.4667 165.6 36.4C166.533 36.6667 167.4 36.9334 168.2 37.2C169.133 37.4667 170 37.7334 170.8 38C171.333 39.3334 172 40.4667 172.8 41.4C173.6 42.3334 174.066 43.5334 174.2 45C173.133 45.5334 171.866 45.9334 170.4 46.2C168.933 46.3334 167.866 46.9334 167.2 48C155.2 48.2667 143.866 48.9334 133.2 50C122.533 51.0667 113.066 52.0667 104.8 53C102.933 55.5334 101.333 58.3334 99.9998 61.4C98.7998 64.4667 97.5331 67.4667 96.1998 70.4C94.8665 73.3334 93.1331 75.9334 90.9998 78.2C96.1998 81.9334 100.8 86.2 104.8 91C108.8 95.6667 113 100.333 117.4 105C119.266 101.4 120.933 97.2667 122.4 92.6C123.866 87.9334 124.8 83.1334 125.2 78.2C125.6 73.1334 125.2 68.4667 124 64.2C122.8 59.8 120.466 56.2 117 53.4C121.933 52.3334 126.666 53.2 131.2 56C135.866 58.6667 139.466 62.2667 142 66.8C141.6 73.8667 140.466 80.2667 138.6 86C136.733 91.7334 134.733 96.9334 132.6 101.6C130.6 106.267 128.933 110.533 127.6 114.4C129.333 115.467 130.866 116.867 132.2 118.6C133.533 120.333 134.866 121.933 136.2 123.4C138.466 123.533 140.2 124.467 141.4 126.2C142.6 127.8 144.066 129.133 145.8 130.2C148.6 131.8 151.533 133.067 154.6 134C157.8 134.933 160.733 136.133 163.4 137.6C166.2 138.933 168.266 141.2 169.6 144.4C172.933 145.067 175.4 146.667 177 149.2C178.6 151.6 180 153.867 181.2 156ZM87.7998 29.6C85.6665 30.4 83.7998 30.8667 82.1998 31C80.5998 31 78.9331 31.7334 77.1998 33.2C75.8665 40.6667 74.5331 48.2 73.1998 55.8C71.8665 63.2667 69.7998 70 66.9998 76C61.1331 76.9334 55.1998 78 49.1998 79.2C43.3331 80.4 38.2665 81.6667 33.9998 83C33.3331 91.9334 32.7331 101.467 32.1998 111.6C31.6665 121.6 30.8665 130.667 29.7998 138.8C35.6665 135.333 42.0665 131.267 48.9998 126.6C55.9331 121.933 61.9331 116.6 66.9998 110.6C68.8665 110.867 69.9331 111.333 70.1998 112C70.5998 112.667 70.7998 113.467 70.7998 114.4C70.6665 115.067 70.6665 115.8 70.7998 116.6C70.9331 117.4 71.3998 118.267 72.1998 119.2C71.2665 121.6 70.3331 123.4 69.3998 124.6C68.5998 125.8 67.8665 127.8 67.1998 130.6C61.4665 134.867 55.8665 139.333 50.3998 144C45.0665 148.667 38.7331 152.333 31.3998 155C30.4665 155.4 29.8665 156.2 29.5998 157.4C29.4665 158.6 28.9998 159.467 28.1998 160C23.3998 160.8 19.1331 159.8 15.3998 157C11.7998 154.067 8.39981 150.933 5.19981 147.6C4.39981 146.667 3.53314 145.8 2.5998 145C1.79981 144.067 0.933139 143.2 -0.00019443 142.4C1.73314 141.067 3.5998 140.467 5.5998 140.6C7.59981 140.733 9.53314 141 11.3998 141.4C12.4665 141.667 13.4665 141.933 14.3998 142.2C15.4665 142.333 16.3998 142.267 17.1998 142C18.3998 133.733 19.0665 124.267 19.1998 113.6C19.4665 102.933 18.8665 92.8667 17.3998 83.4C15.5331 81.4 13.5998 79.4667 11.5998 77.6C9.59981 75.6 7.99981 73.2 6.79981 70.4C6.79981 70.2667 7.46647 69.8667 8.79981 69.2C10.2665 68.5334 11.1331 67.9334 11.3998 67.4C12.5998 67.8 13.7331 68 14.7998 68C15.9998 68 17.1331 67.9334 18.1998 67.8C19.7998 67.8 21.3331 67.8667 22.7998 68C24.3998 68.1334 25.8665 68.8 27.1998 70C29.8665 69.8667 32.9998 69.5334 36.5998 69C40.1998 68.3334 43.7998 67.6 47.3998 66.8C51.1331 66 54.3998 65.2 57.1998 64.4C57.3331 63.8667 57.3998 63.3334 57.3998 62.8C57.5331 62.1334 57.6665 61.4667 57.7998 60.8C58.5998 56 59.3331 51.0667 59.9998 46C60.6665 40.9334 60.8665 35.4 60.5998 29.4C56.0665 29.6667 50.9998 30.2667 45.3998 31.2C39.9331 32 34.7331 33.2 29.7998 34.8C29.1331 34.9334 28.5331 35.2 27.9998 35.6C27.4665 36 26.9331 36.4 26.3998 36.8C25.3331 37.7334 24.1331 38.5334 22.7998 39.2C21.5998 39.7334 19.9998 39.5334 17.9998 38.6C16.3998 37.8 14.5998 36.3334 12.5998 34.2C10.5998 32.0667 8.73314 29.7334 6.9998 27.2C5.26647 24.6667 3.86647 22.5334 2.79981 20.8C3.19981 20.6667 3.39981 20.0667 3.39981 19C3.39981 18.8667 3.39981 18.7334 3.39981 18.6C5.7998 17.2667 8.13314 16.9334 10.3998 17.6C12.7998 18.1334 15.0665 18.8 17.1998 19.6C17.7331 19.8667 18.3331 20.1334 18.9998 20.4C19.6665 20.6667 20.2665 20.8667 20.7998 21C29.9998 20.6 38.3331 19.5334 45.7998 17.8C53.2665 15.9334 59.2665 13.4667 63.7998 10.4C67.1331 11.8667 70.4665 13.2667 73.7998 14.6C77.1331 15.9334 80.0665 17.7334 82.5998 20C85.2665 22.1334 86.9998 25.3334 87.7998 29.6Z"
+                        stroke="#1E293B"
+                        stroke-width="2"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </svg>
+                <p class="kanji-meaning  text-base md:text-xl font-plex italic font-bold text-black opacity-0">
+                    Mejora
+                </p>
+            </div>
+
+            <!-- 善 (zen - bien/bueno) -->
+            <div class="kanji-item flex flex-col items-center gap-2">
+                <svg
+                    id="kanji-zen"
+                    class="kanji-svg w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48"
+                    viewBox="0 0 188 178"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        class="kanji-stroke"
+                    d="M187.6 116.2C186.8 118.733 185.467 120.467 183.6 121.4C181.867 122.2 180 122.733 178 123C175.6 123.267 173.067 123.2 170.4 122.8C167.734 122.267 164.934 121.733 162 121.2C159.734 120.8 157.334 120.4 154.8 120C152.267 119.467 149.667 119.133 147 119C131.267 118.067 114.867 118.067 97.8002 119C80.8669 119.8 64.8669 121.133 49.8002 123C47.0002 123.4 44.2669 123.933 41.6002 124.6C39.0669 125.133 36.6002 125.733 34.2002 126.4C31.8002 127.067 29.5335 127.667 27.4002 128.2C25.2669 128.733 23.4669 128.933 22.0002 128.8C18.6669 128.533 15.7335 127.467 13.2002 125.6C10.8002 123.733 8.53353 121.733 6.4002 119.6C4.4002 117.467 2.26686 115.867 0.000195518 114.8C0.266862 113.6 0.733529 112.933 1.4002 112.8C2.06686 112.667 2.73353 112.6 3.4002 112.6C4.06686 112.467 4.53353 112 4.8002 111.2C9.73353 112.533 14.6002 113.133 19.4002 113C24.2002 112.733 29.2002 112.267 34.4002 111.6C38.1335 111.2 42.0002 110.8 46.0002 110.4C50.0002 110 54.2669 109.933 58.8002 110.2C58.8002 110.2 57.6002 109.533 55.2002 108.2C52.9335 106.867 50.6669 105.133 48.4002 103C46.2669 101.133 44.3335 99 42.6002 96.6C41.0002 94.2 39.6669 91.5333 38.6002 88.6C42.0669 88.2 45.9335 88.6 50.2002 89.8C54.6002 91 58.2669 92.9333 61.2002 95.6C63.0669 97.3333 64.4669 99.4 65.4002 101.8C66.3335 104.067 66.4002 106.6 65.6002 109.4C70.0002 109.267 73.5335 109.067 76.2002 108.8C79.0002 108.4 82.4669 108.2 86.6002 108.2C86.8669 106.2 86.9335 104.2 86.8002 102.2C86.8002 100.2 86.7335 98.1333 86.6002 96C86.4669 94.4 86.3335 92.7333 86.2002 91C86.2002 89.1333 86.2002 87.1333 86.2002 85C83.2669 85.1333 80.4669 85.4 77.8002 85.8C75.1335 86.2 72.5335 86.6 70.0002 87C66.4002 87.6667 62.9335 88.2 59.6002 88.6C56.2669 89 52.8002 88.9333 49.2002 88.4C48.6669 86.8 47.7335 85.6 46.4002 84.8C45.0669 83.8667 43.6669 83 42.2002 82.2C40.4669 81.2667 38.9335 80.3333 37.6002 79.4C36.2669 78.3333 35.6002 76.8 35.6002 74.8C40.8002 74.9333 45.5335 74.9333 49.8002 74.8C54.0669 74.5333 58.4002 74.2667 62.8002 74C66.1335 73.7333 69.6002 73.5333 73.2002 73.4C76.8002 73.2667 80.8002 73.1333 85.2002 73C85.6002 72.3333 85.7335 71.6667 85.6002 71C85.6002 70.3333 85.5335 69.6 85.4002 68.8C85.2669 68.1333 85.1335 67.4667 85.0002 66.8C84.8669 66.1333 84.8669 65.3333 85.0002 64.4C82.6002 64.6667 79.6669 64.8667 76.2002 65C72.8669 65.1333 69.6002 65.4 66.4002 65.8C63.3335 66.2 60.9335 67.0667 59.2002 68.4C54.5335 66.9333 50.7335 65.2667 47.8002 63.4C44.8669 61.5333 42.7335 58.2 41.4002 53.4C44.3335 53.1333 47.3335 53 50.4002 53C53.4669 53 56.6002 53.0667 59.8002 53.2C63.5335 53.3333 67.4002 53.4 71.4002 53.4C75.5335 53.4 79.7335 53.1333 84.0002 52.6C85.3335 49.4 84.8669 46.2667 82.6002 43.2C75.8002 42.9333 70.4002 43.2 66.4002 44C62.4002 44.6667 58.4669 45.9333 54.6002 47.8C50.4669 45.9333 46.6669 43.7333 43.2002 41.2C39.7335 38.5333 36.8669 35.3333 34.6002 31.6C35.6669 31.4667 36.7335 31.3333 37.8002 31.2C39.0002 31.0667 39.6002 30.5333 39.6002 29.6C44.1335 30.9333 48.3335 31.6667 52.2002 31.8C56.0669 31.8 60.6002 31.6 65.8002 31.2C67.2669 31.2 68.8669 31.2 70.6002 31.2C72.3335 31.0667 74.1335 30.9333 76.0002 30.8C76.0002 30.8 74.9335 30.1333 72.8002 28.8C70.8002 27.4667 68.4002 26 65.6002 24.4C62.9335 22.6667 60.4669 21.4 58.2002 20.6C58.8669 18.2 58.8669 16.1333 58.2002 14.4C57.5335 12.6667 56.7335 11 55.8002 9.4C55.2669 8.46666 54.7335 7.53333 54.2002 6.6C53.6669 5.53333 53.2669 4.46666 53.0002 3.39999C67.5335 2.59999 77.0002 9.93333 81.4002 25.4C80.7335 26.0667 80.2669 26.9333 80.0002 28C79.8669 28.9333 79.4669 29.8667 78.8002 30.8C83.3335 30.4 88.0002 30.1333 92.8002 30C97.6002 29.7333 103.4 29.5333 110.2 29.4C112.867 27.1333 114.934 24.4 116.4 21.2C118 18 120 15.1333 122.4 12.6C121.334 10.7333 120 9.13333 118.4 7.79999C116.8 6.46666 115.534 4.79999 114.6 2.79999C114.734 1.99999 115.134 1.66666 115.8 1.79999C116.6 1.79999 117.067 1.19999 117.2 -1.23978e-05C120.934 0.799993 124.6 1.33333 128.2 1.59999C131.934 1.86666 135.267 2.66666 138.2 4C141.134 5.33333 143.334 7.99999 144.8 12C142.667 15.4667 139.734 18.3333 136 20.6C132.4 22.8667 129.134 25.4667 126.2 28.4C126.2 28.4 127.2 28.2667 129.2 28C131.2 27.6 133.534 27.4 136.2 27.4C140.467 27.4 144.534 28.1333 148.4 29.6C152.4 31.0667 155.6 33.3333 158 36.4C158.667 37.3333 158.467 38.1333 157.4 38.8C156.467 39.4667 155.467 39.8 154.4 39.8C149.2 40.4667 143.534 40.8667 137.4 41C131.267 41.1333 125.4 41.2 119.8 41.2C116.2 41.2 112.867 41.2667 109.8 41.4C106.867 41.4 104.267 41.4667 102 41.6C101.867 42 101.8 42.4667 101.8 43C101.934 43.5333 102.067 44.1333 102.2 44.8C102.334 45.6 102.467 46.4667 102.6 47.4C102.734 48.3333 102.6 49.2667 102.2 50.2C104.734 51.1333 107.2 51.4667 109.6 51.2C112 50.8 114.267 50.3333 116.4 49.8C117.6 49.4 118.734 49.0667 119.8 48.8C121 48.5333 122.134 48.4 123.2 48.4C126 48.2667 128.467 48.7333 130.6 49.8C132.734 50.8667 134.8 52 136.8 53.2C137.867 53.8667 138.867 54.5333 139.8 55.2C140.867 55.7333 141.934 56.2 143 56.6C142.467 60.0667 140.867 61.9333 138.2 62.2C135.534 62.4667 132.667 62.4 129.6 62C128.8 61.8667 128 61.8 127.2 61.8C126.4 61.6667 125.6 61.6 124.8 61.6C123.067 61.4667 121.334 61.5333 119.6 61.8C118 61.9333 116.334 62.0667 114.6 62.2C112.467 62.4667 110.267 62.7333 108 63C105.867 63.1333 103.6 63.0667 101.2 62.8C100.8 63.8667 100.6 65.3333 100.6 67.2C100.734 69.0667 100.467 70.7333 99.8002 72.2C101.8 71.9333 103.867 71.8 106 71.8C108.134 71.8 110.334 71.8 112.6 71.8C116.867 71.9333 120.8 71.8667 124.4 71.6C128 71.3333 130.334 70.4 131.4 68.8C135.267 69.7333 139.067 70.8 142.8 72C146.534 73.0667 149.534 74.9333 151.8 77.6C152.2 78 152.267 78.4667 152 79C151.867 79.4 151.6 79.8 151.2 80.2C150.8 80.6 150.4 81.0667 150 81.6C149.734 82.1333 149.667 82.8 149.8 83.6C149.8 83.6 149.067 83.6667 147.6 83.8C146.134 83.9333 144.534 83.9333 142.8 83.8C143.734 85.6667 145 87.1333 146.6 88.2C148.334 89.1333 149.267 90.9333 149.4 93.6C144.867 97.6 139.334 100.6 132.8 102.6C126.267 104.467 120.2 104.8 114.6 103.6C114.867 102.133 115.6 100.8 116.8 99.6C118.134 98.4 119.467 97.2667 120.8 96.2C122.534 94.8667 124 93.5333 125.2 92.2C126.534 90.7333 127.067 89.1333 126.8 87.4C126.667 85.9333 125.934 84.9333 124.6 84.4C123.4 83.7333 121.867 83.3333 120 83.2C118.534 83.2 116.934 83.2667 115.2 83.4C113.467 83.5333 111.734 83.7333 110 84C108.267 84.2667 106.534 84.4667 104.8 84.6C103.067 84.7333 101.534 84.8 100.2 84.8C100.467 86.6667 100.534 88.7333 100.4 91C100.4 93.1333 100.334 95.4 100.2 97.8C100.2 99.5333 100.134 101.267 100 103C100 104.733 100 106.4 100 108C106.934 107.2 114 106.867 121.2 107C128.534 107.133 136.134 107.333 144 107.6C144.667 107.6 145.134 107.6 145.4 107.6C147.534 105.2 150.467 104.267 154.2 104.8C157.934 105.2 161.734 105.867 165.6 106.8C166.267 106.933 166.934 107.133 167.6 107.4C168.4 107.533 169.134 107.667 169.8 107.8C170.067 108.6 169.467 109.067 168 109.2C167.6 109.2 167.334 109.2 167.2 109.2C167.734 110.133 168.2 110.533 168.6 110.4C169.134 110.267 169.667 110.067 170.2 109.8C171 109.133 171.6 108.933 172 109.2C175.067 109.733 177.667 110.867 179.8 112.6C181.934 114.333 184.534 115.533 187.6 116.2ZM154.4 136.8C154.934 137.733 155.067 138.6 154.8 139.4C154.534 140.067 154.2 140.733 153.8 141.4C149.667 141.4 146.534 142.4 144.4 144.4C142.4 146.267 140.867 148.667 139.8 151.6C138.734 154.533 138 157.6 137.6 160.8C137.2 164 136.6 166.8 135.8 169.2C135.134 171.6 133.867 173.133 132 173.8C130.267 174.333 128.734 174.467 127.4 174.2C126.2 173.933 125.067 173.6 124 173.2C123.334 172.933 122.667 172.667 122 172.4C121.467 172.267 120.867 172.133 120.2 172C116.334 171.6 111.6 171.533 106 171.8C100.534 172.067 94.8669 172.467 89.0002 173C83.1335 173.667 77.7335 174.333 72.8002 175C67.8669 175.8 64.1335 176.533 61.6002 177.2C60.1335 177.333 58.8669 176.933 57.8002 176C56.7335 175.2 55.6669 174.2 54.6002 173C53.9335 172.333 53.4002 171.8 53.0002 171.4C51.5335 169.933 50.7335 168 50.6002 165.6C50.4669 163.333 50.5335 160.733 50.8002 157.8C50.9335 155.267 51.0002 152.6 51.0002 149.8C51.0002 146.867 50.5335 143.933 49.6002 141C47.2002 140.333 45.4002 139.2 44.2002 137.6C43.0002 135.867 41.4669 134.4 39.6002 133.2C41.0669 130.933 43.4002 129.467 46.6002 128.8C49.8002 128.133 53.4669 127.667 57.6002 127.4C63.6002 127 70.4002 126.667 78.0002 126.4C85.7335 126 93.3335 125.533 100.8 125C108.267 124.467 114.6 123.733 119.8 122.8C124.467 121.867 129 122.133 133.4 123.6C137.934 124.933 142 126.867 145.6 129.4C149.334 131.8 152.267 134.267 154.4 136.8ZM120 161.4C120 159.933 120 158.467 120 157C120.134 155.533 120.334 154 120.6 152.4C120.867 149.333 121 146.267 121 143.2C121.134 140.133 120.6 137.333 119.4 134.8C110.734 134.4 102.534 134.6 94.8002 135.4C87.2002 136.067 79.1335 136.933 70.6002 138C69.9335 138.133 69.2002 138.267 68.4002 138.4C67.7335 138.4 67.0669 138.467 66.4002 138.6C66.4002 139.4 66.4002 140.267 66.4002 141.2C66.4002 142.133 66.4002 143.2 66.4002 144.4C66.4002 147.2 66.4002 150.267 66.4002 153.6C66.5335 156.8 66.8669 159.533 67.4002 161.8C71.9335 162.2 76.6002 162.333 81.4002 162.2C86.2002 162.067 90.9335 161.867 95.6002 161.6C99.8669 161.333 104.067 161.133 108.2 161C112.334 160.867 116.267 161 120 161.4Z"
+                        stroke="#1E293B"
+                        stroke-width="2"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </svg>
+                <p class="kanji-meaning  text-base md:text-xl font-plex italic font-bold text-black opacity-0">
+                    Continua
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <style>
-  details > summary {
-    list-style: none;
-  }
-  details > summary::-webkit-details-marker {
-    display: none;
-  }
-  details[open] .arrow-icon {
-    transform: rotate(90deg);
-  }
+    /* Estilos para los kanji */
+    .kanji-wrapper {
+        pointer-events: none;
+    }
+
+    .kanji-svg {
+        opacity: 0.3;
+    }
+
+    .kanji-stroke {
+        stroke-dasharray: 4000;
+        stroke-dashoffset: 4000;
+    }
+
+    .kanji-meaning {
+        transition: opacity 0.5s ease-in-out;
+    }
 </style>
 
-<h3 class="Subtitle text-4xl md:text-6xl my-6 animate-fade-right animate-once" id="Experiencia">
-  Experiencia
-</h3>
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    import { SplitText } from "gsap/SplitText";
 
-<section class="border-r-2 pr-4 md:mb-32 space-y-4">
+    // Esperar a que las fuentes y el DOM estén listos
+    const initExperienceAnimations = async () => {
+        try {
+            await document.fonts.ready;
+            
+            gsap.registerPlugin(ScrollTrigger, SplitText);
 
-  <!-- Centro Universitario UNE -->
-  <details class="group rounded-lg p-4 transition-all" open>
-    <summary class="cursor-pointer flex items-center justify-end gap-4">
-      <div class="text-right flex-1">
-        <h4 class="Descriptions text-xl font-semibold md:text-xl">
-          Centro Universitario UNE - Director de Proyectos y Desarrollo Full Stack
-        </h4>
-        <p class="Descriptions text-sm text-gray-600 mt-1">Guadalajara, México (Enero 2025 - Actualidad)</p>
-      </div>
-      <span class="arrow-icon text-2xl text-blue-600 transition-transform duration-200">→</span>
-    </summary>
-    
-    <div class="mt-4 text-right">
-      <p class="Descriptions font-extralight  mb-3 md:text-lg">
-        Responsable del ciclo completo de desarrollo de proyectos, desde el levantamiento de requerimientos hasta la implementación y despliegue. Dirijo la selección de tecnologías, arquitectura e infraestructura de cada proyecto, garantizando soluciones escalables y eficientes.
-      </p>
-        
-    </div>
-  </details>
+            // Seleccionar los kanji
+            const kanjiKai = document.querySelector("#kanji-kai .kanji-stroke");
+            const kanjiZen = document.querySelector("#kanji-zen .kanji-stroke");
+            const kanjiContainer = document.querySelector(".kanji-container");
+            const kanjiKaiMeaning = document.querySelector("#kanji-kai").closest('.kanji-item').querySelector('.kanji-meaning');
+            const kanjiZenMeaning = document.querySelector("#kanji-zen").closest('.kanji-item').querySelector('.kanji-meaning');
 
-  <!-- Los Reyes del Injerto -->
-  <details class="group rounded-lg p-4 transition-all">
-    <summary class="cursor-pointer flex items-center justify-end gap-4">
-      <div class="text-right flex-1">
-        <h4 class="Descriptions text-xl font-semibold md:text-xl">
-          Los Reyes del Injerto - Full Stack Developer y Líder de Proyecto
-        </h4>
-        <p class="Descriptions text-sm text-gray-600 mt-1">Mayo 2024 - Enero 2025</p>
-      </div>
-      <span class="arrow-icon text-2xl text-blue-600 transition-transform duration-200">→</span>
-    </summary>
-    
-    <div class="mt-4 text-right">
-      <p class="Descriptions font-extralight  md:text-lg">
-        Gestioné y optimicé un ERP interno utilizando PHP y MySQL. Implementé mejoras en la base de datos, desarrollé endpoints RESTful API y mejoré la interfaz de usuario con Bootstrap y jQuery. Además, supervisé el mantenimiento de servidores y la gestión de almacenamiento para garantizar la estabilidad y escalabilidad del sistema.
-      </p>
-    </div>
-  </details>
+            // Seleccionar los párrafos de descripción
+            const descriptionContainer = document.querySelector('.experience-description');
+            const paragraphs = document.querySelectorAll('.experience-paragraph');
 
-  <!-- MPYP -->
-  <details class="group rounded-lg p-4 transition-all">
-    <summary class="cursor-pointer flex items-center justify-end gap-4">
-      <div class="text-right flex-1">
-        <h4 class="Descriptions text-xl font-semibold md:text-xl">
-          MPYP - Desarrollador Backend
-        </h4>
-        <p class="Descriptions text-sm text-gray-600 mt-1">Agosto 2023 - Diciembre 2023</p>
-      </div>
-      <span class="arrow-icon text-2xl text-blue-600 transition-transform duration-200">→</span>
-    </summary>
-    
-    <div class="mt-4 text-right">
-      <p class="Descriptions font-extralight  md:text-lg">
-        Trabajé en el desarrollo de aplicaciones robustas utilizando Laravel y SQL. Me encargué de la integración de APIs, el manejo de autenticación con Laravel Sanctum y la optimización de la infraestructura del servidor para mejorar el rendimiento y la escalabilidad.
-      </p>
-    </div>
-  </details>
+            // Verificar que los elementos existen
+            if (!kanjiKai || !kanjiZen || !kanjiContainer) {
+                console.error("No se encontraron los elementos kanji");
+                return;
+            }
 
-  <!-- Mirai Innovation -->
-  <details class="group rounded-lg p-4 transition-all">
-    <summary class="cursor-pointer flex items-center justify-end gap-4">
-      <div class="text-right flex-1">
-        <h4 class="Descriptions text-xl font-semibold md:text-xl">
-          Mirai Innovation Research Institute - Pasante en Desarrollo de Software
-        </h4>
-        <p class="Descriptions text-sm text-gray-600 mt-1">Osaka, Japón (Abril 2023 - Julio 2023)</p>
-      </div>
-      <span class="arrow-icon text-2xl text-blue-600 transition-transform duration-200">→</span>
-    </summary>
-    
-    <div class="mt-4 text-right">
-      <p class="Descriptions font-extralight  md:text-lg">
-        Durante mi pasantía, participé en el desarrollo de una plataforma de teleoperación utilizando Node.js y Python. Implementé funcionalidades de reconocimiento de objetos y optimicé la infraestructura de backend utilizando AWS, lo que resultó en un aumento significativo en la eficiencia operativa del sistema.
-      </p>
-    </div>
-  </details>
+            if (!descriptionContainer || paragraphs.length === 0) {
+                console.error("No se encontraron los párrafos de descripción");
+                return;
+            }
 
-  <!-- Freelance -->
-  <details class="group rounded-lg p-4 transition-all">
-    <summary class="cursor-pointer flex items-center justify-end gap-4">
-      <div class="text-right flex-1">
-        <h4 class="Descriptions text-xl font-semibold md:text-xl">
-          Freelance - Desarrollador Full Stack
-        </h4>
-        <p class="Descriptions text-sm text-gray-600 mt-1">Enero 2022 - Actualidad</p>
-      </div>
-      <span class="arrow-icon text-2xl text-blue-600 transition-transform duration-200">→</span>
-    </summary>
-    
-    <div class="mt-4 text-right">
-      <p class="Descriptions font-extralight  md:text-lg">
-        Como freelance, he desarrollado aplicaciones web utilizando React y Node.js. He trabajado en proyectos de desarrollo de sistemas de punto de ventas y plataformas de gestión, optimizando la experiencia del usuario mediante el uso de Material UI y TailwindCSS.
-      </p>
-    </div>
-  </details>
+            // Dividir cada párrafo en palabras
+            const splits = [];
+            paragraphs.forEach((paragraph) => {
+                const split = new SplitText(paragraph, { type: 'words' });
+                splits.push(split);
+                
+                // Inicializar las palabras invisibles
+                gsap.set(split.words, { opacity: 0, y: 20 });
+            });
 
-</section>
+            // Timeline para revelar el texto progresivamente con scroll
+            const textTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: descriptionContainer,
+                    start: "top 70%",
+                    end: "bottom 60%",
+                    scrub: 1,
+                    // markers: true, // Descomentar para debugging
+                }
+            });
+
+            // Animar todas las palabras de todos los párrafos secuencialmente
+            splits.forEach((split, index) => {
+                textTimeline.to(split.words, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    stagger: 0.05,
+                    ease: "power2.out"
+                }, index === 0 ? 0 : "-=0.5"); // Overlap entre párrafos
+            });
+
+            // Animar 改 (kai) - primer kanji
+            const kaiTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: kanjiContainer,
+                    start: "top 85%",
+                    end: "top 35%",
+                    scrub: 1.5,
+                    // markers: true,
+                }
+            });
+
+            kaiTimeline
+                .to(kanjiKai, {
+                    strokeDashoffset: 0,
+                    ease: "none"
+                })
+                .to(kanjiKaiMeaning, {
+                    opacity: 1,
+                    duration: 0.2,
+                    ease: "power2.out"
+                }, "-=0.1");
+
+            // Animar 善 (zen) - segundo kanji
+            const zenTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: kanjiContainer,
+                    start: "top 75%",
+                    end: "top 25%",
+                    scrub: 1.5,
+                    // markers: true,
+                }
+            });
+
+            zenTimeline
+                .to(kanjiZen, {
+                    strokeDashoffset: 0,
+                    ease: "none"
+                })
+                .to(kanjiZenMeaning, {
+                    opacity: 1,
+                    duration: 0.1,
+                    ease: "power2.out"
+                }, "-=0.1");
+
+            console.log('Animaciones de experiencia inicializadas correctamente');
+
+        } catch (error) {
+            console.error('Error al inicializar animaciones de experiencia:', error);
+        }
+    };
+
+    // Iniciar cuando el DOM esté listo
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initExperienceAnimations);
+    } else {
+        initExperienceAnimations();
+    }
+</script>
