@@ -1,0 +1,74 @@
+---
+// CoverToAboutTransition.astro
+---
+
+<div class="transition-container">
+  <!-- Bloques que suben revelando la siguiente sección -->
+  <div class="transition-block block-1"></div>
+  <div class="transition-block block-2"></div>
+  <div class="transition-block block-3"></div>
+  <div class="transition-block block-4"></div>
+  <div class="transition-block block-5"></div>
+</div>
+
+<style>
+  .transition-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+  }
+
+  .transition-block {
+    position: absolute;
+    bottom: 0;
+    width: 20%;
+    height: 100vh;
+    background-color: #0A1929;
+    transform: translateY(100%); /* Empiezan escondidos abajo */
+  }
+
+  /* Posicionamiento horizontal de cada bloque */
+  .block-1 { left: 0%; }
+  .block-2 { left: 20%; }
+  .block-3 { left: 40%; }
+  .block-4 { left: 60%; }
+  .block-5 { left: 80%; }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const blocks = document.querySelectorAll('.transition-block');
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#Hero",
+      start: "bottom bottom",
+      end: "bottom top",
+      scrub: 1,
+      // markers: true
+    }
+  });
+
+  // FASE 1: Los bloques suben (revelan About)
+  blocks.forEach((block, index) => {
+    tl.to(block, {
+      y: 0, // Suben a su posición
+      ease: "power2.inOut",
+      duration: 0.5
+    }, index * 0.1);
+  });
+
+  // FASE 2: Los bloques continúan subiendo y salen por arriba
+  blocks.forEach((block, index) => {
+    tl.to(block, {
+      y: "-100vh", // Salen completamente por arriba
+      ease: "power2.inOut",
+      duration: 0.5
+    }, 0.5 + (index * 0.1)); // Empiezan después de la fase 1
+  });
+</script>

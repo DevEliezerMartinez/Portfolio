@@ -1,0 +1,197 @@
+---
+interface Props {
+  title: string;
+  dedication?: string;
+  author?: string;
+  label?: string;
+}
+
+const { 
+  title, 
+  dedication = "EN HONOR A UNA LEYENDA",
+  author = "— Kenji Nakamura",
+  label = "FANPAGE"
+} = Astro.props;
+---
+
+<section class="hero-section fixed inset-0 flex flex-col items-center justify-center z-50 overflow-hidden">
+  <div class="racing-lines"></div>
+  <div class="splash-content">
+    <p class="dedication-text opacity-0">{dedication}</p>
+    <h1 class="hero-title font-bold opacity-0 leading-none" style="font-size: clamp(5rem, 7vw, 10rem);">
+      {title}
+    </h1>
+    <p class="author-note opacity-0">{author}</p>
+    <p class="fanpage-label opacity-0">{label}</p>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  
+  // Animación del splash - Estilo RACING
+  const timeline = gsap.timeline();
+  
+  // Líneas de velocidad (racing stripes)
+  timeline
+    .to(".racing-lines", {
+      opacity: 1,
+      scaleX: 1,
+      duration: 0.6,
+      ease: "power4.out"
+    })
+    // Dedicatoria aparece primero
+    .to(".dedication-text", {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: "power2.out"
+    }, "-=0.3")
+    // Título entra como un auto a alta velocidad
+    .to(".hero-title", {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      duration: 0.7,
+      ease: "power3.out",
+      letterSpacing: "0.1em"
+    }, "-=0.2")
+    // Nota del autor aparece
+    .to(".author-note", {
+      opacity: 1,
+      duration: 0.5,
+      ease: "power2.out"
+    }, "-=0.3")
+    // Fanpage label aparece
+    .to(".fanpage-label", {
+      opacity: 1,
+      duration: 0.4,
+      ease: "power2.out"
+    }, "-=0.2")
+    // Efecto de "turbo boost" - el texto se agranda ligeramente
+    .to(".hero-title", {
+      scale: 1.05,
+      duration: 0.3,
+      ease: "power2.inOut"
+    })
+    .to(".hero-title", {
+      scale: 1,
+      duration: 0.3,
+      ease: "power2.inOut"
+    })
+    // Pausa dramática
+    .to(".hero-title", {
+      delay: 0.4
+    })
+    // Salida rápida con motion blur effect - todos los elementos
+    .to(".splash-content", {
+      opacity: 0,
+      x: 200,
+      scale: 0.9,
+      duration: 0.5,
+      ease: "power4.in"
+    })
+    .to(".racing-lines", {
+      opacity: 0,
+      scaleX: 0,
+      x: 300,
+      duration: 0.4,
+      ease: "power4.in"
+    }, "-=0.3")
+    .to(".hero-section", {
+      opacity: 0,
+      duration: 0.3,
+      ease: "power2.in",
+      onComplete: () => {
+        const heroSection = document.querySelector(".hero-section");
+        if (heroSection) {
+          heroSection.style.display = "none";
+        }
+      }
+    }, "-=0.2");
+</script>
+
+<style>
+  .hero-section {
+    background-color: var(--color-blue-deep);
+  }
+  
+  .splash-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .dedication-text {
+    font-size: clamp(0.875rem, 1.5vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.3em;
+    font-weight: 400;
+    text-transform: uppercase;
+    transform: translateY(-10px);
+  }
+  
+  .author-note {
+    font-size: clamp(1rem, 1.8vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    margin-top: -0.5rem;
+  }
+  
+  .fanpage-label {
+    font-size: clamp(0.75rem, 1.2vw, 1rem);
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.4em;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 2rem;
+  }
+  
+  .hero-title {
+    transform: translateX(-300px) scale(0.8);
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 900;
+    margin: 0.5rem 0;
+  }
+  
+  /* Líneas de velocidad estilo racing */
+  .racing-lines {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .racing-lines::before,
+  .racing-lines::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg,
+       transparent 0%,
+       rgba(255, 255, 255, 0.1) 20%,
+       rgba(255, 255, 255, 0.3) 50%,
+       rgba(255, 255, 255, 0.1) 80%,
+       transparent 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  
+  .racing-lines::before {
+    top: 35%;
+  }
+  
+  .racing-lines::after {
+    bottom: 35%;
+  }
+</style>

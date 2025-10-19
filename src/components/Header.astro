@@ -1,50 +1,322 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
+// Header.astro
 ---
 
-<Layout title="Welcome to Astro.">
+<header class="fixed top-0 left-0 right-0 z-50 w-full">
+    <nav
+        class="relative  flex flex-row justify-end items-center w-full px-6 mx-auto py-4 md:py-0 border-gradient"
+    >
+        <!-- Menú hamburguesa (solo móvil) -->
+        <button id="menu" class="md:hidden" aria-label="Abrir menú">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="white"
+                stroke-width="2"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
 
-   <nav class="hamburguer mt-4">
+        <!-- Menú móvil (drawer) -->
+        <div
+            id="mobileMenu"
+            class="fixed top-0 left-0 w-full h-full transform -translate-x-full transition-transform duration-300 md:hidden z-40"
+        >
+            <button
+                id="close"
+                class="absolute top-6 right-6"
+                aria-label="Cerrar menú"
+            >
+                <svg width="32" height="32" viewBox="0 0 40 40">
+                    <path
+                        d="M 10,10 L 30,30 M 30,10 L 10,30"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"></path>
+                </svg>
+            </button>
 
-    <!-- justify-around max-w-6xl mx-auto p-4 sm:flex-row -->
-        <svg id="menu" xmlns="http://www.w3.org/2000/svg" class="mt-0 h-6 w-6 mx-2 sm:hidden cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
+            <ul
+                class="flex flex-col items-center justify-center h-full gap-8 text-2xl"
+            >
+                <li>
+                    <a
+                        href="#experiencia-section"
+                        class="mobile-link text-white hover:text-blue-400 transition-colors"
+                        >Experiencia</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="#Charlas"
+                        class="mobile-link text-white hover:text-blue-400 transition-colors"
+                        >Charlas</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="/contacto"
+                        class="mobile-link text-white hover:text-blue-400 transition-colors"
+                        >Contacto</a
+                    >
+                </li>
+            </ul>
+        </div>
 
-        <ul id="menuItems" class="hidden flex flex-col absolute top-0 pt-16 bg-neutral-900 z-10 left-0 h-full  items-center gap-8 p-6 md:flex md:flex-row md:relative md: justify-center md:bg-transparent md:py-8 ">
-            <svg id="close" class="absolute top-4 left-3 sm:hidden cursor-pointer" width="100" height="100"><path d="M 10,10 L 30,30 M 30,10 L 10,30" stroke="white" stroke-width="4" /></svg>
-            <a href="#Educacion" class="headerList hover:text-blue-600  hover:animate-jump hover:font-semibold" >Educación</a>
-            <a href="#Experiencia" class="headerList  hover:text-blue-600  hover:animate-jump hover:font-semibold">Experiencia</a>
-            <a href="#Awards" class="headerList  hover:text-blue-600  hover:animate-jump hover:font-semibold">Conferencias y premios</a>
-            <a href="#Proyectos" class="headerList  hover:text-blue-600  hover:animate-jump hover:font-semibold">Proyectos</a>
-            <a href="#Contact" class="headerList  hover:text-blue-600  hover:animate-jump hover:font-semibold">Contacto</a>
-        </ul>
+        <!-- Menú desktop con trapecios (lado derecho, fijo) -->
+        <div class="hidden md:flex items-end gap-0 pt-6 font-semibold">
+            <!-- Trapecio 1: Experiencia -->
+            <div class="trapezoid-container group">
+                <svg
+                    width="150"
+                    height="66"
+                    viewBox="0 0 141 39"
+                    preserveAspectRatio="xMidYMid meet"
+                    class="trapezoid-svg"
+                >
+                    <path
+                        d="M25.0922 0H141L116 39H0L25.0922 0Z"
+                        fill="#ffffff"
+                        fill-opacity="0.51"
+                        class="trapezoid-fill"></path>
+                    <path
+                        d="M140.086 0.5L115.727 38.5H0.916992L25.3652 0.5H140.086Z"
+                        fill="none"
+                        stroke="#ffffff"
+                        stroke-opacity="0"></path>
+                </svg>
+                <a href="#experiencia-section" class="trapezoid-link">Experiencia</a>
+            </div>
 
-        <div id="cancelable" class="absolute w-1/2 h-full top-0 left-48  z-30 hidden"></div>
-   </nav>
+            <!-- Trapecio 2: Charlas -->
+            <div class="trapezoid-container group">
+                <svg
+                    width="150"
+                    height="66"
+                    viewBox="0 0 141 39"
+                    preserveAspectRatio="xMidYMid meet"
+                    class="trapezoid-svg"
+                >
+                    <path
+                        d="M25.0922 0H141L116 39H0L25.0922 0Z"
+                        fill="#ffffff"
+                        fill-opacity="0.51"
+                        class="trapezoid-fill"></path>
+                    <path
+                        d="M140.086 0.5L115.727 38.5H0.916992L25.3652 0.5H140.086Z"
+                        fill="none"
+                        stroke="#ffffff"
+                        stroke-opacity="0"></path>
+                </svg>
+                <a href="#Charlas" class="trapezoid-link">Charlas</a>
+            </div>
 
-   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const menuIcon = document.getElementById("menu");
-        const menuItems = document.getElementById("menuItems");
+            <!-- Trapecio 3: Contacto -->
+            <div class="trapezoid-container group">
+                <svg
+                    width="150"
+                    height="66"
+                    viewBox="0 0 141 39"
+                    preserveAspectRatio="xMidYMid meet"
+                    class="trapezoid-svg"
+                >
+                    <path
+                        d="M25.0922 0H141L116 39H0L25.0922 0Z"
+                        fill="#ffffff"
+                        fill-opacity="0.51"
+                        class="trapezoid-fill"></path>
+                    <path
+                        d="M140.086 0.5L115.727 38.5H0.916992L25.3652 0.5H140.086Z"
+                        fill="none"
+                        stroke="#ffffff"
+                        stroke-opacity="0"></path>
+                </svg>
+                <a href="/contacto" class="trapezoid-link">Contacto</a>
+            </div>
+
+            <!-- Líneas decorativas -->
+            <div class="flex items-end pb-3 -ml-6">
+                <svg
+                    width="107"
+                    height="41"
+                    viewBox="0 0 107 56"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <foreignObject
+                        x="-22.8"
+                        y="-22.8"
+                        width="100.6"
+                        height="101.6"
+                        ><div
+                            xmlns="http://www.w3.org/1999/xhtml"
+                            style="backdrop-filter:blur(11.4px);clip-path:url(#bgblur_0_306_6_clip_path);height:100%;width:100%"
+                        >
+                        </div></foreignObject
+                    ><path
+                        data-figma-bg-blur-radius="22.8"
+                        d="M36.1842 0H55L18.8158 56H0L36.1842 0Z"
+                        fill="white"
+                        fill-opacity="0.51"></path>
+                    <foreignObject
+                        x="3.2"
+                        y="-22.8"
+                        width="100.6"
+                        height="101.6"
+                        ><div
+                            xmlns="http://www.w3.org/1999/xhtml"
+                            style="backdrop-filter:blur(11.4px);clip-path:url(#bgblur_1_306_6_clip_path);height:100%;width:100%"
+                        >
+                        </div></foreignObject
+                    ><path
+                        data-figma-bg-blur-radius="22.8"
+                        d="M62.1842 0H81L44.8158 56H26L62.1842 0Z"
+                        fill="white"
+                        fill-opacity="0.51"></path>
+                    <foreignObject
+                        x="29.2"
+                        y="-22.8"
+                        width="100.6"
+                        height="101.6"
+                        ><div
+                            xmlns="http://www.w3.org/1999/xhtml"
+                            style="backdrop-filter:blur(11.4px);clip-path:url(#bgblur_2_306_6_clip_path);height:100%;width:100%"
+                        >
+                        </div></foreignObject
+                    ><path
+                        data-figma-bg-blur-radius="22.8"
+                        d="M88.1842 0H107L70.8158 56H52L88.1842 0Z"
+                        fill="white"
+                        fill-opacity="0.51"></path>
+                    <defs>
+                        <clipPath
+                            id="bgblur_0_306_6_clip_path"
+                            transform="translate(22.8 22.8)"
+                            ><path d="M36.1842 0H55L18.8158 56H0L36.1842 0Z"
+                            ></path>
+                        </clipPath><clipPath
+                            id="bgblur_1_306_6_clip_path"
+                            transform="translate(-3.2 22.8)"
+                            ><path d="M62.1842 0H81L44.8158 56H26L62.1842 0Z"
+                            ></path>
+                        </clipPath><clipPath
+                            id="bgblur_2_306_6_clip_path"
+                            transform="translate(-29.2 22.8)"
+                            ><path d="M88.1842 0H107L70.8158 56H52L88.1842 0Z"
+                            ></path>
+                        </clipPath></defs
+                    >
+                </svg>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<style>
+    .border-gradient {
+        position: relative;
+    }
+
+    .border-gradient::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+            to right,
+            transparent 0%,
+            transparent 50%,
+            white 100%
+        );
+    }
+
+    .trapezoid-container {
+        position: relative;
+        display: inline-block;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+
+    .trapezoid-container:hover {
+        transform: translateY(-3px);
+    }
+
+    .trapezoid-svg {
+        display: block;
+        filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+    }
+
+    .trapezoid-fill {
+        transition: fill-opacity 0.3s ease;
+    }
+
+    .trapezoid-container:hover .trapezoid-fill {
+        fill-opacity: 1;
+    }
+
+    .trapezoid-link {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.3s ease;
+    }
+
+    .line-svg {
+        width: 30px;
+        height: 66px;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+
+    .line-svg:hover {
+        opacity: 1;
+    }
+
+    /* Asegurar que el header siempre esté visible */
+    header {
+        pointer-events: none;
+    }
+
+    header > nav > * {
+        pointer-events: auto;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuButton = document.getElementById("menu");
         const closeButton = document.getElementById("close");
-        const cancelable = document.getElementById("cancelable");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const mobileLinks = document.querySelectorAll(".mobile-link");
 
-        menuIcon.addEventListener("click", function() {
-            menuItems.classList.toggle("hidden");
-            cancelable.classList.remove("hidden")
+        const openMenu = () => {
+            mobileMenu?.classList.remove("-translate-x-full");
+            document.body.style.overflow = "hidden";
+        };
 
+        const closeMenu = () => {
+            mobileMenu?.classList.add("-translate-x-full");
+            document.body.style.overflow = "";
+        };
+
+        menuButton?.addEventListener("click", openMenu);
+        closeButton?.addEventListener("click", closeMenu);
+
+        mobileLinks.forEach((link) => {
+            link.addEventListener("click", closeMenu);
         });
 
-        closeButton.addEventListener("click", function() {
-            menuItems.classList.add("hidden");
-        });
-
-        cancelable.addEventListener("click", function() {
-            menuItems.classList.add("hidden");
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeMenu();
         });
     });
 </script>
-
-</Layout>

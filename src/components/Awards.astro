@@ -1,0 +1,271 @@
+---
+// Component: Recognitions.astro
+---
+
+<section class="recognitions-section relative py-20 px-6 md:px-12 overflow-hidden">
+  <!-- Contenido -->
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12">
+      <!-- Columna Izquierda: Texto -->
+      <div class="relative z-20 md:pr-8">
+        <h2 class="text-white text-3xl md:text-4xl lg:text-6xl font-bold italic mb-6">
+          RECONOCIMIENTOS
+        </h2>
+        <p class="text-[var(--color-orange)] text-xl md:text-2xl italic mb-8 leading-relaxed">
+          Cada logro no marca un punto final, sino una curva más en el camino.
+        </p>
+        <div class="text-white/90 space-y-6 text-lg md:text-2xl font-plex leading-relaxed">
+          <p>
+            El conocimiento no tiene sentido si se guarda.
+          </p>
+          <p>
+            Por eso, comparto lo que aprendo en espacios donde la tecnología se vuelve conversación humana.
+          </p>
+          <p>
+            He tenido la oportunidad de regresar a lugares que marcaron mi camino, como el Colegio de Bachilleres donde estudié, para contarles a los estudiantes que sí es posible, que pueden atreverse. Cada charla es una oportunidad de inspirar como otros me inspiraron.
+          </p>
+        </div>
+      </div>
+
+      <!-- Columna Derecha: Camino y Cards -->
+      <div class="relative h-[1200px] md:h-[1000px]">
+        <!-- SVG Road Path -->
+        <svg class="road-svg absolute inset-0 w-full h-full" viewBox="0 0 400 1000" preserveAspectRatio="xMidYMid meet">
+          <!-- Carretera base (gris oscuro) -->
+          <path 
+            id="road-base"
+            class="road-base"
+            d="M 200,0 L 200,200 Q 200,250 220,280 L 280,380 Q 300,410 300,450 L 300,550 Q 300,590 280,620 L 220,720 Q 200,750 200,800 L 200,1000"
+            stroke="#2A3F5F"
+            stroke-width="60"
+            fill="none"
+            stroke-linecap="round"
+          />
+          
+          <!-- Línea continua lateral izquierda -->
+          <path 
+            class="road-line-solid"
+            d="M 200,0 L 200,200 Q 200,250 220,280 L 280,380 Q 300,410 300,450 L 300,550 Q 300,590 280,620 L 220,720 Q 200,750 200,800 L 200,1000"
+            stroke="#5A6F8F"
+            stroke-width="3"
+            fill="none"
+            transform="translate(-25, 0)"
+          />
+          
+          <!-- Línea continua lateral derecha -->
+          <path 
+            class="road-line-solid"
+            d="M 200,0 L 200,200 Q 200,250 220,280 L 280,380 Q 300,410 300,450 L 300,550 Q 300,590 280,620 L 220,720 Q 200,750 200,800 L 200,1000"
+            stroke="#5A6F8F"
+            stroke-width="3"
+            fill="none"
+            transform="translate(25, 0)"
+          />
+          
+          <!-- Línea central punteada -->
+          <path 
+            class="road-line-dashed"
+            d="M 200,0 L 200,200 Q 200,250 220,280 L 280,380 Q 300,410 300,450 L 300,550 Q 300,590 280,620 L 220,720 Q 200,750 200,800 L 200,1000"
+            stroke="#8A9FB5"
+            stroke-width="2"
+            fill="none"
+            stroke-dasharray="20 15"
+          />
+          
+          <!-- Path invisible para motion path -->
+          <path 
+            id="motion-path"
+            d="M 200,0 L 200,200 Q 200,250 220,280 L 280,380 Q 300,410 300,450 L 300,550 Q 300,590 280,620 L 220,720 Q 200,750 200,800 L 200,1000"
+            fill="none"
+          />
+        </svg>
+
+        <!-- Recognition Cards -->
+        <div class="recognition-card card-1 absolute opacity-0" style="left: 50%; transform: translateX(-50%);">
+          <div class="card-content bg-light-blue text-gulf-blue rounded-2xl p-6 shadow-xl relative">
+            <span class="absolute -top-3 left-6 bg-[var(--color-orange)] text-white px-4 py-1 rounded-full text-sm font-semibold">
+              Abril 2023
+            </span>
+            <p class="mt-4 font-semibold text-sm md:text-base">
+              Reconocimiento al Mérito Académico — Gobierno del Estado de Guerrero
+            </p>
+          </div>
+        </div>
+
+        <div class="recognition-card card-2 absolute opacity-0" style="left: 50%; transform: translateX(-50%);">
+          <div class="card-content bg-light-blue text-gulf-blue rounded-2xl p-6 shadow-xl relative">
+            <span class="absolute -top-3 left-6 bg-[var(--color-orange)] text-white px-4 py-1 rounded-full text-sm font-semibold">
+              Julio 2023
+            </span>
+            <p class="mt-4 font-semibold text-sm md:text-base">
+              Best Project for the Industry Award — Mirai Innovation Research Institute
+            </p>
+          </div>
+        </div>
+
+        <div class="recognition-card card-3 absolute opacity-0" style="left: 50%; transform: translateX(-50%);">
+          <div class="card-content bg-light-blue text-gulf-blue rounded-2xl p-6 shadow-xl relative">
+            <span class="absolute -top-3 left-6 bg-[var(--color-orange)] text-white px-4 py-1 rounded-full text-sm font-semibold">
+              Agosto 2023
+            </span>
+            <p class="mt-4 font-semibold text-sm md:text-base">
+              Conferencia "Caminos al Éxito" — TecNM Campus San Marcos
+            </p>
+          </div>
+        </div>
+
+        <div class="recognition-card card-4 absolute opacity-0" style="left: 50%; transform: translateX(-50%);">
+          <div class="card-content bg-light-blue text-gulf-blue rounded-2xl p-6 shadow-xl relative">
+            <span class="absolute -top-3 left-6 bg-[var(--color-orange)] text-white px-4 py-1 rounded-full text-sm font-semibold">
+              Octubre 2023
+            </span>
+            <p class="mt-4 font-semibold text-sm md:text-base">
+              Cybersecurity: Risks and Implications — Centro Universitario Pacífico Sur
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .recognitions-section {
+    background-color: #0A1840;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  .road-svg {
+    z-index: 1;
+  }
+
+  .road-base {
+    opacity: 0.4;
+  }
+
+  .road-line-solid,
+  .road-line-dashed {
+    opacity: 0;
+  }
+
+  .recognition-card {
+    z-index: 10;
+    width: 280px;
+    max-width: 90%;
+  }
+
+  .card-content {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 100px;
+  }
+
+  .card-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .recognition-card {
+      width: 260px;
+    }
+    
+    /* Asegurar espacio para la última card */
+    .card-4 {
+      margin-bottom: 100px;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+
+  gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+
+  // Timeline principal
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.recognitions-section',
+      start: 'top 60%',
+      end: 'bottom 40%',
+      scrub: 1,
+    }
+  });
+
+  // Animar el dibujado del camino
+  tl.fromTo('.road-line-solid', 
+    { 
+      strokeDasharray: 1000,
+      strokeDashoffset: 1000,
+      opacity: 1
+    },
+    { 
+      strokeDashoffset: 0,
+      duration: 1.5,
+      ease: 'none'
+    }
+  )
+  .fromTo('.road-line-dashed', 
+    { 
+      strokeDasharray: '20 15',
+      strokeDashoffset: 1000,
+      opacity: 1
+    },
+    { 
+      strokeDashoffset: 0,
+      duration: 1.5,
+      ease: 'none'
+    },
+    '<'
+  );
+
+  // Animar las cards a lo largo del camino
+  const cards = ['.card-1', '.card-2', '.card-3', '.card-4'];
+  const positions = [0.2, 0.42, 0.65, 0.88];
+
+  cards.forEach((card, index) => {
+    gsap.to(card, {
+      motionPath: {
+        path: '#motion-path',
+        align: '#motion-path',
+        alignOrigin: [0.5, 0.5],
+        start: 0,
+        end: positions[index],
+      },
+      opacity: 1,
+      duration: 1.5,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.recognitions-section',
+        start: 'top 60%',
+        end: 'bottom 40%',
+        scrub: 1,
+      }
+    });
+  });
+
+  // Fade in del título y texto
+  gsap.from('.recognitions-section h2', {
+    opacity: 0,
+    x: -50,
+    duration: 1,
+    scrollTrigger: {
+      trigger: '.recognitions-section',
+      start: 'top 70%',
+    }
+  });
+
+  gsap.from('.recognitions-section p', {
+    opacity: 0,
+    y: 30,
+    duration: 0.8,
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: '.recognitions-section',
+      start: 'top 70%',
+    }
+  });
+</script>
