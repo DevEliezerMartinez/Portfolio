@@ -2,12 +2,12 @@
 import "@/styles/global.css";
 import Layout from "@layouts/Layout.astro";
 import RacingSplash from "@components/motorsport/Splash.astro";
-import { Image } from "astro:assets";
-import DemoMotorsport from "@/assets/Demo_motorsport.png";
 import Hero from "@/components/motorsport/Hero.astro";
 import Welcome from "@/components/motorsport/Welcome.astro";
-import Milestones from "@/components/motorsport/Milestone.astro";
 import Last from "@/components/motorsport/Last.astro";
+import SmoothScrollLayout from '@/components/motorsport/SmoothScrollLayout.astro';
+import Milestone from "@/components/motorsport/Milestone.astro";
+
 ---
 
 <Layout title="Demo Motorsport - Eliezer Martinez">
@@ -18,14 +18,12 @@ import Last from "@/components/motorsport/Last.astro";
     label="FANPAGE"
   />
 
-  <section class="splash-page">
-    <main class="main-content opacity-0">
-      <Hero/>
-      <Welcome/>
-      <Milestones/>
-      <Last/>
-    </main>
-  </section>
+<SmoothScrollLayout>
+  <Hero />
+  <Welcome />
+  <Milestone/>
+  <Last/>
+</SmoothScrollLayout>
 </Layout>
 
 <script>
@@ -54,9 +52,3 @@ import Last from "@/components/motorsport/Last.astro";
   }, 3500); // Ajusta este tiempo según la duración de tu splash
 </script>
 
-<style>
-  .main-content {
-    background-color: var(--color-blue-deep);
-    transform: translateY(30px);
-  }
-</style>

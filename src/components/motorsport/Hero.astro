@@ -3,20 +3,27 @@ import mainVideo from "@/assets/motorsport/main_s14.mp4";
 import mainVideoMobile from "@/assets/motorsport/main_s14_mobile.mp4";
 ---
 
-<section class="hero-motorsport relative w-full min-h-screen overflow-hidden" data-hero-ready="false">
+<section
+  class="hero-motorsport relative w-full min-h-screen overflow-hidden"
+  data-hero-ready="false"
+>
   <!-- Video de fondo -->
   <div class="video-container absolute inset-0 z-0">
-    <video 
-      autoplay 
-      muted 
-      loop 
+    <video
+      autoplay
+      muted
+      loop
       playsinline
       class="absolute top-0 left-0 w-full h-full object-cover"
     >
       <!-- Video para desktop -->
       <source src={mainVideo} type="video/mp4" media="(min-width: 768px)" />
       <!-- Video para mobile -->
-      <source src={mainVideoMobile} type="video/mp4" media="(max-width: 767px)" />
+      <source
+        src={mainVideoMobile}
+        type="video/mp4"
+        media="(max-width: 767px)"
+      />
       <!-- Fallback -->
       <source src={mainVideo} type="video/mp4" />
     </video>
@@ -25,21 +32,28 @@ import mainVideoMobile from "@/assets/motorsport/main_s14_mobile.mp4";
   </div>
 
   <!-- Contenido -->
-  <div class="hero-content relative z-10 h-screen flex flex-col justify-between p-8 md:p-12">
-    
+  <div
+    class="hero-content relative z-10 h-screen flex flex-col justify-between p-8 md:p-12"
+  >
     <!-- Header superior -->
     <div class="header-top flex justify-between items-start">
       <div class="about-section">
-        <p class="text-white/60 text-sm md:text-base tracking-widest mb-2">ABOUT</p>
-        <h2 class="text-white text-2xl md:text-4xl font-light leading-tight max-w-2xl reveal-text">
-          A tribute to the engineering, design,<br />
-          and culture of Nissans iconic drift machine.
+        <p class="text-white/60 text-sm md:text-base tracking-widest mb-2">
+          ACERCA
+        </p>
+        <h2
+          class="text-white text-lg md:text-xl font-plex leading-tight max-w-3xl reveal-text"
+        >
+          Un tributo a la ingeniería, el diseño<br />
+          y la cultura de la icónica máquina de derrapes de Nissan.
         </h2>
       </div>
-      
+
       <div class="gears-info text-right">
-        <p class="text-white/60 text-sm tracking-widest mb-1">GEARS</p>
-        <p class="text-white text-2xl md:text-3xl font-bold reveal-text">NISSAN</p>
+        <p class="text-white/60 text-sm tracking-widest mb-1">FABRICANTE</p>
+        <p class="text-white text-2xl md:text-3xl font-bold reveal-text">
+          NISSAN
+        </p>
       </div>
     </div>
 
@@ -47,7 +61,10 @@ import mainVideoMobile from "@/assets/motorsport/main_s14_mobile.mp4";
     <div class="footer-bottom flex justify-between items-end">
       <div class="version-info text-white">
         <p class="text-white/60 text-sm tracking-widest mb-1">VERSION</p>
-        <p class="text-6xl md:text-8xl font-bold tracking-tighter reveal-text" style="font-family: 'Courier New', monospace;">
+        <p
+          class="text-6xl md:text-8xl font-bold tracking-tighter reveal-text"
+          style="font-family: 'Courier New', monospace;"
+        >
           (1994-1998)
         </p>
       </div>
@@ -55,30 +72,46 @@ import mainVideoMobile from "@/assets/motorsport/main_s14_mobile.mp4";
       <div class="model-section text-right">
         <div class="brief-list text-white text-right mb-4 space-y-1">
           <p class="text-white/60 text-xs tracking-widest mb-2">BRIEF</p>
-          <p class="text-sm tracking-wide reveal-text">ENGINEERING + ARTISTRY</p>
+          <p class="text-sm tracking-wide reveal-text">
+            ENGINEERING + ARTISTRY
+          </p>
           <p class="text-sm tracking-wide reveal-text">MILESTONES IN MOTION</p>
           <p class="text-sm tracking-wide reveal-text">PURE ANALOG THRILL</p>
           <p class="text-sm tracking-wide reveal-text">UNDER THE SURFACE</p>
           <p class="text-sm tracking-wide reveal-text">THE LEGACY</p>
         </div>
-        
+
         <div class="model-name">
-          <h2 class="text-white text-7xl md:text-9xl font-bold tracking-tighter reveal-text" style="font-family: 'Courier New', monospace;">
+          <h2
+            class="text-white text-7xl md:text-9xl font-bold tracking-tighter reveal-text font-plex"
+          >
             240sx S14
           </h2>
         </div>
       </div>
     </div>
-
   </div>
 
   <!-- Decoración: círculo rojo (faro trasero) -->
-  <div class="taillight absolute right-32 top-1/2 transform -translate-y-1/2 z-10">
+  <div
+    class="taillight absolute right-32 top-1/2 transform -translate-y-1/2 z-10"
+  >
     <div class="relative">
-      <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-red-600 blur-sm opacity-80"></div>
-      <div class="absolute inset-0 w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-red-500/50"></div>
-      <div class="absolute inset-0 w-24 h-24 md:w-32 md:h-32 rounded-full flex items-center justify-center">
-        <div class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-yellow-500 blur-sm"></div>
+      <div
+        class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-red-600 blur-sm opacity-80"
+      >
+      </div>
+      <div
+        class="absolute inset-0 w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-red-500/50"
+      >
+      </div>
+      <div
+        class="absolute inset-0 w-24 h-24 md:w-32 md:h-32 rounded-full flex items-center justify-center"
+      >
+        <div
+          class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-yellow-500 blur-sm"
+        >
+        </div>
       </div>
     </div>
   </div>
@@ -107,7 +140,8 @@ import mainVideoMobile from "@/assets/motorsport/main_s14_mobile.mp4";
   }
 
   @keyframes pulse-light {
-    0%, 100% {
+    0%,
+    100% {
       opacity: 0.8;
       transform: scale(1);
     }
@@ -119,13 +153,13 @@ import mainVideoMobile from "@/assets/motorsport/main_s14_mobile.mp4";
 
   /* Efecto de texto con sombra para mejor legibilidad */
   .hero-title h1 {
-    text-shadow: 
+    text-shadow:
       2px 2px 4px rgba(0, 0, 0, 0.8),
       0 0 20px rgba(0, 0, 0, 0.6);
   }
 
   .model-name h2 {
-    text-shadow: 
+    text-shadow:
       2px 2px 4px rgba(0, 0, 0, 0.8),
       0 0 20px rgba(0, 0, 0, 0.6);
   }
@@ -139,12 +173,12 @@ import mainVideoMobile from "@/assets/motorsport/main_s14_mobile.mp4";
     .hero-title {
       left: 1rem;
     }
-    
+
     .taillight {
       right: 1rem;
       top: 40%;
     }
-    
+
     .brief-list {
       font-size: 0.75rem;
     }
@@ -153,8 +187,9 @@ import mainVideoMobile from "@/assets/motorsport/main_s14_mobile.mp4";
 
 <script>
   // Text reveal animation - scramble effect on load then reveal
-  const upperAndLowerCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
-  const getRandomChar = () => upperAndLowerCase[Math.floor(Math.random() * upperAndLowerCase.length)];
+  const upperAndLowerCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".split("");
+  const getRandomChar = () =>
+    upperAndLowerCase[Math.floor(Math.random() * upperAndLowerCase.length)];
 
   interface CharData {
     el: HTMLSpanElement;
@@ -168,32 +203,32 @@ import mainVideoMobile from "@/assets/motorsport/main_s14_mobile.mp4";
   let isInitialized = false;
 
   function splitText(element: Element): CharData[] {
-    const text = element.textContent || '';
+    const text = element.textContent || "";
     const chars: CharData[] = [];
-    element.textContent = '';
-    
+    element.textContent = "";
+
     let charIndex = 0;
-    text.split('').forEach((char) => {
-      if (char === ' ' || char === '\n') {
+    text.split("").forEach((char) => {
+      if (char === " " || char === "\n") {
         element.appendChild(document.createTextNode(char));
       } else {
-        const span = document.createElement('span');
-        span.className = 'char';
+        const span = document.createElement("span");
+        span.className = "char";
         span.textContent = getRandomChar();
-        span.style.display = 'inline-block';
+        span.style.display = "inline-block";
         element.appendChild(span);
-        
+
         // Delay progresivo basado en la posición del caracter
         chars.push({
           el: span,
           orig: char,
           isRevealed: false,
-          revealDelay: charIndex * 30 + Math.random() * 100
+          revealDelay: charIndex * 30 + Math.random() * 100,
         });
         charIndex++;
       }
     });
-    
+
     return chars;
   }
 
@@ -204,10 +239,10 @@ import mainVideoMobile from "@/assets/motorsport/main_s14_mobile.mp4";
 
   function revealChar(charData: CharData) {
     if (charData.isRevealed) return;
-    
+
     let scrambleCount = 0;
     const maxScrambles = 3 + Math.floor(Math.random() * 3);
-    
+
     const interval = setInterval(() => {
       if (scrambleCount >= maxScrambles) {
         charData.el.textContent = charData.orig;
@@ -222,15 +257,15 @@ import mainVideoMobile from "@/assets/motorsport/main_s14_mobile.mp4";
 
   function initTextElements() {
     if (isInitialized) return;
-    
-    const revealElements = document.querySelectorAll('.reveal-text');
+
+    const revealElements = document.querySelectorAll(".reveal-text");
     allCharsData = [];
-    
+
     revealElements.forEach((el) => {
       const chars = splitText(el);
       allCharsData.push(...chars);
     });
-    
+
     isInitialized = true;
   }
 
@@ -241,7 +276,7 @@ import mainVideoMobile from "@/assets/motorsport/main_s14_mobile.mp4";
     }
 
     // Reset estados
-    allCharsData.forEach(char => {
+    allCharsData.forEach((char) => {
       char.isRevealed = false;
       char.el.textContent = getRandomChar();
     });
@@ -256,7 +291,7 @@ import mainVideoMobile from "@/assets/motorsport/main_s14_mobile.mp4";
       if (scrambleInterval !== null) {
         clearInterval(scrambleInterval);
       }
-      
+
       allCharsData.forEach((charData) => {
         setTimeout(() => {
           revealChar(charData);
@@ -269,8 +304,8 @@ import mainVideoMobile from "@/assets/motorsport/main_s14_mobile.mp4";
   (window as any).startHeroTextReveal = startTextReveal;
 
   // Inicializar elementos cuando el DOM esté listo
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTextElements);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initTextElements);
   } else {
     initTextElements();
   }
@@ -278,9 +313,12 @@ import mainVideoMobile from "@/assets/motorsport/main_s14_mobile.mp4";
   // Observer para detectar cuando el hero se hace visible
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
-      if (mutation.type === 'attributes' && mutation.attributeName === 'data-hero-ready') {
+      if (
+        mutation.type === "attributes" &&
+        mutation.attributeName === "data-hero-ready"
+      ) {
         const target = mutation.target as HTMLElement;
-        if (target.getAttribute('data-hero-ready') === 'true') {
+        if (target.getAttribute("data-hero-ready") === "true") {
           startTextReveal();
           observer.disconnect();
         }
@@ -289,7 +327,7 @@ import mainVideoMobile from "@/assets/motorsport/main_s14_mobile.mp4";
   });
 
   // Observar el elemento hero
-  const heroElement = document.querySelector('.hero-motorsport');
+  const heroElement = document.querySelector(".hero-motorsport");
   if (heroElement) {
     observer.observe(heroElement, { attributes: true });
   }

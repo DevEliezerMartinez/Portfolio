@@ -6,19 +6,41 @@ interface Props {
   label?: string;
 }
 
-const { 
-  title, 
+const {
+  title,
   dedication = "EN HONOR A UNA LEYENDA",
   author = "— Kenji Nakamura",
-  label = "FANPAGE"
+  label = "FANPAGE",
 } = Astro.props;
+
+import NocturnaLogo from "@assets/motorsport/Logo_adaptado.png";
 ---
 
-<section class="hero-section fixed inset-0 flex flex-col items-center justify-center z-50 overflow-hidden">
+<section
+  class="hero-section fixed inset-0 flex flex-col items-center justify-center z-50 overflow-hidden"
+>
   <div class="racing-lines"></div>
   <div class="splash-content">
+    <div class="logo-container opacity-0">
+      <svg
+        class="neon-frame"
+        viewBox="0 0 611 235"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+        class="neon-stroke"
+          d="M540.317 2.50195L533.22 35.9199L532.835 37.7314H609.165L575.857 201.798H556.131V232.997H371.093V196.766H353.129V233L157.639 233.496L158.115 202.314L158.139 200.791H2.01074L50.498 37.7314H134.127L134.531 36.8672L151.084 1.50195L540.317 2.50195Z"
+          stroke="#FFFFFF"
+          stroke-width="3"></path>
+      </svg>
+      <img src={NocturnaLogo.src} alt="Nocturna Drift Club" class="hero-logo" />
+    </div>
     <p class="dedication-text opacity-0">{dedication}</p>
-    <h1 class="hero-title font-bold opacity-0 leading-none" style="font-size: clamp(5rem, 7vw, 10rem);">
+    <h1
+      class="hero-title font-bold opacity-0 leading-none"
+      style="font-size: clamp(5rem, 7vw, 10rem);"
+    >
       {title}
     </h1>
     <p class="author-note opacity-0">{author}</p>
@@ -28,60 +50,117 @@ const {
 
 <script>
   import { gsap } from "gsap";
-  
+
   // Animación del splash - Estilo RACING
   const timeline = gsap.timeline();
-  
+
+  // Configurar el SVG path para animación de dibujo
+  const neonPath = document.querySelector(".neon-stroke");
+  if (neonPath) {
+    const pathLength = neonPath.getTotalLength();
+    neonPath.style.strokeDasharray = pathLength;
+    neonPath.style.strokeDashoffset = pathLength;
+  }
+
   // Líneas de velocidad (racing stripes)
   timeline
     .to(".racing-lines", {
       opacity: 1,
       scaleX: 1,
       duration: 0.6,
-      ease: "power4.out"
+      ease: "power4.out",
     })
-    // Dedicatoria aparece primero
-    .to(".dedication-text", {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      ease: "power2.out"
-    }, "-=0.3")
+    // Logo aparece primero
+    .to(
+      ".logo-container",
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.8,
+        ease: "back.out(1.4)",
+      },
+      "-=0.2",
+    )
+    // SVG se dibuja progresivamente
+    .to(
+      ".neon-stroke",
+      {
+        strokeDashoffset: 0,
+        duration: 1.2,
+        ease: "power2.inOut",
+      },
+      "-=0.4",
+    )
+    // Intensificar el glow del neón
+    .to(
+      ".neon-stroke",
+      {
+        attr: {
+          "stroke-width": 4,
+        },
+        duration: 0.4,
+        ease: "power2.out",
+      },
+      "-=0.3",
+    )
+    // Dedicatoria aparece
+    .to(
+      ".dedication-text",
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power2.out",
+      },
+      "-=0.3",
+    )
     // Título entra como un auto a alta velocidad
-    .to(".hero-title", {
-      opacity: 1,
-      x: 0,
-      scale: 1,
-      duration: 0.7,
-      ease: "power3.out",
-      letterSpacing: "0.1em"
-    }, "-=0.2")
+    .to(
+      ".hero-title",
+      {
+        opacity: 1,
+        x: 0,
+        scale: 1,
+        duration: 0.7,
+        ease: "power3.out",
+        letterSpacing: "0.1em",
+      },
+      "-=0.2",
+    )
     // Nota del autor aparece
-    .to(".author-note", {
-      opacity: 1,
-      duration: 0.5,
-      ease: "power2.out"
-    }, "-=0.3")
+    .to(
+      ".author-note",
+      {
+        opacity: 1,
+        duration: 0.5,
+        ease: "power2.out",
+      },
+      "-=0.3",
+    )
     // Fanpage label aparece
-    .to(".fanpage-label", {
-      opacity: 1,
-      duration: 0.4,
-      ease: "power2.out"
-    }, "-=0.2")
+    .to(
+      ".fanpage-label",
+      {
+        opacity: 1,
+        duration: 0.4,
+        ease: "power2.out",
+      },
+      "-=0.2",
+    )
     // Efecto de "turbo boost" - el texto se agranda ligeramente
     .to(".hero-title", {
       scale: 1.05,
       duration: 0.3,
-      ease: "power2.inOut"
+      ease: "power2.inOut",
     })
     .to(".hero-title", {
       scale: 1,
       duration: 0.3,
-      ease: "power2.inOut"
+      ease: "power2.inOut",
     })
     // Pausa dramática
     .to(".hero-title", {
-      delay: 0.4
+      delay: 0.4,
     })
     // Salida rápida con motion blur effect - todos los elementos
     .to(".splash-content", {
@@ -89,40 +168,80 @@ const {
       x: 200,
       scale: 0.9,
       duration: 0.5,
-      ease: "power4.in"
+      ease: "power4.in",
     })
-    .to(".racing-lines", {
-      opacity: 0,
-      scaleX: 0,
-      x: 300,
-      duration: 0.4,
-      ease: "power4.in"
-    }, "-=0.3")
-    .to(".hero-section", {
-      opacity: 0,
-      duration: 0.3,
-      ease: "power2.in",
-      onComplete: () => {
-        const heroSection = document.querySelector(".hero-section");
-        if (heroSection) {
-          heroSection.style.display = "none";
-        }
-      }
-    }, "-=0.2");
+    .to(
+      ".racing-lines",
+      {
+        opacity: 0,
+        scaleX: 0,
+        x: 300,
+        duration: 0.4,
+        ease: "power4.in",
+      },
+      "-=0.3",
+    )
+    .to(
+      ".hero-section",
+      {
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.in",
+        onComplete: () => {
+          const heroSection = document.querySelector(".hero-section");
+          if (heroSection) {
+            heroSection.style.display = "none";
+          }
+        },
+      },
+      "-=0.2",
+    );
 </script>
 
 <style>
   .hero-section {
     background-color: var(--color-blue-deep);
   }
-  
+
   .splash-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
   }
-  
+
+  .logo-container {
+    position: relative;
+    width: clamp(300px, 35vw, 500px);
+    height: auto;
+    margin-bottom: 1.5rem;
+    transform: scale(0.5);
+  }
+
+  .neon-frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .neon-stroke {
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8))
+      drop-shadow(0 0 12px rgba(255, 255, 255, 0.5));
+  }
+
+  .hero-logo {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    display: block;
+  }
+
   .dedication-text {
     font-size: clamp(0.875rem, 1.5vw, 1.25rem);
     color: rgba(255, 255, 255, 0.7);
@@ -131,7 +250,7 @@ const {
     text-transform: uppercase;
     transform: translateY(-10px);
   }
-  
+
   .author-note {
     font-size: clamp(1rem, 1.8vw, 1.5rem);
     color: rgba(255, 255, 255, 0.6);
@@ -140,7 +259,7 @@ const {
     letter-spacing: 0.05em;
     margin-top: -0.5rem;
   }
-  
+
   .fanpage-label {
     font-size: clamp(0.75rem, 1.2vw, 1rem);
     color: rgba(255, 255, 255, 0.5);
@@ -152,7 +271,7 @@ const {
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 2rem;
   }
-  
+
   .hero-title {
     transform: translateX(-300px) scale(0.8);
     color: #ffffff;
@@ -161,7 +280,7 @@ const {
     font-weight: 900;
     margin: 0.5rem 0;
   }
-  
+
   /* Líneas de velocidad estilo racing */
   .racing-lines {
     position: absolute;
@@ -169,28 +288,30 @@ const {
     opacity: 0;
     pointer-events: none;
   }
-  
+
   .racing-lines::before,
   .racing-lines::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg,
-       transparent 0%,
-       rgba(255, 255, 255, 0.1) 20%,
-       rgba(255, 255, 255, 0.3) 50%,
-       rgba(255, 255, 255, 0.1) 80%,
-       transparent 100%);
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 20%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0.1) 80%,
+      transparent 100%
+    );
     transform: scaleX(0);
     transform-origin: left;
   }
-  
+
   .racing-lines::before {
     top: 35%;
   }
-  
+
   .racing-lines::after {
     bottom: 35%;
   }

@@ -11,90 +11,66 @@ import img8 from '@/assets/motorsport/s14/8.png';
 import img9 from '@/assets/motorsport/s14/9.png';
 ---
 
-<section class="welcome-section relative w-full min-h-[150vh] flex items-center bg-black overflow-hidden z-10">
+<section class="welcome-section relative w-full h-[100vh] bg-black overflow-hidden">
+  
   <!-- Contenedor de imágenes parallax (izquierda) -->
-  <div id="parallax-wrapper" class="absolute top-0 left-0 bottom-0 w-1/2 lg:w-2/5">
-    <div id="parallax-content" class="relative w-full h-full">
-       <div class="parallax-images">
-        <img data-speed="0.8" src={img1.src} alt="Motorsport S14 1" class="parallax-img">
-        <img data-speed="0.9" src={img2.src} alt="Motorsport S14 2" class="parallax-img">
-        <img data-speed="1" src={img3.src} alt="Motorsport S14 3" class="parallax-img">
-        <img data-speed="1.1" src={img4.src} alt="Motorsport S14 4" class="parallax-img">
-        <img data-speed="0.9" src={img5.src} alt="Motorsport S14 5" class="parallax-img">
-        <img data-speed="1.2" src={img6.src} alt="Motorsport S14 6" class="parallax-img">
-        <img data-speed="0.8" src={img7.src} alt="Motorsport S14 7" class="parallax-img">
-        <img data-speed="1" src={img8.src} alt="Motorsport S14 8" class="parallax-img">
-        <img data-speed="0.9" src={img9.src} alt="Motorsport S14 9" class="parallax-img">
-      </div>
+  <div class="parallax-wrapper absolute top-0 left-0 h-full w-1/2 lg:w-[45%] pointer-events-none overflow-hidden">
+    <div class="parallax-images" data-speed="auto">
+      <img data-speed="0.8" src={img1.src} alt="Motorsport S14 1" class="parallax-img">
+      <img data-speed="0.9" src={img2.src} alt="Motorsport S14 2" class="parallax-img">
+      <img data-speed="1" src={img3.src} alt="Motorsport S14 3" class="parallax-img">
+      <img data-speed="1.1" src={img4.src} alt="Motorsport S14 4" class="parallax-img">
+      <img data-speed="0.9" src={img5.src} alt="Motorsport S14 5" class="parallax-img">
+      <img data-speed="1.2" src={img6.src} alt="Motorsport S14 6" class="parallax-img">
+      <img data-speed="0.8" src={img7.src} alt="Motorsport S14 7" class="parallax-img">
+      <img data-speed="1" src={img8.src} alt="Motorsport S14 8" class="parallax-img">
+      <img data-speed="0.9" src={img9.src} alt="Motorsport S14 9" class="parallax-img">
     </div>
   </div>
 
   <!-- Contenido de texto (derecha) -->
-  <div class="welcome-content relative z-10 ml-auto max-w-4xl px-8 md:px-16 lg:px-24 py-20 min-h-screen flex flex-col justify-center">
-   <h2 class="welcome-text text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-white">
-  <span class="reveal-line">Este no es solo un carro.</span>
-  <span class="reveal-line">Es la prueba de que un chavo</span>
-  <span class="reveal-line">que lavaba coches a los 14 años</span>
-  <span class="reveal-line">puede <span class="text-gray-600">construir sus propios sueños.</span></span>
-  <span class="reveal-line">Kenyi Nakamura <span class="text-gray-600">y su equipo convirtieron</span></span>
-  <span class="reveal-line">un S14 naranja <span class="text-gray-600">en una obra de arte</span></span>
-  <span class="reveal-line">Midnight Purple. <span class="text-gray-600">Pura dedicación.</span></span>
-</h2>
-
-   
+  <div class="welcome-content absolute top-0 right-0 h-full w-1/2 lg:w-[55%] flex flex-col justify-center px-8 md:px-12 lg:px-16 xl:px-20">
+    <h2 class="welcome-text text-3xl md:text-4xl lg:text-5xl font-light leading-tight text-white max-w-3xl">
+      <span class="reveal-line">Este no es solo un carro.</span>
+      <span class="reveal-line">Es la prueba de que un chavo</span>
+      <span class="reveal-line">que lavaba coches a los 14 años</span>
+      <span class="reveal-line">puede <span class="text-gray-600">construir sus propios sueños.</span></span>
+      <span class="reveal-line">Kenyi Nakamura <span class="text-gray-600">y su equipo convirtieron</span></span>
+      <span class="reveal-line">un S14 naranja <span class="text-gray-600">en una obra de arte</span></span>
+      <span class="reveal-line">Midnight Purple. <span class="text-gray-600">Pura dedicación.</span></span>
+    </h2>
   </div>
 </section>
 
 <style>
   .welcome-section {
-    background-color: #000000;
-    margin-top: 0;
     isolation: isolate;
-  }
-
-  .welcome-text {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
 
   .reveal-line {
     display: block;
     opacity: 0;
     transform: translateY(30px);
+    margin-bottom: 1.9rem;
   }
 
   .reveal-line .text-gray-600 {
     color: #4b5563;
   }
 
-  /* Parallax images container */
-  #parallax-wrapper {
-    position: absolute;
-    height: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-  }
-
-  #parallax-content {
-    overflow: visible;
-    width: 100%;
-    height: 100%;
-  }
-
   .parallax-images {
+    padding-top: 5vh;
     position: relative;
     width: 100%;
-    max-width: 600px;
+    max-width: 450px;
     margin: 0 auto;
-    height: 200vh;
-    min-height: 200vh;
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(20, 5%);
-    grid-template-rows: repeat(30, 3%);
+    grid-template-rows: repeat(16, 6.25%);
     justify-content: center;
     align-items: center;
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    gap: 0;
   }
 
   .parallax-img {
@@ -103,55 +79,62 @@ import img9 from '@/assets/motorsport/s14/9.png';
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    will-change: transform;
   }
 
   .parallax-img:nth-child(1) {
-    grid-area: 1/1/6/8;
+    grid-area: 1/1/4/7;
   }
 
   .parallax-img:nth-child(2) {
-    grid-area: 3/12/8/20;
+    grid-area: 1/13/4/20;
   }
 
   .parallax-img:nth-child(3) {
-    grid-area: 9/5/13/15;
+    grid-area: 4/5/7/14;
   }
 
   .parallax-img:nth-child(4) {
-    grid-area: 14/1/18/8;
+    grid-area: 7/1/10/7;
   }
 
   .parallax-img:nth-child(5) {
-    grid-area: 16/12/20/19;
+    grid-area: 7/14/10/20;
   }
 
   .parallax-img:nth-child(6) {
-    grid-area: 20/2/25/9;
+    grid-area: 10/3/13/10;
   }
 
   .parallax-img:nth-child(7) {
-    grid-area: 22/11/24/20;
+    grid-area: 10/12/13/19;
   }
 
   .parallax-img:nth-child(8) {
-    grid-area: 26/5/30/15;
+    grid-area: 13/2/16/10;
+  }
+
+  .parallax-img:nth-child(9) {
+    grid-area: 13/11/16/19;
   }
 
   /* Responsive */
   @media (max-width: 1024px) {
-    #parallax-wrapper {
+    .parallax-wrapper {
       width: 40%;
     }
   }
 
   @media (max-width: 768px) {
-    #parallax-wrapper {
+    .parallax-wrapper {
       display: none;
     }
 
     .welcome-content {
       margin-left: 0;
       max-width: 100%;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
 
     .welcome-text {
@@ -167,13 +150,13 @@ import img9 from '@/assets/motorsport/s14/9.png';
   gsap.registerPlugin(ScrollTrigger);
 
   function initWelcomeAnimation() {
+    const section = document.querySelector('.welcome-section');
     const lines = document.querySelectorAll('.welcome-section .reveal-line');
-    const cta = document.querySelector('.welcome-cta');
-    const parallaxWrapper = document.getElementById('parallax-wrapper');
+    const images = document.querySelectorAll('.parallax-img');
 
-    if (!lines.length) return;
+    if (!section || !lines.length) return;
 
-    // Animación de texto
+    // Animación de texto con scroll trigger
     gsap.to(lines, {
       opacity: 1,
       y: 0,
@@ -181,70 +164,29 @@ import img9 from '@/assets/motorsport/s14/9.png';
       stagger: 0.15,
       ease: "power2.out",
       scrollTrigger: {
-        trigger: '.welcome-section',
-        start: 'top 70%',
-        end: 'top 30%',
+        trigger: section,
+        start: 'top 80%',
+        end: 'top 20%',
         toggleActions: 'play none none reverse',
       }
     });
 
-    if (cta) {
-      gsap.to(cta, {
-        opacity: 1,
-        duration: 0.8,
-        delay: lines.length * 0.15 + 0.3,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: '.welcome-section',
-          start: 'top 70%',
-          toggleActions: 'play none none reverse',
-        }
-      });
-    }
+    // Skew effect en las imágenes con velocidad del scroll
+    const skewSetter = gsap.quickTo(images, "skewY", {
+      duration: 0.5,
+      ease: "power3.out"
+    });
+    const clamp = gsap.utils.clamp(-20, 20);
 
-    // Parallax de imágenes
-    if (parallaxWrapper) {
-      const images = document.querySelectorAll('.parallax-img');
-      
-      // Animar cada imagen individualmente con parallax
-      images.forEach((img) => {
-        const speed = parseFloat(img.getAttribute('data-speed') || '1');
-        const movement = (speed - 1) * 500; // Mayor rango de movimiento
-        
-        gsap.fromTo(img, 
-          {
-            y: -movement / 2
-          },
-          {
-            y: movement / 2,
-            ease: "none",
-            scrollTrigger: {
-              trigger: '.welcome-section',
-              start: 'top bottom',
-              end: 'bottom top',
-              scrub: 1,
-             // markers: true, // Descomentar para debug
-            }
-          }
-        );
-      });
-
-      // Skew effect en las imágenes
-      const skewSetter = gsap.quickTo(".parallax-img", "skewY");
-      const clamp = gsap.utils.clamp(-10, 10);
-
-      ScrollTrigger.create({
-        trigger: '.welcome-section',
-        start: 'top bottom',
-        end: 'bottom top',
-        onUpdate: (self) => {
-          const velocity = self.getVelocity();
-          skewSetter(clamp(velocity / -100));
-        },
-        onLeave: () => skewSetter(0),
-        onEnterBack: () => skewSetter(0),
-      });
-    }
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top bottom',
+      end: 'bottom top',
+      onUpdate: (self) => {
+        const velocity = self.getVelocity();
+        skewSetter(clamp(velocity / -50));
+      },
+    });
   }
 
   if (document.readyState === 'loading') {
@@ -253,6 +195,7 @@ import img9 from '@/assets/motorsport/s14/9.png';
     initWelcomeAnimation();
   }
 
+  // Refresh ScrollTrigger on resize
   let resizeTimer: number;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
