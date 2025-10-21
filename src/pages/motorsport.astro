@@ -5,9 +5,9 @@ import RacingSplash from "@components/motorsport/Splash.astro";
 import Hero from "@/components/motorsport/Hero.astro";
 import Welcome from "@/components/motorsport/Welcome.astro";
 import Last from "@/components/motorsport/Last.astro";
-import SmoothScrollLayout from '@/components/motorsport/SmoothScrollLayout.astro';
+import SmoothScrollLayout from "@/components/motorsport/SmoothScrollLayout.astro";
 import Milestone from "@/components/motorsport/Milestone.astro";
-
+import Acerca from "@/components/motorsport/Acerca.astro";
 ---
 
 <Layout title="Demo Motorsport - Eliezer Martinez">
@@ -18,12 +18,11 @@ import Milestone from "@/components/motorsport/Milestone.astro";
     label="FANPAGE"
   />
 
-<SmoothScrollLayout>
-  <Hero />
-  <Welcome />
-  <Milestone/>
-  <Last/>
-</SmoothScrollLayout>
+  <SmoothScrollLayout>
+    <Hero />
+    <!--   <Welcome /> -->
+    <Acerca />
+  </SmoothScrollLayout>
 </Layout>
 
 <script>
@@ -38,17 +37,16 @@ import Milestone from "@/components/motorsport/Milestone.astro";
       ease: "power2.out",
       onComplete: () => {
         // Activar la animación de texto del hero cuando sea visible
-        const heroElement = document.querySelector('.hero-motorsport');
+        const heroElement = document.querySelector(".hero-motorsport");
         if (heroElement) {
-          heroElement.setAttribute('data-hero-ready', 'true');
+          heroElement.setAttribute("data-hero-ready", "true");
         }
-        
+
         // Alternativa: usar la función global si está disponible
-        if (typeof (window as any).startHeroTextReveal === 'function') {
+        if (typeof (window as any).startHeroTextReveal === "function") {
           (window as any).startHeroTextReveal();
         }
-      }
+      },
     });
   }, 3500); // Ajusta este tiempo según la duración de tu splash
 </script>
-

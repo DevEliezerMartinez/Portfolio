@@ -1,0 +1,250 @@
+---
+// Acerca.astro - Componente de galería con parallax y texto fijo
+---
+
+<section class="acerca-section">
+  <div class="acerca-container">
+    <!-- Columna izquierda: Imágenes con scroll -->
+    <div class="images-column">
+      <div class="images">
+        <img
+          data-speed="0.8"
+          src="https://images.unsplash.com/photo-1556856425-366d6618905d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG5lb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60"
+          alt=""
+        />
+        <img
+          data-speed="0.9"
+          src="https://images.unsplash.com/photo-1520271348391-049dd132bb7c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+          alt=""
+        />
+        <img
+          data-speed="1"
+          src="https://images.unsplash.com/photo-1609166214994-502d326bafee?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+          alt=""
+        />
+        <img
+          data-speed="1.1"
+          src="https://images.unsplash.com/photo-1589882265634-84f7eb9a3414?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=434&q=80"
+          alt=""
+        />
+        <img
+          data-speed="0.9"
+          src="https://images.unsplash.com/photo-1514689832698-319d3bcac5d5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=434&q=80"
+          alt=""
+        />
+        <img
+          data-speed="1.2"
+          src="https://images.unsplash.com/photo-1535207010348-71e47296838a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+          alt=""
+        />
+        <img
+          data-speed="0.8"
+          src="https://images.unsplash.com/photo-1588007375246-3ee823ef4851?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fG5lb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60"
+          alt=""
+        />
+        <img
+          data-speed="1"
+          src="https://images.unsplash.com/photo-1571450669798-fcb4c543f6a4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fG5lb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <!-- Columna derecha: Texto fijo -->
+    <div class="text-column">
+      <div class="text-sticky">
+        <h2 class="title">Scrolly Images</h2>
+        <p class="description">
+          Esta es una sección con imágenes que se desplazan suavemente mientras
+          el texto permanece fijo en su posición.
+        </p>
+        <p class="description">
+          Cada imagen tiene una velocidad diferente, creando un efecto parallax
+          dinámico y moderno.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { ScrollSmoother } from "gsap/ScrollSmoother";
+
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+  function initAcercaEffects() {
+    const smoother = ScrollSmoother.get();
+    
+    if (!smoother) {
+      console.warn('ScrollSmoother no encontrado. Esperando...');
+      setTimeout(initAcercaEffects, 100);
+      return;
+    }
+
+    console.log('✅ ScrollSmoother encontrado, aplicando efectos...');
+
+    // Configurar efectos de velocidad en las imágenes
+    const images = document.querySelectorAll('.images-column img');
+    images.forEach((img) => {
+      const speed = img.getAttribute('data-speed');
+      if (speed) {
+        gsap.to(img, {
+          y: () => (1 - parseFloat(speed)) * ScrollTrigger.maxScroll(window) * 0.1,
+          ease: "none",
+          scrollTrigger: {
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 0.5,
+            invalidateOnRefresh: true
+          }
+        });
+      }
+    });
+
+    // Efecto skew basado en velocidad
+    let skewSetter = gsap.quickTo(".images-column img", "skewY");
+    let clamp = gsap.utils.clamp(-20, 20);
+    
+    let rafId;
+    const updateSkew = () => {
+      const velocity = smoother.getVelocity();
+      skewSetter(clamp(velocity / -50));
+      rafId = requestAnimationFrame(updateSkew);
+    };
+    
+    updateSkew();
+
+    // Limpiar en caso de navegación
+    return () => {
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAcercaEffects);
+  } else {
+    initAcercaEffects();
+  }
+</script>
+
+<style>
+  .acerca-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #000;
+    padding: 10vh 0;
+  }
+
+  .acerca-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Columna de imágenes (izquierda) */
+  .images-column {
+    position: relative;
+  }
+
+  .images {
+    position: relative;
+    width: 100%;
+    min-height: 200vh;
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(30, 5vh);
+    gap: 0;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: transform;
+    border-radius: 4px;
+  }
+
+  img:nth-child(1) { grid-area: 1 / 1 / 6 / 6; }
+  img:nth-child(2) { grid-area: 3 / 6 / 8 / 11; }
+  img:nth-child(3) { grid-area: 9 / 2 / 13 / 9; }
+  img:nth-child(4) { grid-area: 14 / 1 / 18 / 6; }
+  img:nth-child(5) { grid-area: 16 / 6 / 20 / 11; }
+  img:nth-child(6) { grid-area: 20 / 2 / 25 / 7; }
+  img:nth-child(7) { grid-area: 22 / 7 / 26 / 11; }
+  img:nth-child(8) { grid-area: 26 / 3 / 30 / 9; }
+
+  /* Columna de texto (derecha) */
+  .text-column {
+    position: relative;
+  }
+
+  .text-sticky {
+    position: sticky;
+    top: 20vh;
+    height: fit-content;
+    padding: 2rem;
+  }
+
+  .title {
+    font-family: termina, sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: white;
+    margin: 0 0 2rem 0;
+    line-height: 1.1;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: white;
+  }
+
+  .description {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    .acerca-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .text-sticky {
+      position: relative;
+      top: 0;
+      order: -1;
+    }
+
+    .images {
+      min-height: 150vh;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .acerca-container {
+      padding: 0 1rem;
+    }
+
+    .images {
+      grid-template-columns: repeat(8, 12.5%);
+      min-height: 120vh;
+    }
+
+    img:nth-child(1) { grid-area: 1 / 1 / 5 / 5; }
+    img:nth-child(2) { grid-area: 3 / 5 / 7 / 9; }
+    img:nth-child(3) { grid-area: 8 / 2 / 12 / 7; }
+    img:nth-child(4) { grid-area: 13 / 1 / 17 / 5; }
+    img:nth-child(5) { grid-area: 15 / 5 / 19 / 9; }
+    img:nth-child(6) { grid-area: 20 / 2 / 24 / 6; }
+    img:nth-child(7) { grid-area: 22 / 6 / 26 / 9; }
+    img:nth-child(8) { grid-area: 27 / 3 / 31 / 7; }
+  }
+</style>
