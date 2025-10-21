@@ -6,6 +6,8 @@ interface Props {
 }
 
 const { title = "Sitio web" } = Astro.props;
+import Clarity from "@/components/Clarity.astro";
+const projectId = "ttrozc87z6"
 ---
 
 <html lang="es">
@@ -13,9 +15,12 @@ const { title = "Sitio web" } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+        <link rel="preconnect" href="https://www.clarity.ms" />
+
   </head>
 
   <body>
+    <Clarity projectId={projectId} />
     <main id="main-content" tabindex="-1">
       <slot></slot>
     </main>
