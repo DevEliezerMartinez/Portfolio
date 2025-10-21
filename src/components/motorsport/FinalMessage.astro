@@ -1,0 +1,291 @@
+---
+// src/components/motorsport/FinalMessage.astro
+---
+
+<section class="final-message-section relative min-h-screen w-full overflow-hidden bg-black">
+  
+  <!-- Fondo con efecto de partículas/estrellas -->
+  <div class="stars-container absolute inset-0">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+  </div>
+
+  <!-- Contenedor principal del mensaje -->
+  <div class="relative z-10 flex min-h-screen items-center justify-center px-6 py-20">
+    <div class="message-container max-w-4xl text-center">
+      
+      <!-- Título principal con efecto de reveal -->
+      <div class="title-wrapper overflow-hidden mb-12">
+        <h2 class="reveal-text text-5xl md:text-7xl font-black text-white mb-4 leading-tight">
+          Hey, Nocturna
+        </h2>
+      </div>
+
+      <!-- Mensaje principal con fade in escalonado -->
+      <div class="message-content space-y-8 text-lg md:text-2xl text-gray-300 leading-relaxed">
+        
+        <p class="fade-paragraph opacity-0">
+          Esta página es solo el <span class="text-cyan-400 font-bold">comienzo de algo más grande</span>.
+        </p>
+
+        <p class="fade-paragraph opacity-0">
+          Me encantaría <span class="text-purple-400 font-bold">colaborar con ustedes</span> para crear 
+          historias visuales como esta para <span class="text-pink-400 font-bold">cada auto</span> y 
+          <span class="text-pink-400 font-bold">cada miembro</span> del equipo Nocturna.
+        </p>
+
+        <p class="fade-paragraph opacity-0">
+          ¿Necesitan un <span class="text-yellow-400 font-bold">software personalizado</span>? 
+          ¿Una <span class="text-yellow-400 font-bold">app para el taller</span>? 
+          ¿Una plataforma para la comunidad?
+        </p>
+
+        <p class="fade-paragraph opacity-0 text-2xl md:text-3xl font-bold text-white">
+          Cuenten conmigo. 🏁
+        </p>
+
+      </div>
+
+      <!-- Signature con efecto de escritura -->
+      <div class="signature-container mt-20 pt-12 border-t border-gray-800">
+        <p class="signature-line opacity-0 text-sm md:text-base text-gray-500 mb-2">
+          Hecho con cariño y respeto
+        </p>
+        <p class="signature-line opacity-0 text-base md:text-lg text-gray-400 mb-1">
+          En honor a una leyenda
+        </p>
+        <p class="signature-line opacity-0 text-2xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+          Kenji Nakamura
+        </p>
+        <p class="signature-line opacity-0 text-xs md:text-sm text-gray-600 mt-4">
+          — Silvia S14
+        </p>
+      </div>
+
+      <!-- CTA Buttons con iconos -->
+      <div class="cta-container mt-16 opacity-0 flex flex-col sm:flex-row gap-6 justify-center items-center">
+        
+        <!-- Botón WhatsApp -->
+        <a 
+          href="https://wa.me/527331701927?text=Hola%20Nocturna!%20Vi%20tu%20tributo%20web%20del%20S14%20y%20me%20encantaría%20colaborar%20contigo.%20¿Podemos%20hablar%20sobre%20crear%20más%20contenido%20visual%20para%20el%20equipo?" 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="cta-button whatsapp-button inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white text-lg md:text-xl font-bold rounded-full hover:scale-105 transition-transform duration-300 shadow-2xl hover:shadow-green-500/50"
+        >
+          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          Hablemos
+        </a>
+
+        <!-- Botón Email -->
+        <a 
+          href="mailto:develiezermartinez@gmail.com?subject=Colaboración Nocturna - Tributo S14&body=Hola Eliezer,%0D%0A%0D%0AVi el tributo web del S14 y me gustaría hablar contigo sobre una posible colaboración.%0D%0A%0D%0ASaludos,"
+          class="cta-button email-button inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-lg md:text-xl font-bold rounded-full hover:scale-105 transition-transform duration-300 shadow-2xl hover:shadow-purple-500/50"
+        >
+          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+          Email
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<style>
+  /* Fondo de estrellas animadas */
+  .stars-container {
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  }
+
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s infinite ease-in-out;
+  }
+
+  .star:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+
+  .star:nth-child(2) {
+    top: 40%;
+    left: 80%;
+    animation-delay: 0.5s;
+  }
+
+  .star:nth-child(3) {
+    top: 60%;
+    left: 30%;
+    animation-delay: 1s;
+  }
+
+  .star:nth-child(4) {
+    top: 80%;
+    left: 70%;
+    animation-delay: 1.5s;
+  }
+
+  .star:nth-child(5) {
+    top: 30%;
+    left: 50%;
+    animation-delay: 2s;
+  }
+
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.5);
+    }
+  }
+
+  /* Gradiente sutil en el texto */
+  .message-content p {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Efecto de glow en spans destacados */
+  .text-cyan-400,
+  .text-purple-400,
+  .text-pink-400,
+  .text-yellow-400 {
+    text-shadow: 0 0 20px currentColor;
+  }
+
+  /* Animación de los botones */
+  .cta-button {
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+  }
+
+  .whatsapp-button {
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.4);
+  }
+
+  .whatsapp-button:hover {
+    box-shadow: 0 0 50px rgba(34, 197, 94, 0.6);
+  }
+
+  .email-button:hover {
+    box-shadow: 0 0 50px rgba(168, 85, 247, 0.6);
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { TextPlugin } from "gsap/TextPlugin";
+
+  gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
+  // Animación de reveal del título con efecto de cortina
+  gsap.from(".reveal-text", {
+    scrollTrigger: {
+      trigger: ".final-message-section",
+      start: "top 80%",
+    },
+    y: 100,
+    opacity: 0,
+    duration: 1.2,
+    ease: "power4.out",
+  });
+
+  // Fade in escalonado de los párrafos
+  const paragraphs = gsap.utils.toArray(".fade-paragraph");
+  paragraphs.forEach((paragraph, index) => {
+    gsap.to(paragraph, {
+      scrollTrigger: {
+        trigger: ".final-message-section",
+        start: "top 60%",
+      },
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      delay: 0.3 + index * 0.2,
+      ease: "power2.out",
+    });
+    
+    gsap.set(paragraph, { y: 30 });
+  });
+
+  // Animación de la firma con efecto de escritura
+  const signatureLines = gsap.utils.toArray(".signature-line");
+  signatureLines.forEach((line, index) => {
+    gsap.to(line, {
+      scrollTrigger: {
+        trigger: ".signature-container",
+        start: "top 80%",
+      },
+      opacity: 1,
+      x: 0,
+      duration: 0.8,
+      delay: index * 0.2,
+      ease: "power2.out",
+    });
+    
+    gsap.set(line, { x: -20 });
+  });
+
+  // Animación del contenedor de botones con bounce
+  gsap.to(".cta-container", {
+    scrollTrigger: {
+      trigger: ".cta-container",
+      start: "top 90%",
+    },
+    opacity: 1,
+    scale: 1,
+    duration: 0.6,
+    ease: "back.out(1.7)",
+  });
+
+  gsap.set(".cta-container", { scale: 0.8 });
+
+  // Efecto de parallax sutil en las estrellas
+  gsap.to(".star", {
+    y: "random(-100, 100)",
+    x: "random(-100, 100)",
+    duration: "random(3, 5)",
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut",
+    stagger: {
+      each: 0.2,
+      from: "random",
+    },
+  });
+
+  // Efecto de hover en el título
+  const title = document.querySelector(".reveal-text");
+  if (title) {
+    title.addEventListener("mouseenter", () => {
+      gsap.to(title, {
+        scale: 1.05,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    });
+
+    title.addEventListener("mouseleave", () => {
+      gsap.to(title, {
+        scale: 1,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    });
+  }
+</script>

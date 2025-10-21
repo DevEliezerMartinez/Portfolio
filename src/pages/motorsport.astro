@@ -3,10 +3,11 @@ import "@/styles/global.css";
 import Layout from "@layouts/Layout.astro";
 import RacingSplash from "@components/motorsport/Splash.astro";
 import Hero from "@/components/motorsport/Hero.astro";
-import Welcome from "@/components/motorsport/Welcome.astro";
 import Last from "@/components/motorsport/Last.astro";
 import SmoothScrollLayout from "@/components/motorsport/SmoothScrollLayout.astro";
 import Milestone from "@/components/motorsport/Milestone.astro";
+import Final from "@/components/motorsport/Final.astro";
+import FinalMessage from "@/components/motorsport/FinalMessage.astro";
 import Acerca from "@/components/motorsport/Acerca.astro";
 ---
 
@@ -20,8 +21,11 @@ import Acerca from "@/components/motorsport/Acerca.astro";
 
   <SmoothScrollLayout>
     <Hero />
-    <!--   <Welcome /> -->
     <Acerca />
+    <Last />
+    <Milestone />
+    <Final />
+    <FinalMessage />
   </SmoothScrollLayout>
 </Layout>
 

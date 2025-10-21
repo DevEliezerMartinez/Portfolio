@@ -20,8 +20,7 @@ import NocturnaLogo from "@assets/motorsport/Logo_adaptado.png";
   class="hero-section fixed inset-0 flex flex-col items-center justify-center z-50 overflow-hidden"
 >
   <div class="racing-lines"></div>
-  <div class="splash-content">
-    <div class="logo-container opacity-0">
+  <div class="splash-content text-center"> <div class="logo-container">
       <svg
         class="neon-frame"
         viewBox="0 0 611 235"
@@ -36,25 +35,30 @@ import NocturnaLogo from "@assets/motorsport/Logo_adaptado.png";
       </svg>
       <img src={NocturnaLogo.src} alt="Nocturna Drift Club" class="hero-logo" />
     </div>
-    <p class="dedication-text opacity-0">{dedication}</p>
+    <p class="dedication-text">{dedication}</p>
     <h1
-      class="hero-title font-bold opacity-0 leading-none"
-      style="font-size: clamp(5rem, 7vw, 10rem);"
-    >
+      class="hero-title font-bold leading-none"
+      style="font-size: clamp(3.5rem, 7vw, 10rem);" >
       {title}
     </h1>
-    <p class="author-note opacity-0">{author}</p>
-    <p class="fanpage-label opacity-0">{label}</p>
+    <p class="author-note">{author}</p>
+    <p class="fanpage-label">{label}</p>
   </div>
 </section>
 
 <script>
   import { gsap } from "gsap";
 
-  // Animación del splash - Estilo RACING
-  const timeline = gsap.timeline();
+  // --- CONFIGURACIÓN INICIAL RESPONSIVE ---
+  // Establecemos los estados iniciales de los elementos desde JS para tener más control.
+  gsap.set(".logo-container, .hero-title, .dedication-text, .author-note, .fanpage-label", { opacity: 0 });
+  gsap.set(".logo-container", { scale: 0.5 });
+  gsap.set(".dedication-text", { y: -10 });
+  // Usamos xPercent para mover el título el 100% de su propio ancho, ¡perfecto para responsive!
+  gsap.set(".hero-title", { xPercent: -100, scale: 0.8 });
 
-  // Configurar el SVG path para animación de dibujo
+
+  const timeline = gsap.timeline();
   const neonPath = document.querySelector(".neon-stroke");
   if (neonPath) {
     const pathLength = neonPath.getTotalLength();
@@ -62,140 +66,34 @@ import NocturnaLogo from "@assets/motorsport/Logo_adaptado.png";
     neonPath.style.strokeDashoffset = pathLength;
   }
 
-  // Líneas de velocidad (racing stripes)
+  // --- SECUENCIA DE ANIMACIÓN ---
   timeline
-    .to(".racing-lines", {
-      opacity: 1,
-      scaleX: 1,
-      duration: 0.6,
-      ease: "power4.out",
-    })
-    // Logo aparece primero
-    .to(
-      ".logo-container",
-      {
-        opacity: 1,
-        scale: 1,
-        duration: 0.8,
-        ease: "back.out(1.4)",
-      },
-      "-=0.2",
-    )
-    // SVG se dibuja progresivamente
-    .to(
-      ".neon-stroke",
-      {
-        strokeDashoffset: 0,
-        duration: 1.2,
-        ease: "power2.inOut",
-      },
-      "-=0.4",
-    )
-    // Intensificar el glow del neón
-    .to(
-      ".neon-stroke",
-      {
-        attr: {
-          "stroke-width": 4,
-        },
-        duration: 0.4,
-        ease: "power2.out",
-      },
-      "-=0.3",
-    )
-    // Dedicatoria aparece
-    .to(
-      ".dedication-text",
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        ease: "power2.out",
-      },
-      "-=0.3",
-    )
-    // Título entra como un auto a alta velocidad
-    .to(
-      ".hero-title",
-      {
-        opacity: 1,
-        x: 0,
-        scale: 1,
-        duration: 0.7,
-        ease: "power3.out",
-        letterSpacing: "0.1em",
-      },
-      "-=0.2",
-    )
-    // Nota del autor aparece
-    .to(
-      ".author-note",
-      {
-        opacity: 1,
-        duration: 0.5,
-        ease: "power2.out",
-      },
-      "-=0.3",
-    )
-    // Fanpage label aparece
-    .to(
-      ".fanpage-label",
-      {
-        opacity: 1,
-        duration: 0.4,
-        ease: "power2.out",
-      },
-      "-=0.2",
-    )
-    // Efecto de "turbo boost" - el texto se agranda ligeramente
-    .to(".hero-title", {
-      scale: 1.05,
-      duration: 0.3,
-      ease: "power2.inOut",
-    })
-    .to(".hero-title", {
-      scale: 1,
-      duration: 0.3,
-      ease: "power2.inOut",
-    })
-    // Pausa dramática
-    .to(".hero-title", {
-      delay: 0.4,
-    })
-    // Salida rápida con motion blur effect - todos los elementos
-    .to(".splash-content", {
+    .to(".racing-lines", { opacity: 1, scaleX: 1, duration: 0.6, ease: "power4.out" })
+    .to(".logo-container", { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.4)" }, "-=0.2")
+    .to(".neon-stroke", { strokeDashoffset: 0, duration: 1.2, ease: "power2.inOut" }, "-=0.4")
+    .to(".neon-stroke", { attr: { "stroke-width": 4 }, duration: 0.4, ease: "power2.out" }, "-=0.3")
+    .to(".dedication-text", { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, "-=0.3")
+    // Animamos xPercent a 0 para que vuelva a su sitio de forma responsive
+    .to(".hero-title", { opacity: 1, xPercent: 0, scale: 1, duration: 0.7, ease: "power3.out", letterSpacing: "0.1em" }, "-=0.2")
+    .to(".author-note", { opacity: 1, duration: 0.5, ease: "power2.out" }, "-=0.3")
+    .to(".fanpage-label", { opacity: 1, duration: 0.4, ease: "power2.out" }, "-=0.2")
+    .to(".hero-title", { scale: 1.05, duration: 0.3, ease: "power2.inOut" })
+    .to(".hero-title", { scale: 1, duration: 0.3, ease: "power2.inOut" })
+    .to({}, { duration: 0.4 }) // Pausa dramática simplificada
+    // Salida también con unidades relativas
+    .to(".splash-content", { opacity: 0, xPercent: 50, scale: 0.9, duration: 0.5, ease: "power4.in" })
+    .to(".racing-lines", { opacity: 0, scaleX: 0, x: "100%", duration: 0.4, ease: "power4.in" }, "-=0.3")
+    .to(".hero-section", {
       opacity: 0,
-      x: 200,
-      scale: 0.9,
-      duration: 0.5,
-      ease: "power4.in",
-    })
-    .to(
-      ".racing-lines",
-      {
-        opacity: 0,
-        scaleX: 0,
-        x: 300,
-        duration: 0.4,
-        ease: "power4.in",
+      duration: 0.3,
+      ease: "power2.in",
+      onComplete: () => {
+        const heroSection = document.querySelector(".hero-section");
+        if (heroSection) {
+          heroSection.style.display = "none";
+        }
       },
-      "-=0.3",
-    )
-    .to(
-      ".hero-section",
-      {
-        opacity: 0,
-        duration: 0.3,
-        ease: "power2.in",
-        onComplete: () => {
-          const heroSection = document.querySelector(".hero-section");
-          if (heroSection) {
-            heroSection.style.display = "none";
-          }
-        },
-      },
-      "-=0.2",
-    );
+    }, "-=0.2");
 </script>
 
 <style>
@@ -208,14 +106,14 @@ import NocturnaLogo from "@assets/motorsport/Logo_adaptado.png";
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    padding: 0 1rem; /* Añadimos padding para que no se pegue a los bordes en móvil */
   }
 
   .logo-container {
     position: relative;
-    width: clamp(300px, 35vw, 500px);
+    width: clamp(280px, 35vw, 500px); /* Ajustado clamp mínimo */
     height: auto;
     margin-bottom: 1.5rem;
-    transform: scale(0.5);
   }
 
   .neon-frame {
@@ -248,7 +146,6 @@ import NocturnaLogo from "@assets/motorsport/Logo_adaptado.png";
     letter-spacing: 0.3em;
     font-weight: 400;
     text-transform: uppercase;
-    transform: translateY(-10px);
   }
 
   .author-note {
@@ -273,7 +170,7 @@ import NocturnaLogo from "@assets/motorsport/Logo_adaptado.png";
   }
 
   .hero-title {
-    transform: translateX(-300px) scale(0.8);
+    /* Quitamos el transform de aquí, ahora lo controla GSAP */
     color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -308,11 +205,16 @@ import NocturnaLogo from "@assets/motorsport/Logo_adaptado.png";
     transform-origin: left;
   }
 
-  .racing-lines::before {
-    top: 35%;
-  }
-
-  .racing-lines::after {
-    bottom: 35%;
+  .racing-lines::before { top: 35%; }
+  .racing-lines::after { bottom: 35%; }
+  
+  /* --- MEDIA QUERY PARA AJUSTES FINOS --- */
+  @media (max-width: 768px) {
+    .splash-content {
+      gap: 0.75rem; /* Reducimos el espacio vertical en pantallas pequeñas */
+    }
+    .logo-container {
+      margin-bottom: 1rem;
+    }
   }
 </style>
